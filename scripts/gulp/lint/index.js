@@ -11,7 +11,6 @@ export const spaces = () =>
         '*.{js,json,md,yml,txt}',
         '.*',
         '!.DS_Store',
-        '!LICENSE-icons-images.txt',
         '!CONTRIBUTING.md',
         'src/**/*.*',
         'scripts/**/*.{js,sh,jsx}',
@@ -46,9 +45,7 @@ export const sass = () =>
 export const javascript = (files, options) =>
     gulp.src([
         '*.js',
-        'shared/**/*.{js,jsx}',
         'src/**/*.{js,jsx}',
-        '!**/*.spec.{js,jsx}'
     ])
     .pipe(cache('lintjs'))
     .pipe(eslint())
