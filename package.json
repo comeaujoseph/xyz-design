@@ -1,0 +1,53 @@
+{
+  "name": "xyz-design",
+  "version": "1.0.0",
+  "description": "xyz design system",
+  "main": "src/index.jsx",
+  "scripts": {
+    "gulp": "babel-node --max-old-space-size=4096 ./node_modules/.bin/gulp",
+    "lint": "npm run gulp -- lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comeaujoseph/xyz-design.git"
+  },
+  "keywords": [
+    "xyz"
+  ],
+  "author": "Joey Comeau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/comeaujoseph/xyz-design/issues"
+  },
+  "homepage": "https://github.com/comeaujoseph/xyz-design#readme",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.0.6",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-jsx": "^8.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-standard": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-axe-webdriver": "^3.1.3",
+    "gulp-cached": "^1.1.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-lintspaces": "^1.0.1",
+    "gulp-stylelint": "^13.0.0",
+    "stylelint": "^13.2.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "yargs": "^15.1.0"
+  }
+}

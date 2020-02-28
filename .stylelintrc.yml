@@ -1,0 +1,18 @@
+ignoreFiles:
+    - node_modules
+    - app_modules
+    - src/vendor/**
+
+# Default rules based on
+# https://github.com/stylelint/stylelint-config-recommended
+extends: "stylelint-config-recommended"
+
+defaultSeverity: "error"
+
+# Overrides
+rules:
+    "selector-class-pattern":
+        - "^(xyz)(-[a-z0-9_-]+|)$"
+        -
+            severity: error
+            resolveNestedSelectors: true
