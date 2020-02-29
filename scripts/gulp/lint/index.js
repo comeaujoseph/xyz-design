@@ -2,6 +2,7 @@
 import gulp from 'gulp';
 import cache from 'gulp-cached';
 import eslint from 'gulp-eslint';
+import htmlhint from 'gulp-htmlhint';
 import lintspaces from 'gulp-lintspaces';
 import stylelint from 'gulp-stylelint';
 
@@ -51,3 +52,39 @@ export const javascript = (files, options) =>
     .pipe(eslint())
     .pipe(eslint.format('codeframe'))
     .pipe(eslint.failAfterError());
+
+
+export const html = () =>
+    gulp.src('.html/*.html')
+    .pipe(
+        htmlhint({
+            // Rules documentation:
+            // https://github.com/yaniswang/HTMLHint/wiki/Rules
+            'alt-require': true,
+            'attr-lowercase': [
+                'viewBox',
+                'preserveAspectRatio',
+                'filterUnits',
+                'gradientTransform',
+                'stdDeviation',
+                'autoComplete'
+            ],
+            'attr-no-duplication': true,
+            'attr-unsafe-chars': true,
+            'attr-value-double-quotes': true,
+            'attr-value-not-empty': true,
+            'doctype-html5': true,
+            'id-class-ad-disabled': true,
+            'id-unique': true,
+            'inline-script-disabled': false,
+            'src-not-empty': true,
+            'tag-pair': true,
+            'tag-self-close': true,
+            'tagname-lowercase': false,
+            'title-require': true,
+            // TODO: enable when https://github.com/yaniswang/HTMLHint/issues/139 is fixed
+            // as <div>&lt;div></div> raises errors at the moment
+            'spec-char-escape': false
+        })
+    )
+    .pipe(htmlhint.failReporter());
