@@ -8,7 +8,9 @@
     "lint:sass": "stylelint 'src/**/*.scss'",
     "lint:spaces": "lintspaces --regexignores '/\\/\\*[\\s\\S]*?\\*\\//g' --editorconfig .editorconfig *.{js,json,md,yml,txt} .* !.DS_Store !CONTRIBUTING.md src/**/*.* !**/__snapshots__/*",
     "lint:javascript": "eslint --format codeframe '*.js' 'src/**/*.{js,jsx}'",
-    "lint:html": "htmlhint .html/*.html"
+    "lint:html": "htmlhint .html/*.html",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -28,7 +30,20 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@storybook/addon-a11y": "^5.3.14",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-backgrounds": "^5.3.14",
+    "@storybook/addon-docs": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addon-storysource": "^5.3.14",
+    "@storybook/addon-viewport": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/react": "^5.3.14",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-config-standard": "^14.1.0",
@@ -41,8 +56,15 @@
     "eslint-plugin-standard": "^4.0.1",
     "htmlhint": "^0.11.0",
     "lintspaces-cli": "^0.7.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
+    "sass-loader": "^8.0.2",
+    "storybook-addon-rtl": "^0.2.2",
+    "style-loader": "^1.1.3",
     "stylelint": "^13.2.0",
-    "stylelint-config-recommended": "^3.0.0"
+    "stylelint-config-recommended": "^3.0.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   }
 }

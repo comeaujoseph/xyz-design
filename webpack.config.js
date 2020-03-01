@@ -1,15 +1,8 @@
 
 const path = require('path');
 
-var HTMLWebpackPlugin = require('html-webpack-plugin');
-var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-    // React.js is a single page application (SPA) and this
-    // file is the template file for serving the application.
-    template: path.resolve(__dirname, 'src', 'index.html'),
-    filename: "index.html",
-    inject: 'body'
-});
-
+// extracts our CSS out of the JavaScript bundle into a separate file,
+// essential for production builds
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
     // Options similar to the same options in webpackOptions.output
@@ -51,6 +44,7 @@ module.exports = {
         // `import File from '../path/to/file'`
         extensions: ['.js', '.jsx', '.css']
     },
+    mode: process.env.NODE_ENV || "development",
     module: {
         rules: [
             // For every file with a js or jsx extension Webpack
@@ -70,18 +64,28 @@ module.exports = {
                 // chain their output to sytle-loader (Loader-chaining)
                 exclude: /node_modules/,
                 use: [
-                    // creates `style` nodes from JS strings
-                    process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    // Creates `style` nodes from JS strings
+                    // It takes CSS and actually inserts it into the page so
+                    // that the styles are active on the page.
+                    this.mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
                     // translates CSS into CommonJS
                     'css-loader',
                     // compiles Sass to CSS
                     'sass-loader'
                 ]
-            }
+            },
+            {
+                test: /\.(jpe?g|png|svg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {},
+                    },
+                ],
+            },
         ]
     },
     plugins: [
-        HTMLWebpackPluginConfig,
         MiniCssExtractPluginConfig
     ],
     stats: {
