@@ -1,0 +1,18 @@
+
+// body text color
+$text-color-default: $cinder;
+// inverse text color for dark backgrounds
+$text-color-inverse: $white;
+// disabled text color
+$text-color-disabled: $black_transparent_30;
+
+// text color for destructive actions
+$text-color-destructive: $sunset-orange;
+// text color for destructive actions - hover state
+$text-color-destructive-hover: $sunset-orange;
+
+// theme specific
+// text color found on any primary theme color
+$text-color-theme-primary: $white;
+
+

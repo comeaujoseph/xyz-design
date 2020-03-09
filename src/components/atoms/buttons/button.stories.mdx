@@ -1,0 +1,121 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Button from './base';
+import IconDownload from '../../../shared/svg-icons/icon-download';
+
+<Meta title="Button" component={Button} />
+
+# Button
+
+Buttons should be used in situations where users needs to trigger an action/behavior such as:
+
+- submit a form
+- trigger a new UI element to appear on the page
+
+<Preview withToolbar>
+  <Story name="button" parameters={{ decorators: [withKnobs] }}>
+    <Button>base button</Button>
+  </Story>
+  <Story name="link button" parameters={{ decorators: [withKnobs] }}>
+    <Button use="a">link button</Button>
+  </Story>
+</Preview>
+
+## When to use
+
+The HTML elements for buttons and links describe a very specific type of action that is going to be taken when they are used. It is important you know when to use which, as the distinction matters:
+
+- Use a **link** when you’re **navigating to another place**, such as: a "view all" page, profile page, etc.
+- Use **buttons** when you are **performing an action**, such as: "submit," "create new," "upload," etc.
+- An action is almost **always** on the same page
+
+## Base
+
+The base `xyz-button` looks like a plain text link. It removes all the styling of the native button.
+
+<Preview withToolbar>
+  <Story name="base button" parameters={{ decorators: [withKnobs] }}>
+    <Button>base button</Button>
+  </Story>
+</Preview>
+
+## Variations
+
+In xyz design we provide 4 types of button:
+
+- neutral button:
+- theme button:
+- success button:
+- destructive button: used for actions of risk, like deletion or authorization
+
+4 additional properties:
+
+- `disabled`
+- `outline`
+- `full width`
+- `stretch`: property will make the button fit to its parent width
+
+### Neutral
+
+<Preview withToolbar>
+  <Story name="neutral button" parameters={{ decorators: [withKnobs] }}>
+    <Button isNeutral>neutral button</Button>
+  </Story>
+  <Story name="outline button" parameters={{ decorators: [withKnobs] }}>
+    <Button isOutline>outline button</Button>
+  </Story>
+</Preview>
+
+### Theme
+
+The theme button generally should only be used once per component screen at any one time. It is used for when there is an action that is clearly more important than the other actions and you need to draw attention to it. An example is when you have a “Save” and “Cancel” button. The “Save” is the primary action.
+
+Not all features need to have primary actions, sometimes the actions are secondary to the content and are all of equal importance.
+
+<Preview withToolbar>
+  <Story name="theme button" parameters={{ decorators: [withKnobs] }}>
+    <Button isTheme>theme button</Button>
+  </Story>
+  <Story name="outline theme button" parameters={{ decorators: [withKnobs] }}>
+    <Button isOutlineTheme>o-theme button</Button>
+  </Story>
+</Preview>
+
+### Destructive
+
+This button is used to indicate a destructive action to the user, like permanently erasing data. Use the text-destructive version when the [standard destructive](#Destructive) button would be too distracting to the experience.
+
+<Preview withToolbar>
+  <Story name="destructive button" parameters={{ decorators: [withKnobs] }}>
+    <Button isDestructive>destructive button</Button>
+  </Story>
+  <Story name="text destructive button" parameters={{ decorators: [withKnobs] }}>
+    <Button isTextDestructive>text destructive button</Button>
+  </Story>
+</Preview>
+
+### Success
+
+<Preview withToolbar>
+  <Story name="success button" parameters={{ decorators: [withKnobs] }}>
+    <Button isSuccess>success button</Button>
+  </Story>
+</Preview>
+
+## With Icons
+
+An `xyz-icon` can be placed inside the button. You can position the icon on the left or the right using `iconPosition`.
+
+<Preview withToolbar>
+  <Story name="button with left icon" parameters={{ decorators: [withKnobs] }}>
+    <Button isOutline icon={<IconDownload />}>button</Button>
+  </Story>
+  <Story name="button with right icon" parameters={{ decorators: [withKnobs] }}>
+    <Button isOutline icon={<IconDownload />} iconPosition="right">button</Button>
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Button} />

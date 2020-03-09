@@ -2,8 +2,8 @@ import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { initializeRTL } from 'storybook-addon-rtl';
 
-// load xyz css
-import '../src/index.scss';
+// base css
+import './index.scss';
 
 initializeRTL();
 
@@ -18,11 +18,7 @@ addParameters({
   ]
 });
 
-const req = require.context('../src/', true, /stories\.(js|jsx)$/)
-function loadStories() {
-  req.keys().forEach(req)
-}
-
-configure(loadStories, module);
-
+configure([
+  require.context('../src/', true, /.stories\.(jsx|mdx)$/),
+], module);
 

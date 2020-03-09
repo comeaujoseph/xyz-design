@@ -1,0 +1,207 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+@import '../tokens/index';
+@import '../mixins/index';
+
+
+.xyz-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    border: $border-width-thin solid transparent;
+    @include border-radius;
+    background: transparent;
+    color: $text-color-default;
+    font-size: $font-size-3;
+    line-height: $button-line-height;
+    text-decoration: none;
+    background-clip: border-box;
+    -webkit-appearance: none;
+    white-space: normal;
+    user-select: none;
+    cursor: pointer;
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus,
+    &:not([disabled]):active,
+    &:not([disabled]):visited {
+        outline: 0;
+        text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+        color: $theme-accessible-active;
+    }
+
+    &:active {
+        color: $theme-accessible-active;
+    }
+
+
+    &[disabled],
+    &:disabled {
+        color: $button-text-color-disabled;
+        text-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+
+        * {
+            pointer-events: none;
+        }
+    }
+
+    a {
+        color: currentColor;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &[disabled],
+    &:disabled {
+        .xyz-icon {
+            fill: currentColor;
+            pointer-events: none;
+        }
+    }
+
+    // Add spacing when button-group is adjacent to a button
+    + .xyz-button-group,
+    + .xyz-button-group-list {
+        margin-left: $spacing-xx-small;
+    }
+
+    // Add spacing when another button is adjacent to it
+    + .xyz-button {
+        margin-left: $spacing-xx-small;
+    }
+}
+
+.xyz-button_reset {
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  text-align: inherit;
+}
+
+.xyz-button_neutral {
+    @include button;
+    @include button-base;
+
+    &[disabled],
+    &:disabled {
+        background-color: $button-background-color-default-disabled;
+        cursor: default;
+    }
+}
+
+.xyz-button_outline {
+  @include button;
+  @include button-base;
+  @include button-outline;
+}
+
+.xyz-button_theme {
+  @include button;
+  @include button-theme;
+
+  &[disabled],
+  &:disabled {
+    background: $theme-disabled;
+    border-color: $theme-disabled;
+    color: $button-text-color-theme-disabled;
+  }
+}
+
+.xyz-button_outline-theme {
+    @include button;
+    @include button-base;
+    color: $theme-primary;
+    border-color: $theme-accessible;
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+      color: $theme-primary;
+      border-color: $theme-primary;
+    }
+
+    &:not([disabled]):active {
+      color: $theme-primary;
+      border-color: $theme-primary;
+    }
+
+    &[disabled],
+    &:disabled {
+      border-color: $border-color;
+      color: $button-text-color-disabled;
+      background-color: $button-background-color-disabled;
+    }
+}
+
+.xyz-button_destructive {
+    @include button;
+    @include button-destructive;
+}
+
+.xyz-button_text-destructive {
+    @include button;
+    @include button-base;
+    color: $text-color-destructive;
+
+    &:not([disabled]):focus,
+    &:not([disabled]):hover {
+        color: $text-color-destructive-hover;
+    }
+}
+
+.xyz-button_success {
+    @include button;
+    @include button-success;
+}
+
+.xyz-button_full-width {
+    @include button-reset;
+
+    width: 100%;
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.xyz-button_stretch {
+    width: 100%;
+}
+
+.xyz-button-has-icon {
+    .xyz-icon {
+        @include square($size-square-small);
+        fill: currentColor;
+    }
+}
+
+.xyz-button-has-icon_left {
+    .xyz-icon {
+        margin-right: $spacing-x-small;
+    }
+}
+
+.xyz-button-has-icon_right {
+    .xyz-icon {
+        margin-left: $spacing-x-small;
+    }
+}

@@ -1,20 +1,15 @@
 
-// brand
-$button-color-text-brand-disabled: $white;
-$button-color-background-primary: $white;
+// default
+$button-text-color-default: $science-blue;
+$button-background-color-default-hover: $link-water;
+$button-background-color-default-active: $white-lilac;
+$button-background-color-default-disabled: $white;
 
 // disable
-$button-color-text-disabled: $black_transparent_30;
-$button-color-background-disabled: $palette-cool-gray-3;
+$button-text-color-disabled: $text-color-disabled;
+$button-background-color-disabled: $palette-gray-3;
 
-// default
-$button-color-text-default: $science-blue;
-$button-color-background-default-hover: $link-water;
-$button-color-background-default-active: $white-lilac;
-
-// inverse
-$button-color-text-inverse: $palette-cool-gray-4;
-$button-color-text-inverse-disabled: $white-transparent-15;
-$button-color-background-inverse: $transparent;
-$button-color-background-inverse-disabled: $transparent;
+// theme
+$button-background-color-primary: $white;
+$button-text-color-theme-disabled: $white;
 

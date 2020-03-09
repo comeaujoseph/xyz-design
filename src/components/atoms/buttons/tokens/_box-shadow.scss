@@ -1,6 +1,2 @@
 
-// custom glow for focus states on ui elements with explicit containers
-$button-shadow-focus: $offset-none $offset-none $offset-small + px $science-blue;
-// custom glow for focus states on ui button elements with explicit containers on dark or vibrantly colored backgrounds
-$button-shadow-focus-inverse: $offset-none $offset-none $offset-small + px $palette-cool-gray-4;
-
+$button-shadow-focus: $offset-none $offset-none $offset-small + px $royal-blue;

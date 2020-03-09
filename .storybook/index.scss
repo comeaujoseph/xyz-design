@@ -1,0 +1,14 @@
+
+// load xyz css
+@import '../src/index';
+
+html {
+    font-family: $sans-serif;
+    font-size: 16px;
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility
+}

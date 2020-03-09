@@ -11,6 +11,7 @@ defaultSeverity: "error"
 
 # Overrides
 rules:
+    "at-rule-no-unknown": null
     "selector-class-pattern":
         - "^(xyz)(-[a-z0-9_-]+|)$"
         -
