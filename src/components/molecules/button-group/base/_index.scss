@@ -1,0 +1,38 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+@import '../row/index';
+
+.xyz-button-group {
+  display: inline-flex;
+
+  .xyz-button {
+    border-radius: 0;
+    border-width: $border-width-thin;
+
+    &:focus {
+      z-index: 1;
+    }
+  }
+}
+
+.xyz-button-group .xyz-button + .xyz-button {
+  margin-left: (-1 * $border-width-thin);
+}
+
+.xyz-button-group .xyz-button:first-child {
+    border-radius: $button-border-radius 0 0 $button-border-radius;
+}
+
+.xyz-button-group .xyz-button:last-child,
+.xyz-button-group .xyz-button_last .xyz-button {
+  border-radius: 0 $button-border-radius $button-border-radius 0;
+}
+
+.xyz-button-group .xyz-button:only-child {
+  border-radius: $button-border-radius;
+}

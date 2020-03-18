@@ -1,0 +1,40 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import ButtonGroup from './base';
+import { ButtonGroupRow, ButtonGroupItem } from './row';
+import Button from '../../atoms/button/base';
+
+<Meta title="Button Group" component={ButtonGroup} />
+
+# Button Group
+
+Button group should be used to group together buttons that are performing similar actions or acting on the same object.
+
+<Preview withToolbar>
+  <Story name="button-group" parameters={{ decorators: [withKnobs] }}>
+    <ButtonGroup>
+      <Button isOutline>edit</Button>
+      <Button isOutline>save</Button>
+      <Button isOutline>delete</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Row
+
+<Preview withToolbar>
+  <Story name="button-group-row" parameters={{ decorators: [withKnobs] }}>
+    <ButtonGroupRow>
+      <ButtonGroupItem>
+        <Button isOutline>edit</Button>
+      </ButtonGroupItem>
+      <ButtonGroupItem>
+        <Button isOutline>save</Button>
+      </ButtonGroupItem>
+      <ButtonGroupItem>
+        <Button isTheme>delete</Button>
+      </ButtonGroupItem>
+    </ButtonGroupRow>
+  </Story>
+</Preview>

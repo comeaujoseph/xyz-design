@@ -73,8 +73,7 @@
     }
 
     // Add spacing when button-group is adjacent to a button
-    + .xyz-button-group,
-    + .xyz-button-group-list {
+    + .xyz-button-group {
         margin-left: $spacing-xx-small;
     }
 
@@ -189,7 +188,7 @@
 
 .xyz-button-has-icon {
     .xyz-icon {
-        @include square($size-square-small);
+        @include square($size-square-x-small);
         fill: currentColor;
     }
 }
