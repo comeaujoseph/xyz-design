@@ -1,0 +1,25 @@
+
+@mixin button-icon {
+  line-height: $line-height-reset;
+  vertical-align: middle;
+  color: $text-color-icon-default;
+  transition: border 0.15s linear;
+  border: $border-width-thin solid transparent;
+
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
+    background-color: $black_transparent_05;
+    color: $text-color-icon-hover;
+  }
+
+  &:not([disabled]):active {
+    background-color: $button-background-color-default-active;
+    color: $text-color-default;
+  }
+
+  &[disabled],
+  &:disabled {
+    background-color: $button-background-color-disabled;
+    border-color: $button-border-color-disabled;
+  }
+}

@@ -67,6 +67,15 @@ In xyz design we provide 4 types of button:
   </Story>
 </Preview>
 
+<Preview withToolbar>
+  <Story name="disabled neutral button" parameters={{ decorators: [withKnobs] }}>
+    <Button isNeutral disabled>neutral button</Button>
+  </Story>
+  <Story name="disabled outline button" parameters={{ decorators: [withKnobs] }}>
+    <Button isOutline disabled>outline button</Button>
+  </Story>
+</Preview>
+
 ### Theme
 
 The theme button generally should only be used once per component screen at any one time. It is used for when there is an action that is clearly more important than the other actions and you need to draw attention to it. An example is when you have a “Save” and “Cancel” button. The “Save” is the primary action.
@@ -79,6 +88,15 @@ Not all features need to have primary actions, sometimes the actions are seconda
   </Story>
   <Story name="outline theme button" parameters={{ decorators: [withKnobs] }}>
     <Button isOutlineTheme>o-theme button</Button>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="disabled theme button" parameters={{ decorators: [withKnobs] }}>
+    <Button isTheme disabled>theme button</Button>
+  </Story>
+  <Story name="disabled outline theme button" parameters={{ decorators: [withKnobs] }}>
+    <Button isOutlineTheme disabled>o-theme button</Button>
   </Story>
 </Preview>
 
@@ -95,11 +113,26 @@ This button is used to indicate a destructive action to the user, like permanent
   </Story>
 </Preview>
 
+<Preview withToolbar>
+  <Story name="disabled destructive button" parameters={{ decorators: [withKnobs] }}>
+    <Button isDestructive disabled>destructive button</Button>
+  </Story>
+  <Story name="disabled text destructive button" parameters={{ decorators: [withKnobs] }}>
+    <Button isTextDestructive disabled>text destructive button</Button>
+  </Story>
+</Preview>
+
 ### Success
 
 <Preview withToolbar>
   <Story name="success button" parameters={{ decorators: [withKnobs] }}>
     <Button isSuccess>success button</Button>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="disabled success button" parameters={{ decorators: [withKnobs] }}>
+    <Button isSuccess disabled>success button</Button>
   </Story>
 </Preview>
 
@@ -113,6 +146,15 @@ An `xyz-icon` can be placed inside the button. You can position the icon on the 
   </Story>
   <Story name="button with right icon" parameters={{ decorators: [withKnobs] }}>
     <Button isOutline icon={<IconDownload />} iconPosition="right">button</Button>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="disabled button with left icon" parameters={{ decorators: [withKnobs] }}>
+    <Button isOutline icon={<IconDownload />} disabled>button</Button>
+  </Story>
+  <Story name="disabled button with right icon" parameters={{ decorators: [withKnobs] }}>
+    <Button isOutline icon={<IconDownload />} iconPosition="right" disabled>button</Button>
   </Story>
 </Preview>
 

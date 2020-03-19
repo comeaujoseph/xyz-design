@@ -1,0 +1,85 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+@import '../mixins/index';
+
+.xyz-button-icon {
+    @include square($size-square-xx-large);
+    justify-content: center;
+    vertical-align: middle;
+    line-height: $line-height-reset;
+    color: $text-color-icon-default;
+    flex-shrink: 0;
+
+    .xyz-icon {
+        @include square($size-square-large);
+    }
+}
+
+.xyz-button-icon_medium {
+    @include square($size-square-xx-large);
+
+    .xyz-icon {
+        @include square($size-square-medium);
+    }
+}
+
+.xyz-button-icon_small {
+    @include square($size-square-x-large);
+    .xyz-icon {
+        @include square($size-square-small);
+    }
+}
+
+.xyz-button-icon_x-small {
+    @include square($size-square-x-large);
+    .xyz-icon {
+        @include square($size-square-x-small);
+    }
+}
+
+.xyz-button-icon_xx-small {
+    @include square($size-square-x-large);
+    .xyz-icon {
+        @include square($size-square-xx-small);
+    }
+}
+
+.xyz-button-icon .xyz-button-icon_dropdown {
+    @include square($size-square-xx-small);
+    margin-left: $spacing-xx-small;
+}
+
+.xyz-button-icon_has-dropdown {
+    @include square($size-square-xx-large);
+    width: auto;
+    padding: 0 $spacing-x-small;
+    .xyz-button-icon_dropdown {
+        @include square($size-square-xxx-small);
+    }
+}
+
+.xyz-button-icon_small .xyz-button-icon_dropdown,
+.xyz-button-icon_x-small .xyz-button-icon_dropdown,
+.xyz-button-icon_xx-small .xyz-button-icon_dropdown {
+    @include square($size-square-xxx-small);
+}
+
+.xyz-button-icon_neutral {
+    @include button-icon;
+
+    &[disabled],
+    &:disabled {
+        background-color: $button-background-color-default-disabled;
+        cursor: default;
+    }
+}
+
+.xyz-button-icon_outline {
+    @include button-icon;
+    border: $border-width-thin solid $border-color;
+}
