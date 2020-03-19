@@ -8,10 +8,7 @@ import IconHelp from '../../../shared/svg-icons/icon-help';
 
 # Button Icon
 
-Button icon is visual iconography that should be used in situations where users needs to trigger an action/behavior such as:
-
-- submit a form
-- trigger a new UI element to appear on the page
+Button icon is visual iconography version of the `Button` component.
 
 <Preview withToolbar>
   <Story name="button icon" parameters={{ decorators: [withKnobs] }}>
@@ -22,6 +19,16 @@ Button icon is visual iconography that should be used in situations where users 
 </Preview>
 
 ## Sizing
+
+A button icon supports multiple sizes:
+
+- default
+- medium
+- small
+- x-small
+- xx-small
+
+Omit the `size` property for a button icon with the default size.
 
 <Preview withToolbar>
   <Story name="sizing" parameters={{ decorators: [withKnobs] }}>
@@ -49,7 +56,8 @@ Button icon is visual iconography that should be used in situations where users 
 
 In xyz design we provide 1 types of button:
 
-- neutral button
+- neutral
+- dropdown
 
 2 additional properties:
 
@@ -99,7 +107,9 @@ In xyz design we provide 1 types of button:
 </Preview>
 
 
-## Dropdown
+### Dropdown
+
+Use this variation when the button opens a dropdown menu.
 
 <Preview withToolbar>
   <Story name="dropdown" parameters={{ decorators: [withKnobs] }}>
