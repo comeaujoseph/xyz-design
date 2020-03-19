@@ -4,6 +4,11 @@ import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import ButtonGroup from './base';
 import { ButtonGroupRow, ButtonGroupItem } from './row';
 import Button from '../../atoms/button/base';
+import ButtonIcon from '../../atoms/button-icon/base';
+
+import IconDownload from '../../../shared/svg-icons/icon-download';
+import IconExport from '../../../shared/svg-icons/icon-export';
+import IconLink from '../../../shared/svg-icons/icon-link';
 
 <Meta title="Button Group" component={ButtonGroup} />
 
@@ -12,7 +17,7 @@ import Button from '../../atoms/button/base';
 Button group should be used to group together buttons that are performing similar actions or acting on the same object.
 
 <Preview withToolbar>
-  <Story name="button-group" parameters={{ decorators: [withKnobs] }}>
+  <Story name="group of buttons" parameters={{ decorators: [withKnobs] }}>
     <ButtonGroup>
       <Button isOutline>edit</Button>
       <Button isOutline>save</Button>
@@ -21,10 +26,45 @@ Button group should be used to group together buttons that are performing simila
   </Story>
 </Preview>
 
+### Of Button Icons
+
+<Preview withToolbar>
+  <Story name="group of button icons" parameters={{ decorators: [withKnobs] }}>
+    <ButtonGroup>
+      <ButtonIcon size="medium" isOutline>
+        <IconDownload />
+      </ButtonIcon>
+      <ButtonIcon size="medium" isOutline>
+        <IconExport />
+      </ButtonIcon>
+      <ButtonIcon size="medium" isOutline>
+        <IconLink />
+      </ButtonIcon>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+### Of Mixed Buttons
+
+<Preview withToolbar>
+  <Story name="group of mixed buttons" parameters={{ decorators: [withKnobs] }}>
+    <ButtonGroup>
+      <Button isOutline>save</Button>
+      <ButtonIcon size="medium" isOutline>
+        <IconDownload />
+      </ButtonIcon>
+      <Button isOutline>delete</Button>
+      <ButtonIcon size="medium" isOutline>
+        <IconExport />
+      </ButtonIcon>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
 ## Row
 
 <Preview withToolbar>
-  <Story name="button-group-row" parameters={{ decorators: [withKnobs] }}>
+  <Story name="row of buttons" parameters={{ decorators: [withKnobs] }}>
     <ButtonGroupRow>
       <ButtonGroupItem>
         <Button isOutline>edit</Button>
@@ -34,6 +74,55 @@ Button group should be used to group together buttons that are performing simila
       </ButtonGroupItem>
       <ButtonGroupItem>
         <Button isTheme>delete</Button>
+      </ButtonGroupItem>
+    </ButtonGroupRow>
+  </Story>
+</Preview>
+
+### Of Button Icons
+
+<Preview withToolbar>
+  <Story name="row of button icons" parameters={{ decorators: [withKnobs] }}>
+    <ButtonGroupRow>
+      <ButtonGroupItem>
+        <ButtonIcon size="medium" isOutline>
+          <IconDownload />
+        </ButtonIcon>
+      </ButtonGroupItem>
+      <ButtonGroupItem>
+        <ButtonIcon size="medium" isOutline>
+          <IconExport />
+        </ButtonIcon>
+      </ButtonGroupItem>
+      <ButtonGroupItem>
+        <ButtonIcon size="medium" isOutline>
+          <IconLink />
+        </ButtonIcon>
+      </ButtonGroupItem>
+    </ButtonGroupRow>
+  </Story>
+</Preview>
+
+### Of Mixed Buttons
+
+<Preview withToolbar>
+  <Story name="row of mixed buttons" parameters={{ decorators: [withKnobs] }}>
+    <ButtonGroupRow>
+    <ButtonGroupItem>
+        <Button isOutline>save</Button>
+      </ButtonGroupItem>
+      <ButtonGroupItem>
+        <ButtonIcon size="medium" isOutline>
+          <IconDownload />
+        </ButtonIcon>
+      </ButtonGroupItem>
+      <ButtonGroupItem>
+        <Button isOutline>delete</Button>
+      </ButtonGroupItem>
+      <ButtonGroupItem>
+        <ButtonIcon size="medium" isOutline>
+          <IconExport />
+        </ButtonIcon>
       </ButtonGroupItem>
     </ButtonGroupRow>
   </Story>
