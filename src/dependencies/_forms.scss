@@ -1,0 +1,61 @@
+
+@mixin form-input-container {
+    width: 100%;
+    box-sizing: border-box;
+    border: $border-width-thin solid $border-color-input;
+    border-radius: $border-radius-medium;
+    background-color: $background-color-input;
+}
+
+@mixin form-input-focus {
+    border-color: $border-color-input-active;
+    background-color: $background-color-input-active;
+    box-shadow: $input-shadow-focus;
+    outline: 0;
+}
+
+@mixin form-input-disabled {
+    border-color: $border-color-input-disabled;
+    background-color: $background-color-input-disabled;
+    cursor: not-allowed;
+    user-select: none;
+
+    &:focus,
+    &:active {
+        box-shadow: none;
+    }
+}
+
+@mixin form-input-error($element: null) {
+    @if $element != null {
+        #{$element} {
+            background-color: $background-color-input;
+            border-color: $border-color-error;
+            background-clip: padding-box;
+
+            &:focus,
+            &:active {
+                // color: $torch-red
+                box-shadow: $offset-none $offset-none $offset-none $offset-small + px rgba(245,34,45,0.2);
+            }
+        }
+    }
+  }
+
+@mixin form-states {
+    @include form-input-container;
+    transition: border $duration-quickly linear, background-color $duration-quickly linear;
+
+    &:required {
+        box-shadow: none;
+    }
+
+    &:focus,
+    &:active {
+        @include form-input-focus;
+    }
+
+    &[disabled] {
+        @include form-input-disabled;
+    }
+}

@@ -7,6 +7,7 @@ import { cannotBeSetWith } from '../../../../shared/helpers';
 
 const Button = (props) => {
     const {
+        id,
         className,
         disabled,
         isTheme,
@@ -46,13 +47,13 @@ const Button = (props) => {
         // Using a React.Fragment to improve readability
         <>
             {use === 'a' ? (
-                <a className={classNameList} {...rest} href={null}>
+                <a id={id} className={classNameList} {...rest} href={null}>
                     { iconPosition === 'left' && icon }
                     {props.children}
                     { iconPosition === 'right' && icon }
                 </a>
             ) : (
-                <button className={classNameList} {...rest} disabled={disabled} {...rest}>
+                <button id={id} className={classNameList} {...rest} disabled={disabled} {...rest}>
                     { iconPosition === 'left' && icon }
                     {props.children}
                     { iconPosition === 'right' && icon }
@@ -63,6 +64,7 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
+    id: PropTypes.string,
     className: PropTypes.string,
     disabled: PropTypes.bool,
     isTheme: PropTypes.bool,

@@ -1,0 +1,108 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Input from './base';
+import FormItem from '../../molecules/form-item/base';
+import IconSearch from '../../../shared/svg-icons/icon-search';
+import IconClose from '../../../shared/svg-icons/icon-close';
+
+<Meta title="Input" component={Input} />
+
+# Input
+
+A component to get user input for text fields. Use this when:
+
+- A user input in a form field is needed.
+- A search input is required.
+
+<Preview withToolbar>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <FormItem>
+      <Input />
+    </FormItem>
+  </Story>
+</Preview>
+
+
+## States
+
+### Disabled
+
+<Preview withToolbar>
+  <Story name="disabled" parameters={{ decorators: [withKnobs] }}>
+    <FormItem>
+      <Input placeholder="placeholder text" disabled />
+    </FormItem>
+  </Story>
+</Preview>
+
+### Error
+
+<Preview withToolbar>
+  <Story name="error" parameters={{ decorators: [withKnobs] }}>
+    <FormItem hasError>
+      <Input />
+    </FormItem>
+  </Story>
+</Preview>
+
+### Error with icon
+
+<Preview withToolbar>
+  <Story name="error with icon" parameters={{ decorators: [withKnobs] }}>
+    <FormItem hasRightIcon hasError>
+      <Input />
+      <IconClose className="xyz-input__icon xyz-input__icon_right" />
+    </FormItem>
+  </Story>
+</Preview>
+
+### Read only
+
+<Preview withToolbar>
+  <Story name="read only" parameters={{ decorators: [withKnobs] }}>
+    <FormItem>
+      <Input placeholder="placeholder text" readOnly />
+    </FormItem>
+  </Story>
+</Preview>
+
+## With Icons
+
+### Icon Left
+
+<Preview withToolbar>
+  <Story name="left icon" parameters={{ decorators: [withKnobs] }}>
+    <FormItem hasLeftIcon>
+      <IconSearch className="xyz-input__icon xyz-input__icon_left" />
+      <Input />
+    </FormItem>
+  </Story>
+</Preview>
+
+### Icon Right
+
+<Preview withToolbar>
+  <Story name="right icon" parameters={{ decorators: [withKnobs] }}>
+    <FormItem hasRightIcon>
+      <Input />
+      <IconClose className="xyz-input__icon xyz-input__icon_right" />
+    </FormItem>
+  </Story>
+</Preview>
+
+### Icon Left and Right
+
+<Preview withToolbar>
+  <Story name="left-right icon" parameters={{ decorators: [withKnobs] }}>
+    <FormItem hasLeftIcon hasRightIcon>
+      <IconSearch className="xyz-input__icon xyz-input__icon_left" />
+      <Input />
+      <IconClose className="xyz-input__icon xyz-input__icon_right" />
+    </FormItem>
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Input} />

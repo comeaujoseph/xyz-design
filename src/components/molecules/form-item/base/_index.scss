@@ -1,0 +1,16 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-form-item {
+    position: relative;
+    min-width: 0;
+}
+
+.xyz-form-item__control {
+    clear: left;
+    position: relative;
+}
