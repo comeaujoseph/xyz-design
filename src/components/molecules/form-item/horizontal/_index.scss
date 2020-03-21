@@ -1,0 +1,84 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-form-item_horizontal,
+.xyz-form_horizontal .xyz-form-item,
+.xyz-form_stacked .xyz-form-item_horizontal {
+    display: block;
+    margin-bottom: $spacing-small;
+    padding: $spacing-xxx-small $spacing-xx-small;
+
+    // If form item doesn't have a size modifier, make sure it takes up 100% of the parents width
+    &:not([class*="xyz-size"]) {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .xyz-form-item {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    &.xyz-form-item_1-col {
+        @include mq-medium-min {
+
+            .xyz-form-item__label {
+                // Calculation - 33% of 50% minus help text icon size
+                max-width: calc((50% - 33.333%) - #{0.125rem});
+            }
+
+            .xyz-form-item__control,
+            .xyz-form-item__help {
+                // Calculation - 33% of 50% minus form item horizontal padding
+                padding-left: calc((50% - 33.333%) - (#{$spacing-xx-small} * 2));
+            }
+        }
+    }
+
+    @include mq-medium-min {
+        .xyz-form-item__label {
+            position: relative;
+            float: left;
+            max-width: calc(33% - #{0.125rem});
+            flex-basis: calc(33% - #{0.125rem});
+            margin-bottom: 0;
+            z-index: 1;
+        }
+
+        .xyz-form-item__control,
+        .xyz-form-item__help {
+            padding-left: 33%;
+            clear: none;
+        }
+
+        .xyz-form-item__control .xyz-form-item__control {
+            padding-left: 0;
+        }
+
+        .xyz-form-row .xyz-form-item__label,
+        .xyz-form-row .xyz-form-item__control {
+            width: auto;
+            max-width: 100%;
+            flex-basis: auto;
+            float: none;
+            position: relative;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .xyz-form-item__icon {
+            float: left;
+            padding-top: $spacing-xx-small;
+        }
+
+        .xyz-input-has-icon_left .xyz-input__icon,
+        .xyz-input-has-icon_left-right .xyz-input__icon_left {
+            left: calc(33% + #{$spacing-small});
+        }
+    }
+}
+

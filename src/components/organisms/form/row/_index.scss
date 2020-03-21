@@ -1,0 +1,21 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: ($spacing-small * -1);
+    margin-right: ($spacing-small * -1);
+}
+
+.xyz-form-row__item {
+    display: flex;
+    flex: 1 1 0%;
+    min-width: 280px;
+    padding-left: $spacing-small;
+    padding-right: $spacing-small
+}

@@ -2,6 +2,7 @@ import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import FormItem from './base';
+import Input from '../../atoms/input/base';
 
 <Meta title="FormItem" component={FormItem} />
 
@@ -9,6 +10,108 @@ import FormItem from './base';
 
 <Preview withToolbar>
   <Story name="base" parameters={{ decorators: [withKnobs] }}>
-    <FormItem />
+    <FormItem labelContent="Form Item Label" inputId="input-unique-id">
+      <Input id="input-unique-id" />
+    </FormItem>
   </Story>
 </Preview>
+
+## States
+
+### Feedback
+
+A form item should provide validate message to help the user provide the correct data.
+
+#### Required
+
+<Preview withToolbar>
+  <Story name="required" parameters={{ decorators: [withKnobs] }}>
+    <FormItem labelContent="Form Label" inputId="input-unique-id" isRequired>
+      <Input id="input-unique-id" />
+    </FormItem>
+  </Story>
+</Preview>
+
+#### Help Message
+
+<Preview withToolbar>
+  <Story name="message" parameters={{ decorators: [withKnobs] }}>
+    <FormItem labelContent="Form Label" inputId="input-unique-id" isRequired inlineMessage="This field is required">
+      <Input id="input-unique-id" />
+    </FormItem>
+  </Story>
+</Preview>
+
+#### Error
+
+<Preview withToolbar>
+  <Story name="error" parameters={{ decorators: [withKnobs] }}>
+    <FormItem labelContent="Form Label" inputId="input-unique-id" isRequired inlineMessage="This field is required" hasError>
+      <Input id="input-unique-id" />
+    </FormItem>
+  </Story>
+</Preview>
+
+## Layout Variations
+
+### Stacked
+
+<Preview withToolbar>
+  <Story name="stacked" parameters={{ decorators: [withKnobs] }}>
+    <div>
+      <FormItem labelContent="Form Label" inputId="input-unique-id" isStacked>
+        <Input id="input-unique-id" />
+      </FormItem>
+      <FormItem labelContent="Form Label" inputId="input-unique-id" isRequired inlineMessage="This field is required" isStacked>
+        <Input id="input-unique-id" />
+      </FormItem>
+      <FormItem labelContent="Form Label" inputId="input-unique-id" isStacked>
+        <Input id="input-unique-id" />
+      </FormItem>
+    </div>
+  </Story>
+</Preview>
+
+### Horizontal
+
+<Preview withToolbar>
+  <Story name="horizontal" parameters={{ decorators: [withKnobs] }}>
+    <div>
+      <FormItem labelContent="Form Label" inputId="input-unique-id" isHorizontal>
+        <Input id="input-unique-id" />
+      </FormItem>
+      <FormItem labelContent="Form Label" inputId="input-unique-id" isRequired inlineMessage="This field is required" isHorizontal>
+        <Input id="input-unique-id" />
+      </FormItem>
+      <FormItem labelContent="Form Label" inputId="input-unique-id" isHorizontal>
+        <Input id="input-unique-id" />
+      </FormItem>
+    </div>
+  </Story>
+</Preview>
+
+#### Standalone
+
+<Preview withToolbar>
+  <Story name="horizontal single element" parameters={{ decorators: [withKnobs] }}>
+    <div>
+      <FormItem labelContent="Form Label" inputId="input-unique-id" isHorizontal column="1">
+        <Input id="input-unique-id" />
+      </FormItem>
+    </div>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="horizontal single element required" parameters={{ decorators: [withKnobs] }}>
+    <div>
+      <FormItem labelContent="Form Label" inputId="input-unique-id" isRequired inlineMessage="This field is required" isHorizontal column="1">
+        <Input id="input-unique-id" />
+      </FormItem>
+    </div>
+  </Story>
+</Preview>
+
+## API
+
+<Props of={FormItem} />

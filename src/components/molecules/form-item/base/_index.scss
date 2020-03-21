@@ -5,12 +5,54 @@
 //  text
 //  other
 
+@import '../tokens/index';
+@import '../stacked/index';
+@import '../horizontal/index';
+
 .xyz-form-item {
     position: relative;
     min-width: 0;
 }
 
+.xyz-form-item__label {
+    @include hyphenate;
+
+    display: inline-block;
+    margin-bottom: $spacing-x-small;
+    padding-right: $spacing-x-small;
+    padding-top: $spacing-xx-small;
+    color: $label-text-color;
+    font-size: $label-font-size;
+    font-weight: $label-font-weight;
+
+    &:empty {
+        margin: 0;
+    }
+}
+
 .xyz-form-item__control {
     clear: left;
     position: relative;
+}
+
+.xyz-required {
+    margin: 0 $spacing-xxx-small;
+    color: $text-color-error;
+    font-size: $required-font-size;
+    text-decoration: none;
+
+    &[title] {
+        border: none;
+    }
+}
+
+.xyz-form-item__help {
+   display: block;
+   margin-top: $spacing-xx-small;
+   color: $help-text-color;
+   font-size: $help-font-size;
+}
+
+.xyz-has-error .xyz-form-item__help {
+    color: $text-color-error;
 }

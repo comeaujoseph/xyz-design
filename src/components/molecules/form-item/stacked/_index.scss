@@ -1,0 +1,42 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-form-item_stacked,
+.xyz-form_stacked .xyz-form-item,
+.xyz-form_horizontal .xyz-form-item_stacked {
+    display: block;
+    margin-bottom: $spacing-x-small;
+    padding: $spacing-xxx-small $spacing-xx-small;
+
+    .xyz-form-item {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    // If form item doesn't have a size modifier, make sure it takes up 100% of the parents width
+    &:not([class*="xyz-size"]) {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .xyz-form-item__label,
+    .xyz-form-item__control {
+        border-bottom: 0;
+        padding-left: 0;
+    }
+
+    .xyz-form-item__control {
+        width: 100%;
+        flex-basis: 100%;
+        clear: left;
+    }
+
+    .xyz-form-item__icon {
+        float: none;
+        padding-top: $spacing-xx-small;
+    }
+}

@@ -8,6 +8,9 @@ const Wrapper = props => {
         id,
         className,
         hasError,
+        isStacked,
+        isHorizontal,
+        column,
         ...rest
     } = props;
 
@@ -15,7 +18,10 @@ const Wrapper = props => {
         'xyz-form-item',
         {
             'xyz-has-error': hasError,
+            'xyz-form-item_stacked': isStacked,
+            'xyz-form-item_horizontal': isHorizontal,
         },
+        column && `xyz-form-item_${column}-col`,
         className
     );
 
@@ -29,7 +35,10 @@ Wrapper.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
     className: PropTypes.string,
-    hasError: PropTypes.bool
+    hasError: PropTypes.bool,
+    isStacked: PropTypes.bool,
+    isHorizontal: PropTypes.bool,
+    column: PropTypes.number,
 };
 
 
@@ -91,12 +100,32 @@ Label.propTypes = {
 };
 
 
+const HelpMessage = props => {
+    const {
+        errorId,
+    } = props;
+
+    return (
+        <div className="xyz-form-item__help" id={errorId}>
+            { props.children }
+        </div>
+    );
+};
+HelpMessage.propTypes = {
+    children: PropTypes.node,
+    errorId: PropTypes.string,
+};
+
+
 const FormItem = (props) => {
     const {
         // wrapper
         id,
         formElementClassName,
         hasError,
+        isStacked,
+        isHorizontal,
+        column,
         // label
         labelId,
         inputId,
@@ -107,6 +136,9 @@ const FormItem = (props) => {
         formControlClassName,
         hasLeftIcon,
         hasRightIcon,
+        // help message
+        inlineMessage,
+        errorId,
         ...rest
     } = props;
 
@@ -125,8 +157,11 @@ const FormItem = (props) => {
             {...rest}
             className={classNames(formElementClassName)}
             hasError={hasError}
+            isStacked={isStacked}
+            isHorizontal={isHorizontal}
+            column={column}
         >
-            {labelContent ? (
+            {labelContent && (
                 <Label
                     labelId={labelId}
                     inputId={inputId}
@@ -134,12 +169,15 @@ const FormItem = (props) => {
                     labelContent={labelContent}
                     isRequired={isRequired}
                 />
-            ) : (
-                null
             )}
             <Control className={classNames(inputIconPositionClasses, formControlClassName)}>
                 { props.children }
             </Control>
+            {inlineMessage && (
+                <HelpMessage errorId={errorId}>
+                    {inlineMessage}
+                </HelpMessage>
+            )}
         </Wrapper>
     );
 };
@@ -150,6 +188,9 @@ FormItem.propTypes = {
     id: PropTypes.string,
     formElementClassName: PropTypes.string,
     hasError: PropTypes.bool,
+    isStacked: PropTypes.bool,
+    isHorizontal: PropTypes.bool,
+    column: PropTypes.number,
     // label
     labelId: PropTypes.string,
     labelClassName: PropTypes.string,
@@ -160,6 +201,9 @@ FormItem.propTypes = {
     formControlClassName: PropTypes.string,
     hasLeftIcon: PropTypes.bool,
     hasRightIcon: PropTypes.bool,
+    // help message
+    inlineMessage: PropTypes.string,
+    errorId: PropTypes.string,
 };
 
 FormItem.defaultProps = {}

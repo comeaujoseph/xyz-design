@@ -1,0 +1,49 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Form from './base';
+import { FormRow, FormRowItem } from './row';
+import FormItem from '../../molecules/form-item/base';
+import Input from '../../atoms/input/base';
+
+<Meta title="Form" component={Form} />
+
+# Form
+
+<Preview withToolbar>
+  <Story name="row" parameters={{ decorators: [withKnobs] }}>
+    <Form isStacked>
+        <FormRow>
+            <FormRowItem>
+                <FormItem labelContent="Form Item Label" inputId="input-unique-id">
+                    <Input id="input-unique-id" />
+                </FormItem>
+            </FormRowItem>
+            <FormRowItem>
+                <FormItem labelContent="Form Item Label" inputId="input-unique-id">
+                    <Input id="input-unique-id" />
+                </FormItem>
+            </FormRowItem>
+        </FormRow>
+    </Form>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="horizontal row" parameters={{ decorators: [withKnobs] }}>
+    <Form isHorizontal>
+        <FormRow>
+            <FormRowItem>
+                <FormItem labelContent="Form Item Label" inputId="input-unique-id">
+                    <Input id="input-unique-id" />
+                </FormItem>
+            </FormRowItem>
+            <FormRowItem>
+                <FormItem labelContent="Form Item Label" inputId="input-unique-id">
+                    <Input id="input-unique-id" />
+                </FormItem>
+            </FormRowItem>
+        </FormRow>
+    </Form>
+  </Story>
+</Preview>
