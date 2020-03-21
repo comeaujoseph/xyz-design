@@ -6,6 +6,12 @@
   transition: border 0.15s linear;
   border: $border-width-thin solid transparent;
 
+  &[disabled],
+  &:disabled {
+    background-color: $button-background-color-disabled;
+    border-color: $button-border-color-disabled;
+  }
+
   &:not([disabled]):hover,
   &:not([disabled]):focus {
     background-color: $black_transparent_05;
@@ -15,11 +21,5 @@
   &:not([disabled]):active {
     background-color: $button-background-color-default-active;
     color: $text-color-default;
-  }
-
-  &[disabled],
-  &:disabled {
-    background-color: $button-background-color-disabled;
-    border-color: $button-border-color-disabled;
   }
 }

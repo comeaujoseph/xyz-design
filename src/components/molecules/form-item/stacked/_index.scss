@@ -5,6 +5,8 @@
 //  text
 //  other
 
+/* stylelint-disable no-descending-specificity */
+
 .xyz-form-item_stacked,
 .xyz-form_stacked .xyz-form-item,
 .xyz-form_horizontal .xyz-form-item_stacked {
@@ -15,12 +17,6 @@
     .xyz-form-item {
         padding: 0;
         margin-bottom: 0;
-    }
-
-    // If form item doesn't have a size modifier, make sure it takes up 100% of the parents width
-    &:not([class*="xyz-size"]) {
-        width: 100%;
-        flex-basis: 100%;
     }
 
     .xyz-form-item__label,
@@ -38,5 +34,10 @@
     .xyz-form-item__icon {
         float: none;
         padding-top: $spacing-xx-small;
+    }
+
+    &:not([class*="xyz-size"]) {
+        width: 100%;
+        flex-basis: 100%;
     }
 }

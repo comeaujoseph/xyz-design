@@ -27,14 +27,6 @@
     user-select: none;
     cursor: pointer;
 
-    &:not([disabled]):hover,
-    &:not([disabled]):focus,
-    &:not([disabled]):active,
-    &:not([disabled]):visited {
-        outline: 0;
-        text-decoration: none;
-    }
-
     &:hover,
     &:focus {
         color: $theme-accessible-active;
@@ -61,17 +53,6 @@
         color: currentColor;
     }
 
-    &:hover,
-    &:focus,
-    &:active,
-    &[disabled],
-    &:disabled {
-        .xyz-icon {
-            fill: currentColor;
-            pointer-events: none;
-        }
-    }
-
     // Add spacing when button-group is adjacent to a button
     + .xyz-button-group {
         margin-left: $spacing-xx-small;
@@ -80,6 +61,14 @@
     // Add spacing when another button is adjacent to it
     + .xyz-button {
         margin-left: $spacing-xx-small;
+    }
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus,
+    &:not([disabled]):active,
+    &:not([disabled]):visited {
+        outline: 0;
+        text-decoration: none;
     }
 }
 
@@ -113,13 +102,6 @@
 .xyz-button_theme {
   @include button;
   @include button-theme;
-
-  &[disabled],
-  &:disabled {
-    background: $theme-disabled;
-    border-color: $theme-disabled;
-    color: $button-text-color-theme-disabled;
-  }
 }
 
 .xyz-button_outline-theme {
@@ -127,6 +109,13 @@
     @include button-base;
     color: $theme-primary;
     border-color: $theme-accessible;
+
+    &[disabled],
+    &:disabled {
+      border-color: $border-color;
+      color: $button-text-color-disabled;
+      background-color: $button-background-color-disabled;
+    }
 
     &:not([disabled]):hover,
     &:not([disabled]):focus {
@@ -137,13 +126,6 @@
     &:not([disabled]):active {
       color: $theme-primary;
       border-color: $theme-primary;
-    }
-
-    &[disabled],
-    &:disabled {
-      border-color: $border-color;
-      color: $button-text-color-disabled;
-      background-color: $button-background-color-disabled;
     }
 }
 
@@ -191,16 +173,25 @@
         @include square($size-square-x-small);
         fill: currentColor;
     }
-}
-
-.xyz-button-has-icon_left {
-    .xyz-icon {
-        margin-right: $spacing-x-small;
+    &.xyz-button-has-icon_left {
+        .xyz-icon {
+            margin-right: $spacing-x-small;
+        }
     }
-}
+    &.xyz-button-has-icon_right {
+        .xyz-icon {
+            margin-left: $spacing-x-small;
+        }
+    }
 
-.xyz-button-has-icon_right {
-    .xyz-icon {
-        margin-left: $spacing-x-small;
+    &:hover,
+    &:focus,
+    &:active,
+    &[disabled],
+    &:disabled {
+        .xyz-icon {
+            fill: currentColor;
+            pointer-events: none;
+        }
     }
 }

@@ -63,6 +63,13 @@
   border-color: $theme-primary;
   color: $text-color-theme-primary;
 
+  &[disabled],
+  &:disabled {
+    background: $theme-disabled;
+    border-color: $theme-disabled;
+    color: $button-text-color-theme-disabled;
+  }
+
   &:not([disabled]):hover,
   &:not([disabled]):focus {
     color: $text-color-theme-primary;
