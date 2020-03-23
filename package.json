@@ -2,7 +2,7 @@
   "name": "xyz-design",
   "version": "1.0.0",
   "description": "xyz design system",
-  "main": "src/index.jsx",
+  "main": "build/bundle.js",
   "scripts": {
     "lint": "npm-run-all --parallel lint:sass lint:spaces lint:javascript lint:html",
     "lint:sass": "stylelint 'src/**/*.scss'",
@@ -10,14 +10,23 @@
     "lint:javascript": "eslint --format codeframe '*.js' 'src/**/*.{js,jsx}'",
     "lint:html": "htmlhint .html/*.html",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/comeaujoseph/xyz-design.git"
   },
   "keywords": [
-    "xyz"
+    "xyz",
+    "component",
+    "components",
+    "design",
+    "framework",
+    "frontend",
+    "react",
+    "react-component",
+    "ui"
   ],
   "author": "Joey Comeau",
   "license": "ISC",
@@ -25,7 +34,7 @@
     "url": "https://github.com/comeaujoseph/xyz-design/issues"
   },
   "homepage": "https://github.com/comeaujoseph/xyz-design#readme",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -60,6 +69,8 @@
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "sass-loader": "^8.0.2",
     "storybook-addon-rtl": "^0.2.2",
     "style-loader": "^1.1.3",

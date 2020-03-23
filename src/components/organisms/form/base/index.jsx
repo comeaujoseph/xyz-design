@@ -36,8 +36,6 @@ Form.propTypes = {
     isHorizontal: PropTypes.bool,
 };
 
-
 Form.defaultProps = {}
-
 
 export default Form;

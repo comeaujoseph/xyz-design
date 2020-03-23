@@ -19,7 +19,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         publicPath: '/',
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        libraryTarget: 'commonjs2'
     },
     // Since webpack bundles the code, source maps are mandatory to get
     // a reference to the original file that raised the error. For example,
@@ -85,6 +86,9 @@ module.exports = {
             }
         ]
     },
+    // externals: {
+    //     react: "react"
+    // },
     plugins: [
         MiniCssExtractPluginConfig
     ],
