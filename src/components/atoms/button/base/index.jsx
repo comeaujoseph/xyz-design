@@ -19,6 +19,7 @@ const Button = (props) => {
         isSuccess,
         isFullWidth,
         isStretch,
+        isReset,
         icon,
         iconPosition,
         use,
@@ -37,6 +38,7 @@ const Button = (props) => {
             'xyz-button_success': isSuccess,
             'xyz-button_full-width': isFullWidth,
             'xyz-button_stretch': isStretch,
+            'xyz-button_reset': isReset,
             'xyz-button-has-icon': icon
         },
         icon && ('xyz-button-has-icon_' + iconPosition),
@@ -76,6 +78,7 @@ Button.propTypes = {
     isSuccess: PropTypes.bool,
     isFullWidth: PropTypes.bool,
     isStretch: PropTypes.bool,
+    isReset: PropTypes.bool,
     icon: PropTypes.node,
     iconPosition: PropTypes.oneOf(['left', 'right']),
     use: cannotBeSetWith('disabled', PropTypes.oneOf(['a']))
