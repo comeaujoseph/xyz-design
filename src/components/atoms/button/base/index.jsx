@@ -51,13 +51,13 @@ const Button = (props) => {
             {use === 'a' ? (
                 <a id={id} className={classNameList} {...rest} href={null}>
                     { iconPosition === 'left' && icon }
-                    {props.children}
+                    { props.children }
                     { iconPosition === 'right' && icon }
                 </a>
             ) : (
                 <button id={id} className={classNameList} {...rest} disabled={disabled} {...rest}>
                     { iconPosition === 'left' && icon }
-                    {props.children}
+                    { props.children }
                     { iconPosition === 'right' && icon }
                 </button>
             )}

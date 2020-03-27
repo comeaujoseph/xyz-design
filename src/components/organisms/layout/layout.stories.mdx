@@ -1,0 +1,158 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Layout from './base';
+import { Sidebar, SidebarHeader, SidebarBody, SidebarToggle } from './sidebar';
+import { Header } from './header';
+import { Content } from './content';
+
+
+<Meta title="Layout" component={Layout} />
+
+# Layout
+
+<Preview withToolbar>
+  <Story name="variation 1" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasHeader style={{ height: "250px" }}>
+        <Header style={{ background: "#7dbcea" }} />
+        <Content style={{ background: "#108ee9" }} />
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 2" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasHeader style={{ height: "250px" }}>
+        <Header style={{ background: "#7dbcea" }} />
+        <Layout hasLeftSidebar>
+            <Sidebar />
+            <Content style={{ background: "#108ee9" }} />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 2 collapsed" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasHeader style={{ height: "250px" }}>
+        <Header style={{ background: "#7dbcea" }} />
+        <Layout hasLeftSidebar isLeftSidebarCollapsed>
+            <Sidebar isCollapsed />
+            <Content style={{ background: "#108ee9" }} />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 3" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasHeader style={{ height: "250px" }}>
+        <Header style={{ background: "#7dbcea" }} />
+        <Layout hasRightSidebar>
+            <Content style={{ background: "#108ee9" }} />
+            <Sidebar position="right" />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 3 collapsed" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasHeader style={{ height: "250px" }}>
+        <Header style={{ background: "#7dbcea" }} />
+        <Layout hasRightSidebar isRightSidebarCollapsed>
+            <Content style={{ background: "#108ee9" }} />
+            <Sidebar position="right" isCollapsed />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 4" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasHeader style={{ height: "250px" }}>
+        <Header style={{ background: "#7dbcea" }} />
+        <Layout hasLeftSidebar hasRightSidebar>
+            <Sidebar />
+            <Content style={{ background: "#108ee9" }} />
+            <Sidebar position="right" />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 4 collapsed" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasHeader style={{ height: "250px" }}>
+        <Header style={{ background: "#7dbcea" }} />
+        <Layout hasLeftSidebar isLeftSidebarCollapsed hasRightSidebar isRightSidebarCollapsed>
+            <Sidebar isCollapsed />
+            <Content style={{ background: "#108ee9" }} />
+            <Sidebar position="right" isCollapsed />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 5" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasLeftSidebar style={{ height: "250px" }}>
+        <Sidebar />
+        <Layout hasHeader>
+            <Header style={{ background: "#7dbcea" }} />
+            <Content style={{ background: "#108ee9" }} />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 5 collapsed" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasLeftSidebar isLeftSidebarCollapsed style={{ height: "250px" }}>
+        <Sidebar isCollapsed />
+        <Layout hasHeader>
+            <Header style={{ background: "#7dbcea" }} />
+            <Content style={{ background: "#108ee9" }} />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 6" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasRightSidebar style={{ height: "250px" }}>
+        <Sidebar position="right" />
+        <Layout hasHeader>
+            <Header style={{ background: "#7dbcea" }} />
+            <Content style={{ background: "#108ee9" }} />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="variation 6 collapsed" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasRightSidebar isRightSidebarCollapsed style={{ height: "250px" }}>
+        <Sidebar position="right" isCollapsed />
+        <Layout hasHeader>
+            <Header style={{ background: "#7dbcea" }} />
+            <Content style={{ background: "#108ee9" }} />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+
+## API
+
+### Layout
+
+The wrapper.
+
+<Props of={Layout} />
+
+### Layout.Sidebar
+
+The sidebar.
+
+<Props of={Sidebar} />

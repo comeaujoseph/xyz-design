@@ -1,0 +1,103 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-layout-sidebar {
+    position: absolute;
+    top: 0px;
+    width: 52px;
+    height: 100%;
+    background: #F9F9FA;
+    transition: width 0.3s, left 0.3s;
+    overflow: hidden;
+    z-index: 300;
+
+    @include mq-large-min {
+        width: 180px;
+    }
+}
+
+.xyz-layout-sidebar_collapsed {
+    width: 52px !important;
+
+    .xyz-layout-sidebar-header__inner {
+        display: none;
+    }
+
+    .xyz-layout-sidebar-toggle {
+        justify-content: center !important;
+    }
+}
+
+.xyz-layout-sidebar-header {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    justify-content: center;
+    height: 66px;
+    padding: 0px 10px;
+    color: #11111a;
+}
+
+.xyz-layout-sidebar-header__inner {
+    display: none;
+
+    @include mq-large-min {
+        display: block;
+    }
+}
+
+.xyz-layout-sidebar-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.xyz-layout-sidebar-body__inner {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+.xyz-layout-sidebar-toggle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 10px;
+    border: 0;
+    border-top: 1px solid #ecebea;
+    border-radius: 0px;
+    background-color: #F9F9FA;
+    color: #707070;
+    transition: width 0.3s;
+}
+
+.xyz-layout-sidebar_left {
+    left: 0px;
+    box-shadow: inset -1px 0 0 #ecebea;
+
+    .xyz-layout-sidebar-toggle {
+        justify-content: flex-end;
+        box-shadow: inset -1px 0 0 #ecebea;
+    }
+}
+
+.xyz-layout-sidebar_right {
+    right: 0px;
+    box-shadow: inset 1px 0 0 #ecebea;
+
+    .xyz-layout-sidebar-toggle {
+        justify-content: flex-start;
+        box-shadow: inset 1px 0 0 #ecebea;
+    }
+}
