@@ -29,7 +29,7 @@
 }
 
 .xyz-button-icon_small {
-    @include square($size-square-x-large);
+    @include square($size-square-xx-large);
     .xyz-icon {
         @include square($size-square-small);
     }

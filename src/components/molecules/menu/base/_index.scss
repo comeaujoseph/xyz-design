@@ -1,0 +1,47 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+@import '../item/index';
+
+.xyz-menu {
+  overflow: hidden;
+}
+
+.xyz-menu__title {
+  position: relative;
+  flex: 0 0 auto;
+  height: 15px;
+  margin-top: 16px;
+  margin-bottom: 5px;
+  padding: 0 18px;
+  border-top: 1px solid $palette-gray-4;
+  color: $palette-gray-5;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: $font-size-1_2;
+  font-weight: $font-weight-regular;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  transition: all 0.15s ease-in-out;
+
+  span {
+    opacity: 0;
+  }
+
+  @include mq-large-min {
+    border-color: transparent;
+    span {
+      opacity: 1;
+    }
+  }
+}
+
+.xyz-menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+

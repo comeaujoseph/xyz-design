@@ -1,0 +1,83 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-menu-item {
+  position: relative;
+  display: flex;
+  flex: 0 1 auto;
+  height: 32px;
+  padding: 0px 10px;
+  font-size: $font-size-4;
+  transition: all 0.15s ease-in-out;
+
+  &:not(:last-child) {
+    margin-bottom: 2px;
+  }
+}
+
+.xyz-menu-item_active {
+  & > .xyz-menu-item__container {
+    background-color: $palette-gray-4;
+
+    & > .xyz-menu-item__icon {
+        color: $dodger-blue !important;
+    }
+
+    & > .xyz-menu-item__name {
+        color: $palette-gray-10 !important;
+    }
+  }
+}
+
+.xyz-menu-item__container {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background-color: transparent;
+  color: $palette-gray-7;
+  opacity: 1;
+  cursor: pointer;
+
+  &:hover {
+    & > .xyz-menu-item__icon {
+        color: $palette-gray-10;
+    }
+    & > .xyz-menu-item__name {
+        color: $palette-gray-10;
+    }
+  }
+}
+
+.xyz-menu-item__icon {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+
+  svg {
+    @include square($size-square-small);
+  }
+}
+
+.xyz-menu-item__name {
+  display: none;
+  flex: 1 1 auto;
+  margin-left: 8px;
+
+  @include mq-large-min {
+    display: block;
+  }
+}
+
+.xyz-menu-item__icon + .xyz-menu-item__name {
+  margin-left: 5px;
+}

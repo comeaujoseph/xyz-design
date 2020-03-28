@@ -7,7 +7,7 @@ import IconCaretDoubleLeft from '../../../../shared/svg-icons/icon-caret-double-
 import IconCaretDoubleRight from '../../../../shared/svg-icons/icon-caret-double-right';
 
 
-export const SidebarHeader = (props) => {
+const SidebarHeader = (props) => {
     const {
         id,
         className,
@@ -38,7 +38,7 @@ SidebarHeader.propTypes = {
 SidebarHeader.defaultProps = {};
 
 
-export const SidebarBody = (props) => {
+const SidebarBody = (props) => {
     const {
         id,
         className,
@@ -69,7 +69,7 @@ SidebarBody.propTypes = {
 SidebarBody.defaultProps = {};
 
 
-export const SidebarToggle = (props) => {
+const SidebarToggle = (props) => {
     const {
         id,
         className,
@@ -124,6 +124,8 @@ export const Sidebar = (props) => {
         className,
         position,
         isCollapsed,
+        isCollapsible,
+        header,
         ...rest
     } = props;
 
@@ -131,6 +133,8 @@ export const Sidebar = (props) => {
         'xyz-layout-sidebar',
         {
             'xyz-layout-sidebar_collapsed': isCollapsed,
+            'xyz-layout-sidebar_has-header': header,
+            'xyz-layout-sidebar_has-toggle': isCollapsible,
         },
         'xyz-layout-sidebar_' + position,
         className,
@@ -138,8 +142,13 @@ export const Sidebar = (props) => {
 
     return (
         <aside id={id} className={classNameList} {...rest}>
-            { props.children }
-            <SidebarToggle isRightSidebar={ position === 'right'} isCollapsed={isCollapsed} />
+            {header && (
+                <SidebarHeader>{ header }</SidebarHeader>
+            )}
+            <SidebarBody>{ props.children }</SidebarBody>
+            {isCollapsible && (
+                <SidebarToggle isRightSidebar={ position === 'right'} isCollapsed={isCollapsed} />
+            )}
         </aside>
     );
 };
@@ -149,6 +158,8 @@ Sidebar.propTypes = {
     className: PropTypes.string,
     isCollapsed: PropTypes.bool,
     position: PropTypes.oneOf(['left', 'right']),
+    header: PropTypes.node,
+    isCollapsible: PropTypes.bool
 };
 Sidebar.defaultProps = {
     position: 'left'

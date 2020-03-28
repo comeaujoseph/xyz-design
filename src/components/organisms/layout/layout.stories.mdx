@@ -2,9 +2,23 @@ import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import Layout from './base';
-import { Sidebar, SidebarHeader, SidebarBody, SidebarToggle } from './sidebar';
+import { Sidebar } from './sidebar';
 import { Header } from './header';
 import { Content } from './content';
+
+import Menu from '../../molecules/menu/base';
+import { MenuItem } from '../../molecules/menu/item';
+
+import IconDashboard from '../../../shared/svg-icons/icon-dashboard';
+import IconUpload from '../../../shared/svg-icons/icon-upload';
+import IconFolder from '../../../shared/svg-icons/icon-folder';
+import IconStar from '../../../shared/svg-icons/icon-star';
+import IconHeart from '../../../shared/svg-icons/icon-heart';
+import IconTemplate from '../../../shared/svg-icons/icon-template';
+import IconTag from '../../../shared/svg-icons/icon-tag';
+import IconPeople from '../../../shared/svg-icons/icon-people';
+import IconBriefcase from '../../../shared/svg-icons/icon-briefcase';
+import IconHelp from '../../../shared/svg-icons/icon-help';
 
 
 <Meta title="Layout" component={Layout} />
@@ -134,6 +148,33 @@ import { Content } from './content';
   <Story name="variation 6 collapsed" parameters={{ decorators: [withKnobs] }}>
     <Layout hasRightSidebar isRightSidebarCollapsed style={{ height: "250px" }}>
         <Sidebar position="right" isCollapsed />
+        <Layout hasHeader>
+            <Header style={{ background: "#7dbcea" }} />
+            <Content style={{ background: "#108ee9" }} />
+        </Layout>
+    </Layout>
+  </Story>
+</Preview>
+
+
+<Preview withToolbar>
+  <Story name="example" parameters={{ decorators: [withKnobs] }}>
+    <Layout hasLeftSidebar style={{ height: "600px" }}>
+        <Sidebar header={<div style={{ textAlign: "center"}}>example</div>} isCollapsible>
+            <Menu>
+                <MenuItem name="Dashboard" icon={<IconDashboard />} isActive />
+                <MenuItem name="Upload Artifact" icon={<IconUpload />} />
+                <MenuItem name="Artifact Catalog" icon={<IconFolder />} />
+                <MenuItem name="Saved Reports" icon={<IconHeart />} />
+                <MenuItem name="Tags" icon={<IconTag />} />
+                <MenuItem name="Modules" icon={<IconTemplate />} />
+            </Menu>
+            <Menu title="settings">
+                <MenuItem name="Team" icon={<IconPeople />} />
+                <MenuItem name="Workspace" icon={<IconBriefcase />} />
+                <MenuItem name="Help" icon={<IconHelp />} />
+            </Menu>
+        </Sidebar>
         <Layout hasHeader>
             <Header style={{ background: "#7dbcea" }} />
             <Content style={{ background: "#108ee9" }} />
