@@ -17,6 +17,10 @@
   &:not(:last-child) {
     margin-bottom: 2px;
   }
+
+  &_center {
+    text-align: center;
+  }
 }
 
 .xyz-menu-item_active {
@@ -38,7 +42,7 @@
   flex: 1 1 auto;
   align-items: center;
   justify-content: center;
-  border-radius: 3px;
+  border-radius: $border-radius-medium;
   background-color: transparent;
   color: $palette-gray-7;
   opacity: 1;

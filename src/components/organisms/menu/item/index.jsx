@@ -10,19 +10,21 @@ export const MenuItem = (props) => {
         icon,
         name,
         isActive,
+        isCenter,
         ...rest
     } = props;
 
     var classNameList = classNames(
         'xyz-menu-item',
         {
-            'xyz-menu-item_active': isActive
+            'xyz-menu-item_active': isActive,
+            'xyz-menu-item_center': isCenter
         },
         className
     );
 
     return (
-        <li id={id} className={classNameList} {...rest}>
+        <li {...rest} id={id} className={classNameList}>
             <a className="xyz-menu-item__container">
                 {icon && (
                     <div className="xyz-menu-item__icon">{ icon }</div>
@@ -53,7 +55,8 @@ MenuItem.propTypes = {
         }
     },
     name: PropTypes.string,
-    isActive: PropTypes.bool
+    isActive: PropTypes.bool,
+    isCenter: PropTypes.bool
 };
 MenuItem.defaultProps = {};
 

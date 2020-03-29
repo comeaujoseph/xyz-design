@@ -36,10 +36,10 @@
     position: relative;
 
     .xyz-input__icon {
-        @include square($size-square-small);
+        @include square($size-square-medium);
         position: absolute;
         top: 50%;
-        margin-top: (($size-square-small / 2) * -1);
+        margin-top: (($size-square-medium / 2) * -1);
         line-height: $line-height-reset;
         border: 0;
         color: $text-color-icon-default;

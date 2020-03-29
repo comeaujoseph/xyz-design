@@ -7,7 +7,9 @@ const Menu = (props) => {
     const {
         id,
         className,
+        mode,
         title,
+        isSubmenu,
         ...rest
     } = props;
 
@@ -33,12 +35,13 @@ Menu.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
     className: PropTypes.string,
-    title: PropTypes.string,
-    mode: PropTypes.oneOf(['vertical', 'vertical-left', 'vertical-right', 'horizontal', 'inline'])
+    title: PropTypes.string
 };
 
 
-Menu.defaultProps = {}
+Menu.defaultProps = {
+    mode: 'vertical'
+}
 
 
 export default Menu;

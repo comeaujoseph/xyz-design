@@ -24,36 +24,37 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 60px;
+    height: $layout-header-height;
     padding: 0 15px;
 }
 
 .xyz-layout-has-sidebar_left {
     .xyz-layout-header {
-        left: 52px;
+        left: $layout-sidebar-md-width;
 
-        @include mq-large-min {
-            left: 180px;
+        @include layout-breakpoint($layout-md-breakpoint) {
+            left: $layout-sidebar-md-width-expanded;
         }
     }
 
     &.xyz-layout-has-sidebar_left-collapsed .xyz-layout-header {
-        left: 52px;
+        left: $layout-sidebar-md-width;
     }
 }
 
 .xyz-layout-has-sidebar_right {
     .xyz-layout-header {
-        right: 52px;
+        right: $layout-sidebar-md-width;
 
-        @include mq-large-min {
-            right: 180px;
+        @include layout-breakpoint($layout-md-breakpoint) {
+            right: $layout-sidebar-md-width-expanded;
         }
     }
 
     &.xyz-layout-has-sidebar_right-collapsed .xyz-layout-header {
-        right: 52px;
+        right: $layout-sidebar-md-width;
     }
 }

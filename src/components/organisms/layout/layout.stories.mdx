@@ -6,8 +6,8 @@ import { Sidebar } from './sidebar';
 import { Header } from './header';
 import { Content } from './content';
 
-import Menu from '../../molecules/menu/base';
-import { MenuItem } from '../../molecules/menu/item';
+import Menu from '../menu/base';
+import { MenuItem } from '../menu/item';
 
 import IconDashboard from '../../../shared/svg-icons/icon-dashboard';
 import IconUpload from '../../../shared/svg-icons/icon-upload';
@@ -19,6 +19,10 @@ import IconTag from '../../../shared/svg-icons/icon-tag';
 import IconPeople from '../../../shared/svg-icons/icon-people';
 import IconBriefcase from '../../../shared/svg-icons/icon-briefcase';
 import IconHelp from '../../../shared/svg-icons/icon-help';
+
+import FormItem from '../../molecules/form-item/base';
+import Input from '../../atoms/input/base';
+import IconSearch from '../../../shared/svg-icons/icon-search';
 
 
 <Meta title="Layout" component={Layout} />
@@ -159,7 +163,7 @@ import IconHelp from '../../../shared/svg-icons/icon-help';
 
 <Preview withToolbar>
   <Story name="example" parameters={{ decorators: [withKnobs] }}>
-    <Layout hasLeftSidebar style={{ height: "600px" }}>
+    <Layout hasLeftSidebar style={{ height: "100vh" }}>
         <Sidebar header={<div style={{ textAlign: "center"}}>example</div>} isCollapsible>
             <Menu>
                 <MenuItem name="Dashboard" icon={<IconDashboard />} isActive />
@@ -176,8 +180,13 @@ import IconHelp from '../../../shared/svg-icons/icon-help';
             </Menu>
         </Sidebar>
         <Layout hasHeader>
-            <Header style={{ background: "#7dbcea" }} />
-            <Content style={{ background: "#108ee9" }} />
+            <Header>
+                <FormItem hasLeftIcon>
+                    <IconSearch className="xyz-input__icon xyz-input__icon_left" />
+                    <Input required placeholder="File hash, URL, IP address, or Domain" />
+                </FormItem>
+            </Header>
+            <Content />
         </Layout>
     </Layout>
   </Story>

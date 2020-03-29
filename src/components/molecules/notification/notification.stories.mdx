@@ -1,0 +1,19 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Notification from './base';
+
+<Meta title="Notification" component={Notification} />
+
+# Notification
+
+Button group should be used to group together buttons that are performing similar actions or acting on the same object.
+
+<Preview withToolbar>
+  <Story name="group of buttons" parameters={{ decorators: [withKnobs] }}>
+    <Notification>
+      
+    </Notification>
+  </Story>
+</Preview>
+

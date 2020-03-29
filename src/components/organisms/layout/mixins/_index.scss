@@ -1,0 +1,8 @@
+
+@mixin layout-breakpoint($size: $layout-md-breakpoint) {
+    @if $size == $layout-md-breakpoint {
+        @include mq-large-min {
+            @content
+        }
+    }
+}

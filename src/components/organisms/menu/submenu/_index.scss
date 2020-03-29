@@ -1,0 +1,37 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-submenu .xyz-dropdown {
+  top: 0;
+  display: none;
+  transform: none;
+  margin: 0;
+  padding: 0;
+}
+
+.xyz-submenu_vertical {
+  &.xyz-submenu_left {
+    .xyz-dropdown {
+      left: auto;
+      right: 100%;
+      margin-right: .75rem;
+    }
+  }
+
+  &.xyz-submenu_right {
+    .xyz-dropdown {
+      left: 100%;
+      margin-left: .75rem;
+    }
+  }
+}
+
+.xyz-submenu_inline {
+  .xyz-dropdown_inline .xyz-menu-item__container {
+    padding: 0 20px;
+  }
+}

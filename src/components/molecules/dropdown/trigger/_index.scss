@@ -1,0 +1,52 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-dropdown-trigger {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  .xyz-dropdown:first-of-type {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity $duration-quickly linear, visibility $duration-quickly linear;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+
+    > .xyz-dropdown:first-of-type {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity $duration-quickly linear, visibility $duration-quickly linear;
+    }
+  }
+
+  &.xyz-dropdown_open > .xyz-dropdown {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  &:not(.xyz-submenu) > .xyz-dropdown:first-of-type {
+      top: 100%;
+  }
+
+  .xyz-dropdown_bottom {
+    top: auto;
+  }
+}
+
+.xyz-dropdown-tigger_click {
+  cursor: pointer;
+
+  .xyz-dropdown,
+  &:hover .xyz-dropdown {
+    display: none;
+  }
+}

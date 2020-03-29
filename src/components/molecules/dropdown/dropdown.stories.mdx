@@ -1,0 +1,143 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Dropdown from './base';
+import DropdownTrigger from './trigger';
+
+import Menu from '../../organisms/menu/base';
+import { MenuItem } from '../../organisms/menu/item';
+import { SubMenu } from '../../organisms/menu/submenu';
+
+<Meta title="Dropdown" component={Dropdown} />
+
+# Dropdown
+
+...
+
+<Preview withToolbar>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <DropdownTrigger isOpen>
+        <Dropdown>
+          <Menu>
+            <MenuItem name="Option 1" />
+            <MenuItem name="Option 2" />
+            <MenuItem name="Option 3" />
+            <MenuItem name="Option 4" />
+          </Menu>
+        </Dropdown>
+      </DropdownTrigger>
+    </div>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="right" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <DropdownTrigger isOpen>
+        <Dropdown position="right">
+          <Menu>
+            <MenuItem name="Option 1" />
+            <MenuItem name="Option 2" />
+            <MenuItem name="Option 3" />
+            <MenuItem name="Option 4" />
+          </Menu>
+        </Dropdown>
+      </DropdownTrigger>
+    </div>
+  </Story>
+</Preview>
+
+## With multiple menus
+
+<Preview withToolbar>
+  <Story name="w/ menus" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <DropdownTrigger isOpen>
+        <Dropdown>
+          <Menu>
+            <MenuItem name="Status" />
+            <MenuItem name="Settings" />
+          </Menu>
+          <Menu>
+            <MenuItem name="Page Lock" />
+            <MenuItem name="Keyboard shortcuts" />
+          </Menu>
+          <Menu>
+            <MenuItem name="Logout" />
+          </Menu>
+        </Dropdown>
+      </DropdownTrigger>
+    </div>
+  </Story>
+</Preview>
+
+
+## With submenu
+
+<Preview withToolbar>
+  <Story name="w/ vertical submenu" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px", paddingLeft: "150px" }}>
+      <DropdownTrigger isOpen>
+        <Dropdown>
+          <Menu>
+            <MenuItem name="option 1" />
+            <MenuItem name="option 2" />
+            <MenuItem name="option 3" />
+            <SubMenu mode="vertical" position="left" size="xx-small" name="option 4" isActive>
+              <Menu>
+                <MenuItem name="sub-option 1" isCenter />
+                <MenuItem name="sub-option 2" isCenter />
+              </Menu>
+            </SubMenu>
+          </Menu>
+        </Dropdown>
+      </DropdownTrigger>
+    </div>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="w/ vertical right submenu" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <DropdownTrigger isOpen>
+        <Dropdown>
+          <Menu>
+            <MenuItem name="option 1" />
+            <MenuItem name="option 2" />
+            <MenuItem name="option 3" />
+            <SubMenu mode="vertical" position="right" size="xx-small" name="option 4" isActive>
+              <Menu>
+                <MenuItem name="sub-option 1" isCenter />
+                <MenuItem name="sub-option 2" isCenter />
+              </Menu>
+            </SubMenu>
+          </Menu>
+        </Dropdown>
+      </DropdownTrigger>
+    </div>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="w/ submenu" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <DropdownTrigger isOpen>
+        <Dropdown>
+          <Menu>
+            <MenuItem name="option 1" />
+            <MenuItem name="option 2" />
+            <MenuItem name="option 3" />
+            <SubMenu mode="inline" name="option 4" isActive>
+              <Menu>
+                <MenuItem name="sub-option 1" />
+                <MenuItem name="sub-option 2" />
+              </Menu>
+            </SubMenu>
+          </Menu>
+        </Dropdown>
+      </DropdownTrigger>
+    </div>
+  </Story>
+</Preview>
+

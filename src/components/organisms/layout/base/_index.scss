@@ -5,6 +5,8 @@
 //  text
 //  other
 
+@import '../tokens/index';
+@import '../mixins/index';
 @import '../header/index';
 @import '../content/index';
 @import '../sidebar/index';
@@ -17,13 +19,6 @@
     min-height: 100%;
     margin: 0;
     padding: 0;
-    clear: both;
-
-    &::before {
-        content: "";
-        display: table;
-        clear: both;
-    }
 }
 
 
@@ -34,22 +29,22 @@
 
 .xyz-layout-has-sidebar_left,
 .xyz-layout-has-sidebar_left-right {
-    padding-left: 180px;
+    padding-left: $layout-sidebar-md-width-expanded;
 
     &.xyz-layout-has-sidebar_left-collapsed {
-        padding-left: 52px;
+        padding-left: $layout-sidebar-md-width;
     }
 }
 
 .xyz-layout-has-sidebar_right,
 .xyz-layout-has-sidebar_left-right {
-    padding-right: 180px;
+    padding-right: $layout-sidebar-md-width-expanded;
 
     &.xyz-layout-has-sidebar_right-collapsed {
-        padding-right: 52px;
+        padding-right: $layout-sidebar-md-width;
     }
 }
 
 .xyz-layout-has-header {
-    padding-top: 60px;
+    padding-top: $layout-header-height;
 }

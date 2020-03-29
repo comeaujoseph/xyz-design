@@ -6,9 +6,10 @@
 //  other
 
 @import '../item/index';
+@import '../submenu/index';
 
 .xyz-menu {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .xyz-menu__title {
