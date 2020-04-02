@@ -1,0 +1,99 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+
+.xyz-notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding-left: 15px;
+  line-height: 44px;
+
+  h4 {
+    margin: 0;
+    padding: 0;
+    color: #7b7b7b;
+    font-size: .65rem;
+    line-height: 11px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    font-weight: $font-weight-thick;
+  }
+}
+
+
+.xyz-notification__all-read {
+  font-size: $font-size-1;
+  text-transform: uppercase;
+  font-weight: $font-weight-thick;
+  letter-spacing: .4px;
+
+  cursor: pointer;
+  color: $limeade;
+  border: none;
+  background: none;
+  height: 32px;
+  padding: 0 15px !important;
+
+  &:hover, &:focus {
+    color: $limeade;
+  }
+}
+
+
+.xyz-notification-entry {
+  margin: 0 5px 2px;
+  padding-top: 10px;
+  border-radius: $border-radius-medium;
+  position: relative;
+
+  &::last-of-type {
+      margin-bottom: 5px;
+  }
+
+  &:hover {
+      background-color: hsla(0,0%,69.4%,.07);
+
+      .xyz-notification-entry__read {
+          display: block;
+      }
+  }
+}
+
+
+.xyz-notification-entry__read {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  color: $palette-gray-8;
+  cursor: pointer;
+
+  .xyz-icon {
+    @include square($size-square-xxx-small)
+  }
+}
+
+.xyz-notification-entry__body {
+  margin: 0 20px 0 15px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+.xyz-notification-entry__title {
+  color: $black;
+  margin-bottom: 3px;
+  font-size: $font-size-3;
+}
+
+.xyz-notification-entry__details {
+  color: $palette-gray-8;
+  font-size: $font-size-2;
+  line-height: 1rem;
+}

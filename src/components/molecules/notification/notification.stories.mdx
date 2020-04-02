@@ -2,18 +2,37 @@ import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import Notification from './base';
+import { NotificationEntry } from './dropdown';
 
 <Meta title="Notification" component={Notification} />
 
 # Notification
 
-Button group should be used to group together buttons that are performing similar actions or acting on the same object.
+...
 
 <Preview withToolbar>
-  <Story name="group of buttons" parameters={{ decorators: [withKnobs] }}>
-    <Notification>
-      
-    </Notification>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <Notification />
+  </Story>
+</Preview>
+
+
+<Preview withToolbar>
+  <Story name="available" parameters={{ decorators: [withKnobs] }}>
+    <Notification isAvailable />
+  </Story>
+</Preview>
+
+
+<Preview withToolbar>
+  <Story name="open" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "250px" }}>
+      <Notification isAvailable isOpen>
+        <NotificationEntry title="You now have access!">
+          You now have access to the new Workspace Settings! <a href="#">Take a look</a>
+        </NotificationEntry>
+      </Notification>
+    </div>
   </Story>
 </Preview>
 

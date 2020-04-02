@@ -7,27 +7,33 @@ import Dropdown from '../../dropdown/base';
 import ButtonIcon from '../../../atoms/button-icon/base';
 import IconNotification from '../../../../shared/svg-icons/icon-notification';
 
+import { NotificationHeader } from '../dropdown';
+
 
 const Notification = (props) => {
     const {
         id,
         className,
+        isAvailable,
         ...rest
     } = props;
 
     var classNameList = classNames(
         'xyz-notification',
-        {},
+        {
+            'xyz-notification_available': isAvailable
+        },
         className
     );
 
     return (
         <DropdownTrigger {...rest} id={id} className={classNameList}
             customTrigger={
-                <ButtonIcon size="small"><IconNotification /></ButtonIcon>
+                <ButtonIcon size="medium"><IconNotification /></ButtonIcon>
             }
         >
             <Dropdown position={ props.position }>
+                <NotificationHeader />
                 { props.children }
             </Dropdown>
         </DropdownTrigger>
@@ -37,7 +43,8 @@ const Notification = (props) => {
 Notification.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    isAvailable: PropTypes.bool
 };
 
 Notification.defaultProps = {}

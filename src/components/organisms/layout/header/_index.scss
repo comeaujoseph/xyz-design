@@ -58,3 +58,25 @@
         right: $layout-sidebar-md-width;
     }
 }
+
+.xyz-layout-header-section {
+    display: flex;
+    flex-basis: auto;
+
+    .xyz-layout-header-section__inner {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.xyz-layout-header-section__item {
+    width: 100%;
+    margin: 0 5px;
+}

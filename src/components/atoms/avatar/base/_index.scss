@@ -1,0 +1,21 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+
+.xyz-avatar {
+  @include square(35px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  color: $mine-shaft;
+  background-color: rgba(42, 42, 42, .05);
+  font-size: $font-size-4;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}

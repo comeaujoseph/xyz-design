@@ -3,7 +3,7 @@ import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import Layout from './base';
 import { Sidebar } from './sidebar';
-import { Header } from './header';
+import { Header, HeaderSection, HeaderItem } from './header';
 import { Content } from './content';
 
 import Menu from '../menu/base';
@@ -23,6 +23,9 @@ import IconHelp from '../../../shared/svg-icons/icon-help';
 import FormItem from '../../molecules/form-item/base';
 import Input from '../../atoms/input/base';
 import IconSearch from '../../../shared/svg-icons/icon-search';
+
+import Notification from '../../molecules/notification/base';
+import Avatar from '../../atoms/avatar/base';
 
 
 <Meta title="Layout" component={Layout} />
@@ -181,10 +184,22 @@ import IconSearch from '../../../shared/svg-icons/icon-search';
         </Sidebar>
         <Layout hasHeader>
             <Header>
-                <FormItem hasLeftIcon>
+              <HeaderSection style={{flex: "0 0 75%"}}>
+                <HeaderItem>
+                  <FormItem hasLeftIcon>
                     <IconSearch className="xyz-input__icon xyz-input__icon_left" />
                     <Input required placeholder="File hash, URL, IP address, or Domain" />
-                </FormItem>
+                  </FormItem>
+                </HeaderItem>
+              </HeaderSection>
+              <HeaderSection>
+                <HeaderItem>
+                  <Notification isAvailable></Notification>
+                </HeaderItem>
+                <HeaderItem>
+                  <Avatar text="JC" />
+                </HeaderItem>
+              </HeaderSection>
             </Header>
             <Content />
         </Layout>

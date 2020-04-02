@@ -5,5 +5,27 @@
 //  text
 //  other
 
-@import '../entry/index';
+@import '../dropdown/index';
 
+
+.xyz-notification .xyz-button-icon {
+  &:hover,
+  &:focus {
+    color: $text-color-icon-default;
+  }
+}
+
+
+.xyz-notification_available > .xyz-button-icon {
+  &::before {
+    @include square(7px);
+
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    display: block;
+    background-color: red;
+    border-radius: 100%;
+  }
+}
