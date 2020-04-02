@@ -15,6 +15,8 @@ const Notification = (props) => {
         id,
         className,
         isAvailable,
+        position,
+        size,
         ...rest
     } = props;
 
@@ -32,7 +34,7 @@ const Notification = (props) => {
                 <ButtonIcon size="medium"><IconNotification /></ButtonIcon>
             }
         >
-            <Dropdown position={ props.position }>
+            <Dropdown position={ position } size={ size }>
                 <NotificationHeader />
                 { props.children }
             </Dropdown>

@@ -3,6 +3,7 @@ import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import Dropdown from './base';
 import DropdownTrigger from './trigger';
+import DropdownOverlay from './overlay';
 
 import Menu from '../../organisms/menu/base';
 import { MenuItem } from '../../organisms/menu/item';
@@ -17,6 +18,7 @@ import { SubMenu } from '../../organisms/menu/submenu';
 <Preview withToolbar>
   <Story name="base" parameters={{ decorators: [withKnobs] }}>
     <div style={{ height: "300px" }}>
+      <DropdownOverlay />
       <DropdownTrigger isOpen>
         <Dropdown>
           <Menu>

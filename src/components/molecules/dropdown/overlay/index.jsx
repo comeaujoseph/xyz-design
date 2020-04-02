@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 
-export const DropdownOverlay = (props) => {
+const DropdownOverlay = (props) => {
     const {
         id,
         className,
@@ -23,9 +23,13 @@ export const DropdownOverlay = (props) => {
         <div {...rest} id={id} className={classNameList} />
     );
 };
+
 DropdownOverlay.propTypes = {
     id: PropTypes.string,
     className: PropTypes.string,
     isActive: PropTypes.bool
 };
+
 DropdownOverlay.defaultProps = {};
+
+export default DropdownOverlay;

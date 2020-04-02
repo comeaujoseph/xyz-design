@@ -124,3 +124,16 @@
         box-shadow: inset $border-width-thin 0 0 $layout-border-color;
     }
 }
+
+.xyz-layout-sidebar_collapsed .xyz-menu {
+    .xyz-menu__title {
+        border-top: 1px solid $layout-border-color;
+        span {
+            display: none;
+        }
+    }
+
+    .xyz-menu-item__name {
+        display: none;
+    }
+}

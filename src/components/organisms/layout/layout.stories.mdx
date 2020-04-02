@@ -166,8 +166,8 @@ import Avatar from '../../atoms/avatar/base';
 
 <Preview withToolbar>
   <Story name="example" parameters={{ decorators: [withKnobs] }}>
-    <Layout hasLeftSidebar style={{ height: "100vh" }}>
-        <Sidebar header={<div style={{ textAlign: "center"}}>example</div>} isCollapsible>
+    <Layout hasLeftSidebar isLeftSidebarCollapsed style={{ height: "100vh" }}>
+        <Sidebar header={<div style={{ textAlign: "center"}}>example</div>} isCollapsible isCollapsed>
             <Menu>
                 <MenuItem name="Dashboard" icon={<IconDashboard />} isActive />
                 <MenuItem name="Upload Artifact" icon={<IconUpload />} />

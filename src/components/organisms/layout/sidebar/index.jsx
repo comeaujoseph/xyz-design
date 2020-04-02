@@ -94,8 +94,8 @@ const SidebarToggle = (props) => {
     }
 
     return (
-        <div id={id} className={classNameList} {...rest}>
-            <ButtonIcon size="small" isNeutral {...rest}>
+        <div id={id} className={classNameList}>
+            <ButtonIcon {...rest} size="small" isNeutral>
                 {isCollapsed ? (
                     iconCollapsed
                 ) : (
@@ -141,13 +141,13 @@ export const Sidebar = (props) => {
     );
 
     return (
-        <aside id={id} className={classNameList} {...rest}>
+        <aside id={id} className={classNameList}>
             {header && (
                 <SidebarHeader>{ header }</SidebarHeader>
             )}
             <SidebarBody>{ props.children }</SidebarBody>
             {isCollapsible && (
-                <SidebarToggle isRightSidebar={ position === 'right'} isCollapsed={isCollapsed} />
+                <SidebarToggle {...rest} isRightSidebar={ position === 'right'} isCollapsed={isCollapsed} />
             )}
         </aside>
     );
