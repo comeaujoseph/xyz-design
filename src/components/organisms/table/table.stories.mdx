@@ -1,0 +1,28 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Table from './base';
+import { TableHeader, THead, THeadTr, THeadTh } from './thead';
+
+
+<Meta title="Table" component={Table} />
+
+# Table
+
+<Preview withToolbar>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <Table>
+        <TableHeader>
+            <THead>
+                <THeadTr>
+                    <THeadTh className="xyz-table-cell-40">Name</THeadTh>
+                    <THeadTh className="xyz-table-cell-30">Status</THeadTh>
+                    <THeadTh className="xyz-table-cell-30">Creation Time</THeadTh>
+                    <THeadTh className="xyz-table-cell-15">Actions</THeadTh>
+                </THeadTr>
+            </THead>
+        </TableHeader>
+    </Table>
+  </Story>
+</Preview>
+

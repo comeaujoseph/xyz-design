@@ -1,0 +1,54 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import PageBlock from './base';
+import PageHeader from '../page-header/base';
+
+import Button from '../../atoms/button/base';
+import ButtonIcon from '../../atoms/button-icon/base';
+import IconHelp from '../../../shared/svg-icons/icon-help';
+import Form from '../../organisms/form/base';
+import { FormRow, FormRowItem } from '../../organisms/form/row';
+import FormItem from '../../molecules/form-item/base';
+import Input from '../../atoms/input/base';
+
+<Meta title="Page Block" component={PageBlock} />
+
+# Page Block
+
+<Preview withToolbar>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <div>
+      <PageHeader name="Page">
+        <Button isOutlineTheme>Refresh</Button>
+        <Button isTheme>Create New</Button>
+        <ButtonIcon size="medium" isNeutral>
+            <IconHelp />
+        </ButtonIcon>
+      </PageHeader>
+      <PageBlock>
+        <Form>
+          <FormRow>
+            <FormRowItem>
+              <FormItem inputId="input-unique-id" isStacked style={{ margin: 0 }}>
+                <Input id="input-unique-id" />
+              </FormItem>
+            </FormRowItem>
+            <FormRowItem style={{ flex: 0, minWidth: "auto" }}>
+              <Button isTheme style={{ minWidth: "100px", textAlign: "center" }}>Search</Button>
+            </FormRowItem>
+          </FormRow>
+        </Form>
+      </PageBlock>
+    </div>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="tinted" parameters={{ decorators: [withKnobs] }}>
+    <div>
+      <PageHeader name="Page" />
+      <PageBlock isTinted />
+    </div>
+  </Story>
+</Preview>

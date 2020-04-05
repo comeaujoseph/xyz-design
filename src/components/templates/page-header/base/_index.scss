@@ -1,0 +1,28 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 0;
+    padding: 0rem $spacing-small $spacing-medium;
+    border-bottom: $border-width-thin solid $border-color;
+    background-color: $white;
+
+    &_has-name {
+        flex-direction: row;
+    }
+}
+
+.xyz-page-header__name {
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-6;
+    font-weight: $font-weight-thick;
+}

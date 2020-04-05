@@ -1,0 +1,49 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-input-affix {
+  display: flex;
+
+  .xyz-form-item .xyz-input,
+  .xyz-button {
+    border-radius: 0;
+    border-width: $border-width-thin;
+    &:focus {
+      z-index: 1;
+    }
+  }
+
+  .xyz-form-item {
+    width: 100%;
+    z-index: 1;
+  }
+
+  .xyz-button_outline {
+    border-color: $border-color-input;
+  }
+}
+
+.xyz-input-affix .xyz-form-item + .xyz-button,
+.xyz-input-affix .xyz-button + .xyz-form-item .xyz-input {
+  margin-left: (-1 * $border-width-thin);
+}
+
+.xyz-input-affix .xyz-form-item:first-child {
+  .xyz-input {
+    border-radius: $border-radius-medium 0 0 $border-radius-medium;
+  }
+}
+
+.xyz-input-affix .xyz-button:first-child {
+    border-radius: $border-radius-medium 0 0 $border-radius-medium;
+}
+
+.xyz-input-affix .xyz-form-item:last-child .xyz-input,
+.xyz-input-affix .xyz-button:last-child {
+  border-radius: 0 $border-radius-medium $border-radius-medium 0;
+}
+

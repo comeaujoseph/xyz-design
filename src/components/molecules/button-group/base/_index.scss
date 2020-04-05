@@ -28,8 +28,7 @@
     border-radius: $button-border-radius 0 0 $button-border-radius;
 }
 
-.xyz-button-group .xyz-button:last-child,
-.xyz-button-group .xyz-button_last .xyz-button {
+.xyz-button-group .xyz-button:last-child {
   border-radius: 0 $button-border-radius $button-border-radius 0;
 }
 

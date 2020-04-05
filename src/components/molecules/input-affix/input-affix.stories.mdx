@@ -1,0 +1,64 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import InputAffix from './base';
+import FormItem from '../form-item/base';
+
+import Input from '../../atoms/input/base';
+import Button from '../../atoms/button/base';
+import IconSearch from '../../../shared/svg-icons/icon-search';
+
+<Meta title="Input Affix" component={InputAffix} />
+
+# Input Affix
+
+...
+
+<Preview withToolbar>
+  <Story name="button right w/ left icon" parameters={{ decorators: [withKnobs] }}>
+    <InputAffix>
+      <FormItem hasLeftIcon>
+        <IconSearch className="xyz-input__icon xyz-input__icon_left" />
+        <Input />
+      </FormItem>
+      <Button isOutline>Search</Button>
+    </InputAffix>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="button left w/ left icon" parameters={{ decorators: [withKnobs] }}>
+    <InputAffix>
+      <Button isOutline>Search</Button>
+      <FormItem hasLeftIcon>
+        <IconSearch className="xyz-input__icon xyz-input__icon_left" />
+        <Input />
+      </FormItem>
+    </InputAffix>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="button left w/ right icon" parameters={{ decorators: [withKnobs] }}>
+    <InputAffix>
+      <Button isOutline>Search</Button>
+      <FormItem hasRightIcon>
+        <Input />
+        <IconSearch className="xyz-input__icon xyz-input__icon_right" />
+      </FormItem>
+    </InputAffix>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="button right w/ right icon" parameters={{ decorators: [withKnobs] }}>
+    <InputAffix>
+      <FormItem hasRightIcon>
+        <Input />
+        <IconSearch className="xyz-input__icon xyz-input__icon_right" />
+      </FormItem>
+      <Button isOutline>Search</Button>
+    </InputAffix>
+  </Story>
+</Preview>
+

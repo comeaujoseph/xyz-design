@@ -1,0 +1,19 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-page-block {
+    margin: 0;
+    padding: $spacing-medium $spacing-small;
+    color: #7b7b7b;
+    border-bottom: $border-width-thin solid $border-color;
+    background-color: $white;
+    font-size: $font-size-3;
+
+    &_tinted {
+        background-color: $background-color;
+    }
+}
