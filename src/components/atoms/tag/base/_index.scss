@@ -1,0 +1,85 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+@import '../group/index';
+
+.xyz-tag__wrapper {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px 4px 2px 0;
+  border-radius: $border-radius-medium;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &.xyz-tag_has-header {
+    padding: 8px 12px 8px 12px;
+    box-shadow: inset 0 0 0 2px $black_transparent_20;
+    -webkit-transition: box-shadow 200ms ease-in-out;
+    transition: box-shadow 200ms ease-in-out;
+
+    &:hover {
+        box-shadow: inset 0 0 0 2px $black_transparent_50;
+    }
+
+    .xyz-tag {
+      margin-left: 8px;
+    }
+  }
+}
+
+.xyz-tag__title {
+  color: $mine-shaft;
+  text-decoration: none;
+  font-size: $font-size-4;
+  font-weight: $font-weight-thick;
+}
+
+.xyz-tag {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  padding: 4px 8px;
+  border: $border-width-thin solid transparent;
+  border-radius: $border-radius-medium;
+  background-color: $mine-shaft;
+  color: $white;
+  font-size: $font-size-1_2;
+  font-weight: $font-weight-regular;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .xyz-icon {
+    @include square($size-square-small);
+  }
+}
+
+.xyz-tag_bold {
+  font-weight: $font-weight-thick;
+}
+
+.xyz-tag_lowercase {
+  text-transform: lowercase;
+}
+
+.xyz-tag_outline {
+  border-color: $mine-shaft;
+  background-color: $white;
+  color: $mine-shaft;
+}
+
+.xyz-tag_has-icon_left {
+  margin-right: $spacing-x-small;
+}
+
+.xyz-tag_has-icon_right {
+  margin-left: $spacing-x-small;
+}

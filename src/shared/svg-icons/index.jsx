@@ -7,6 +7,7 @@ import IconCloseX from './icon-close-x';
 import IconClose from './icon-close';
 import IconDashboard from './icon-dashboard';
 import IconDownload from './icon-download';
+import IconEllipsis from './icon-ellipsis';
 import IconExport from './icon-export';
 import IconFolder from './icon-folder';
 import IconHeart from './icon-heart';
@@ -16,6 +17,9 @@ import IconNotification from './icon-notification';
 import IconPeople from './icon-people';
 import IconSearch from './icon-search';
 import IconStar from './icon-star';
+import IconStatusCanceled from './icon-status-canceled';
+import IconStatusRunning from './icon-status-running';
+import IconStatusSuccess from './icon-status-success';
 import IconTag from './icon-tag';
 import IconTask from './icon-task';
 import IconTemplate from './icon-template';
@@ -23,7 +27,8 @@ import IconUpload from './icon-upload';
 
 export {
     IconBriefcase, IconBullhorn, IconCaretDoubleLeft, IconCaretDoubleRight, IconCaretDown,
-    IconCloseX, IconClose, IconDashboard, IconDownload, IconExport, IconFolder,
+    IconCloseX, IconClose, IconDashboard, IconDownload, IconEllipsis, IconExport, IconFolder,
     IconHeart, IconHelp, IconLink, IconNotification, IconPeople, IconSearch,
-    IconStar, IconTag, IconTask, IconTemplate, IconUpload
+    IconStar, IconStatusCanceled, IconStatusRunning, IconStatusSuccess, IconTag, IconTask,
+    IconTemplate, IconUpload
 };

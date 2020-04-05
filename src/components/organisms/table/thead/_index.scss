@@ -1,24 +1,13 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
 
 .xyz-table-header table {
-    table-layout: fixed;
-    border-collapse: separate;
-    width: 100%;
-    background: #fff;
-    margin: 0;
-    border: 1px solid #dcdcdc;
-    border-bottom: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-radius: .25rem .25rem 0 0;
-    text-align: left;
-    color: rgba(0, 0, 0, 0.87);
-    border-collapse: separate;
-    border-spacing: 0;
-
-    // experiment
-    border-left: none;
-    border-right: none;
-    border-top: none;
+    @include table;
+    border-radius: $table-border-radius $table-border-radius 0 0;
 }
 
 .xyz-thead,
@@ -32,17 +21,7 @@
     vertical-align: baseline;
 }
 
-.xyz-thead {
-    color: #909399;
-    font-weight: 500;
-}
-
-.xyz-thead__th:first-child {
-    border-left: none;
-}
-
 .xyz-thead__th {
-    background-color: #fff;
     padding: 12px 0;
     min-width: 0;
     box-sizing: border-box;
@@ -57,40 +36,14 @@
     padding: 0;
     height: 40px;
     white-space: nowrap;
-    color: rgba(0, 0, 0, 0.87);
 
-    &:first-child {
-        border-left: none;
-    }
-}
 
-.xyz-thead__tr:first-child > .xyz-thead__th:first-child {
-    border-radius: .25rem 0  0 .25rem;
-}
-
-.xyz-thead__tr:first-child > .xyz-thead__th:last-child {
-    border-radius: 0 .25rem .25rem 0;
 }
 
 .xyz-thead__th-cell {
-    padding-right: 10px;
-    overflow: hidden;
-    padding-left: 10px;
-    white-space: normal;
-    word-break: break-all;
-    box-sizing: border-box;
-    position: relative;
-    word-wrap: normal;
-    text-overflow: ellipsis;
-    vertical-align: middle;
-    width: 100%;
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    font-size: $font-size-3;
-    color: #1f1f22;
-    font-weight: bold;
+    @include table-cell;
+    color: $th-text-color;
+    font-weight: $font-weight-bold;
 }
 
 .xyz-thead__th:first-child .xyz-thead__th-cell {

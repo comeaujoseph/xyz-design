@@ -3,6 +3,14 @@ import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import Table from './base';
 import { TableHeader, THead, THeadTr, THeadTh } from './thead';
+import { TableMain, TBody, TBodyTr, Td } from './tmain';
+
+import ButtonIcon from '../../atoms/button-icon/base';
+import IconEllipsis from '../../../shared/svg-icons/icon-ellipsis';
+
+import Tag from '../../atoms/tag/base';
+import IconStatusRunning from '../../../shared/svg-icons/icon-status-running';
+import IconStatusCanceled from '../../../shared/svg-icons/icon-status-canceled';
 
 
 <Meta title="Table" component={Table} />
@@ -10,18 +18,60 @@ import { TableHeader, THead, THeadTr, THeadTh } from './thead';
 # Table
 
 <Preview withToolbar>
-  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+  <Story name="example" parameters={{ decorators: [withKnobs] }}>
     <Table>
-        <TableHeader>
-            <THead>
-                <THeadTr>
-                    <THeadTh className="xyz-table-cell-40">Name</THeadTh>
-                    <THeadTh className="xyz-table-cell-30">Status</THeadTh>
-                    <THeadTh className="xyz-table-cell-30">Creation Time</THeadTh>
-                    <THeadTh className="xyz-table-cell-15">Actions</THeadTh>
-                </THeadTr>
-            </THead>
-        </TableHeader>
+      <TableHeader>
+        <THead>
+          <THeadTr>
+            <THeadTh className="xyz-table-cell-40">Name</THeadTh>
+            <THeadTh className="xyz-table-cell-30">Status</THeadTh>
+            <THeadTh className="xyz-table-cell-30">Creation Time</THeadTh>
+            <THeadTh className="xyz-table-cell-15">Actions</THeadTh>
+          </THeadTr>
+        </THead>
+      </TableHeader>
+      <TableMain>
+        <TBody>
+          <TBodyTr>
+            <Td className="xyz-table-cell-40">
+                YARA Pattern
+            </Td>
+            <Td className="xyz-table-cell-30">
+              <Tag isLowercase isOutline>
+                <IconStatusRunning className="xyz-tag_has-icon_left" />
+                active
+              </Tag>
+            </Td>
+            <Td className="xyz-table-cell-30">
+                Dec 26, 2019, 8:05:17 PM
+            </Td>
+            <Td className="xyz-table-cell-15">
+              <ButtonIcon size="medium">
+                <IconEllipsis />
+              </ButtonIcon>
+            </Td>
+          </TBodyTr>
+          <TBodyTr>
+            <Td className="xyz-table-cell-40 xyz-alerts__alert-name">
+                Upload Limit
+            </Td>
+            <Td className="xyz-table-cell-30">
+              <Tag isLowercase isOutline>
+                <IconStatusCanceled className="xyz-tag_has-icon_left" />
+                inactive
+              </Tag>
+            </Td>
+            <Td className="xyz-table-cell-30">
+                Dec 26, 2019, 8:05:17 PM
+            </Td>
+            <Td className="xyz-table-cell-15">
+              <ButtonIcon size="medium">
+                <IconEllipsis />
+                </ButtonIcon>
+            </Td>
+          </TBodyTr>
+        </TBody>
+      </TableMain>
     </Table>
   </Story>
 </Preview>

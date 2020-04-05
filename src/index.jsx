@@ -3,6 +3,7 @@ export { default as Avatar } from './components/atoms/avatar';
 export { default as Button } from './components/atoms/button';
 export { default as ButtonIcon } from './components/atoms/button-icon';
 export { default as Input } from './components/atoms/input';
+export { default as Tag, TagGroup } from './components/atoms/tag';
 
 
 export { default as ButtonGroup, ButtonGroupRow, ButtonGroupItem } from './components/molecules/button-group';
@@ -15,6 +16,7 @@ export { default as Notification, NotificationEntry } from './components/molecul
 export { default as Form, FormRow, FormRowItem } from './components/organisms/form';
 export { default as Layout, Sidebar, Header, HeaderSection, HeaderItem, Content } from './components/organisms/layout';
 export { default as Menu, MenuItem, SubMenu } from './components/organisms/menu';
+export { default as Table, TableHeader, THead, THeadTr, THeadTh, TableMain, TBody, TBodyTr, Td } from './components/organisms/table';
 
 
 export { default as PageBlock } from './components/templates/page-block';

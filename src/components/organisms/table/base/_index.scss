@@ -5,4 +5,45 @@
 //  text
 //  other
 
+@import '../tokens/index';
+@import '../mixins/index';
 @import '../thead/index';
+@import '../tmain/index';
+
+
+.xyz-table-wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+.xyz-table-cell-5 {
+    flex: 1 1 5%;
+}
+
+.xyz-table-cell-10 {
+    flex: 1 1 10%;
+}
+
+.xyz-table-cell-15 {
+    flex: 1 1 15%;
+}
+
+.xyz-table-cell-20 {
+    flex: 1 1 20%;
+}
+
+.xyz-table-cell-25 {
+    flex: 1 1 25%;
+}
+.xyz-table-cell-30 {
+    flex: 1 1 30%;
+}
+.xyz-table-cell-35 {
+    flex: 1 1 35%;
+}
+.xyz-table-cell-40 {
+    flex: 1 1 40%;
+}
+.xyz-table-cell-45 {
+    flex: 1 1 45%;
+}

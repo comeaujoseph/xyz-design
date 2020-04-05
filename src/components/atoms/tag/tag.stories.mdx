@@ -1,0 +1,79 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Tag from './base';
+import { TagGroup } from './group';
+
+import IconStatusSuccess from '../../../shared/svg-icons/icon-status-success';
+import IconStatusRunning from '../../../shared/svg-icons/icon-status-running';
+
+<Meta title="Tag" component={Tag} />
+
+# Tag
+
+...
+
+<Preview withToolbar>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <Tag>TAG</Tag>
+  </Story>
+  <Story name="bold" parameters={{ decorators: [withKnobs] }}>
+    <Tag isBold>TAG</Tag>
+  </Story>
+  <Story name="lowercase" parameters={{ decorators: [withKnobs] }}>
+    <Tag isLowercase>TAG</Tag>
+  </Story>
+  <Story name="outline" parameters={{ decorators: [withKnobs] }}>
+    <Tag isOutline>TAG</Tag>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="icon left" parameters={{ decorators: [withKnobs] }}>
+    <Tag>
+      <IconStatusSuccess className="xyz-tag_has-icon_left" style={{ color: "red" }} />
+      TAG
+    </Tag>
+  </Story>
+  <Story name="icon right" parameters={{ decorators: [withKnobs] }}>
+    <Tag>
+      TAG
+      <IconStatusSuccess className="xyz-tag_has-icon_right" style={{ color: "red" }} />
+    </Tag>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="group" parameters={{ decorators: [withKnobs] }}>
+    <TagGroup>
+      <Tag>TAG ONE</Tag>
+      <Tag>
+        TAG
+        <IconStatusSuccess className="xyz-tag_has-icon_right" style={{ color: "red" }} />
+      </Tag>
+      <Tag>TAG TWO</Tag>
+    </TagGroup>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="w/ title" parameters={{ decorators: [withKnobs] }}>
+    <Tag title="Title">TAG</Tag>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="example 1" parameters={{ decorators: [withKnobs] }}>
+    <Tag isLowercase isOutline>
+      <IconStatusRunning className="xyz-tag_has-icon_left" />
+      active
+    </Tag>
+  </Story>
+  <Story name="example 2" parameters={{ decorators: [withKnobs] }}>
+    <Tag title="Purchase">20% off</Tag>
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Tag} />

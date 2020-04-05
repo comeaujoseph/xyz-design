@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-
-export const TableHeader = (props) => {
+export const TableMain = (props) => {
     const {
         id,
         className,
@@ -12,7 +11,7 @@ export const TableHeader = (props) => {
 
     var classNameList = classNames(
         'xyz-table',
-        'xyz-table-header',
+        'xyz-table-main',
         {
 
         },
@@ -20,22 +19,22 @@ export const TableHeader = (props) => {
     );
 
     return (
-        <div id={id} className={classNameList} {...rest}>
-            <table cellSpacing="0" cellPadding="0" border="0">
+        <main id={id} className={classNameList} {...rest}>
+            <table cellSpacing="0">
                 { props.children }
             </table>
-        </div>
+        </main>
     );
 };
-TableHeader.propTypes = {
+TableMain.displayName = "TableMain";
+TableMain.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
     className: PropTypes.string
 };
-TableHeader.defaultProps = {};
+TableMain.defaultProps = {};
 
-
-export const THead = (props) => {
+export const TBody = (props) => {
     const {
         id,
         className,
@@ -43,24 +42,25 @@ export const THead = (props) => {
     } = props;
 
     var classNameList = classNames(
-        'xyz-thead',
+        'xyz-tbody',
         {
 
         },
         className,
     );
 
-    return <thead id={id} className={classNameList} {...rest}>{ props.children }</thead>;
+    return <tbody id={id} className={classNameList} {...rest}>{ props.children }</tbody>;
 };
-THead.propTypes = {
+
+TBody.displayName = "TBody";
+TBody.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
     className: PropTypes.string
 };
-THead.defaultProps = {};
+TBody.defaultProps = {};
 
-
-export const THeadTr = (props) => {
+export const TBodyTr = (props) => {
     const {
         id,
         className,
@@ -68,7 +68,7 @@ export const THeadTr = (props) => {
     } = props;
 
     var classNameList = classNames(
-        'xyz-thead__tr',
+        'xyz-tbody__tr',
         {
 
         },
@@ -77,44 +77,43 @@ export const THeadTr = (props) => {
 
     return <tr id={id} className={classNameList} {...rest}>{ props.children }</tr>;
 };
-THeadTr.propTypes = {
+
+TBodyTr.displayName = "TBodyTr";
+TBodyTr.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
     className: PropTypes.string
 };
-THeadTr.defaultProps = {};
+TBodyTr.defaultProps = {};
 
-
-export const THeadTh = (props) => {
+export const Td = (props) => {
     const {
         id,
         className,
-        isSortable,
         ...rest
     } = props;
 
     var classNameList = classNames(
-        'xyz-thead__th',
+        'xyz-td',
         {
-            'xyz-thead__th_sortable': isSortable
+
         },
         className,
     );
 
     return (
-        <th id={id} className={classNameList} {...rest}>
-            <div className="xyz-thead__th-cell">
+        <td id={id} className={classNameList} {...rest}>
+            <div className="xyz-table-cell">
                 { props.children }
             </div>
-        </th>
+        </td>
     );
 };
-THeadTh.propTypes = {
+
+Td.displayName = "Td";
+Td.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
-    className: PropTypes.string,
-    isSortable: PropTypes.bool
+    className: PropTypes.string
 };
-THeadTh.defaultProps = {};
-
-
+Td.defaultProps = {};

@@ -3,19 +3,18 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 
-const Table = (props) => {
+export const TagGroup = (props) => {
     const {
         id,
         className,
-        isStacked,
-        isHorizontal,
+        title,
         ...rest
     } = props;
 
     var classNameList = classNames(
-        'xyz-table-wrapper',
+        'xyz-tag-group',
         {},
-        className
+        className,
     );
 
     return (
@@ -24,13 +23,11 @@ const Table = (props) => {
         </div>
     );
 };
-
-Table.propTypes = {
+TagGroup.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
     className: PropTypes.string,
+    title: PropTypes.string
 };
+TagGroup.defaultProps = {};
 
-Table.defaultProps = {}
-
-export default Table;
