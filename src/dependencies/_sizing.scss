@@ -3,3 +3,8 @@
     width: $size;
     height: $size;
 }
+
+@mixin circle($size) {
+    @include square($size);
+    border-radius: $border-radius-circle;
+}

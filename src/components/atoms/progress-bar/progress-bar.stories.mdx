@@ -1,0 +1,39 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import ProgressBar from './base';
+
+
+<Meta title="Progress Bar" component={ProgressBar} />
+
+# Progress Bar
+
+...
+
+<Preview withToolbar>
+  <Story name="0%" parameters={{ decorators: [withKnobs] }}>
+    <ProgressBar />
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="100%" parameters={{ decorators: [withKnobs] }}>
+    <ProgressBar percentage="1" />
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="15%" parameters={{ decorators: [withKnobs] }}>
+    <ProgressBar percentage="0.15" />
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="w/ details" parameters={{ decorators: [withKnobs] }}>
+    <ProgressBar percentage="0.63" isDetails />
+  </Story>
+</Preview>
+
+## API
+
+<Props of={ProgressBar} />

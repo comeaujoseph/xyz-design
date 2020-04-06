@@ -3,6 +3,7 @@ export { default as Avatar } from './components/atoms/avatar';
 export { default as Button } from './components/atoms/button';
 export { default as ButtonIcon } from './components/atoms/button-icon';
 export { default as Input } from './components/atoms/input';
+export { default as ProgressBar } from './components/atoms/progress-bar';
 export { default as Tag, TagGroup } from './components/atoms/tag';
 
 

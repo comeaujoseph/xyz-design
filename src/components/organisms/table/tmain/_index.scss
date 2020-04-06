@@ -15,10 +15,6 @@
         border-left: none;
         border-right: none;
         border-color: $table-border-color;
-
-        td {
-            border-bottom: $border-width-thin solid $td-border-color;
-        }
     }
 }
 
@@ -30,6 +26,6 @@
     padding-left: 30px;
 }
 
-.xyz-table-main table tr:last-child td {
-    border-bottom: none;
+.xyz-table-main table tr:not(:last-child) td {
+    border-bottom: $border-width-thin solid $td-border-color;
 }
