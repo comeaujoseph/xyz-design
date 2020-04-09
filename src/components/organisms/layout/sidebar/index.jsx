@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import ButtonIcon from '../../../atoms/button-icon/base';
-import IconCaretDoubleLeft from '../../../../shared/svg-icons/icon-caret-double-left';
-import IconCaretDoubleRight from '../../../../shared/svg-icons/icon-caret-double-right';
+import IconAngleDoubleLeft from '../../../../shared/svg-icons/icon-angle-double-left';
+import IconAngleDoubleRight from '../../../../shared/svg-icons/icon-angle-double-right';
 
 
 const SidebarHeader = (props) => {
@@ -85,12 +85,12 @@ const SidebarToggle = (props) => {
     );
 
     // default left panel;
-    var icon = <IconCaretDoubleLeft />;
-    var iconCollapsed = <IconCaretDoubleRight />;
+    var icon = <IconAngleDoubleLeft />;
+    var iconCollapsed = <IconAngleDoubleRight />;
 
     if (isRightSidebar) {
-        icon = <IconCaretDoubleRight />;
-        iconCollapsed = <IconCaretDoubleLeft />;
+        icon = <IconAngleDoubleRight />;
+        iconCollapsed = <IconAngleDoubleLeft />;
     }
 
     return (

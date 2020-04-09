@@ -1,8 +1,10 @@
 import IconBriefcase from './icon-briefcase';
 import IconBullhorn from './icon-bullhorn';
 import IconCancel from './icon-cancel';
-import IconCaretDoubleLeft from './icon-caret-double-left';
-import IconCaretDoubleRight from './icon-caret-double-right';
+import IconAngleDoubleLeft from './icon-angle-double-left';
+import IconAngleDoubleRight from './icon-angle-double-right';
+import IconAngleDown from './icon-angle-down';
+import IconAngleRight from './icon-angle-right';
 import IconCaretDown from './icon-caret-down';
 import IconCloseX from './icon-close-x';
 import IconClose from './icon-close';
@@ -30,7 +32,7 @@ import IconTrash from './icon-trash';
 import IconUpload from './icon-upload';
 
 export {
-    IconBriefcase, IconBullhorn, IconCancel, IconCaretDoubleLeft, IconCaretDoubleRight, IconCaretDown,
+    IconBriefcase, IconBullhorn, IconCancel, IconAngleDoubleLeft, IconAngleDoubleRight, IconAngleDown, IconAngleRight, IconCaretDown,
     IconCloseX, IconClose, IconDashboard, IconDownload, IconEllipsis, IconExport, IconFileArchive, IconFilePDF, IconFolder,
     IconHeart, IconHelp, IconLink, IconNotification, IconPeople, IconSearch,
     IconStar, IconStatusCanceled, IconStatusRunning, IconStatusSuccess, IconTag, IconTask,

@@ -1,0 +1,30 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-box-item {
+    padding: 8px 16px;
+    list-style-type: none;
+    border-top: $border-width-thin solid $box-border-color;
+    cursor: pointer;
+
+
+    a {
+        color: $endeavour;
+        font-size: $font-size-4;
+        text-decoration: none;
+    }
+
+    &:hover {
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    &:first-of-type {
+        border-top-color: transparent;
+    }
+}

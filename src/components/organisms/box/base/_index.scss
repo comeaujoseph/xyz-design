@@ -1,0 +1,69 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+@import '../tokens/index';
+@import '../item/index';
+
+
+.xyz-box {
+  margin-bottom: 24px;
+  min-width: 150px;
+
+  &_collapsed {
+
+    .xyz-box-header {
+      border-bottom: none;
+    }
+
+    .xyz-box__main {
+      display: none;
+    }
+  }
+}
+
+.xyz-box__inner {
+  border: $border-width-thin solid $box-border-color;
+  -webkit-box-shadow: 0 2px 5px -3px rgba(12, 21, 46, 0.08);
+  box-shadow: 0 2px 5px -3px rgba(12, 21, 46, 0.08);
+  border-radius: $box-border-radius;
+}
+
+
+.xyz-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: $border-width-thin solid $box-border-color;
+  cursor: pointer;
+  user-select: none;
+
+  .xyz-icon {
+    @include square($size-square-small);
+    margin-left: 5px;
+  }
+}
+
+.xyz-box-header__title {
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-5;
+  font-weight: $font-weight-thick;
+}
+
+.xyz-box__filter {
+  padding: 10px;
+  border-bottom: $border-width-thin solid $box-border-color;
+  background-color: $background-color;
+}
+
+.xyz-box__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+

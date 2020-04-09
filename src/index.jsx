@@ -14,6 +14,7 @@ export { default as InputAffix } from './components/molecules/input-affix';
 export { default as Notification, NotificationEntry } from './components/molecules/notification';
 
 
+export { default as Box, BoxItem } from './components/organisms/box';
 export { default as Form, FormRow, FormRowItem } from './components/organisms/form';
 export { default as Layout, Sidebar, Header, HeaderSection, HeaderItem, Content } from './components/organisms/layout';
 export { default as Menu, MenuItem, SubMenu } from './components/organisms/menu';
