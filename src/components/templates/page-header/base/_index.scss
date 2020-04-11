@@ -20,6 +20,10 @@
     }
 }
 
+.xyz-breadcrumb + .xyz-page-header {
+    padding-top: $spacing-medium;
+}
+
 .xyz-page-header__name {
     margin: 0;
     padding: 0;

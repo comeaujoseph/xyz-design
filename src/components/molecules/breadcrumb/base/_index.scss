@@ -1,0 +1,40 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+@import '../crumb/index';
+
+
+.xyz-breadcrumb {
+  display: flex;
+  min-height: 48px;
+  color: $mine-shaft;
+  width: 100%;
+}
+
+.xyz-breadcrumb__inner {
+  position: relative;
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: $spacing-medium;
+  align-items: center;
+  border-bottom: $border-width-thin solid $border-color;
+  width: 100%;
+}
+
+.xyz-layout-content > .xyz-breadcrumb {
+  .xyz-breadcrumb__inner {
+    padding-top: 0;
+  }
+}
+
+.xyz-breadcrumb__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  line-height: 16px;
+  list-style: none;
+}

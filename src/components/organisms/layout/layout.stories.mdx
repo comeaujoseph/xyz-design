@@ -27,6 +27,11 @@ import IconSearch from '../../../shared/svg-icons/icon-search';
 import Notification from '../../molecules/notification/base';
 import Avatar from '../../atoms/avatar/base';
 
+import Breadcrumb from '../../molecules/breadcrumb/base';
+import { Crumb } from '../../molecules/breadcrumb/crumb';
+
+import PageHeader from '../../templates/page-header/base';
+
 
 <Meta title="Layout" component={Layout} />
 
@@ -201,7 +206,14 @@ import Avatar from '../../atoms/avatar/base';
                 </HeaderItem>
               </HeaderSection>
             </Header>
-            <Content />
+            <Content>
+              <Breadcrumb>
+                <Crumb>edit</Crumb>
+                <Crumb>save</Crumb>
+                <Crumb isLast>delete</Crumb>
+              </Breadcrumb>
+              <PageHeader name="Alerts" />
+            </Content>
         </Layout>
     </Layout>
   </Story>

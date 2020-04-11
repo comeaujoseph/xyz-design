@@ -32,6 +32,10 @@
 .xyz-layout-has-sidebar_left-right {
     padding-left: $layout-sidebar-md-width-expanded;
 
+    @include mq-large-max {
+        padding-left: $layout-sidebar-md-width;
+    }
+
     &.xyz-layout-has-sidebar_left-collapsed {
         padding-left: $layout-sidebar-md-width;
     }

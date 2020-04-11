@@ -3,3 +3,7 @@
 
 @import 'design-tokens';
 @import 'dependencies/index';
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}

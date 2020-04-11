@@ -1,0 +1,45 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+
+
+.xyz-breadcrumb-crumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2px 0;
+
+  &:not(:last-child) {
+      padding-right: 20px;
+  }
+
+  &:last-of-type {
+    .xyz-breadcrumb-crumb__text {
+          font-weight: 600;
+          color: #2e2e2e;
+      }
+  }
+}
+
+.xyz-breadcrumb-crumb__text {
+  font-size: .8rem;
+  color: #707070;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 0 1 auto;
+  text-decoration: none;
+}
+
+.xyz-breadcrumb-crumb__pointer {
+  position: absolute;
+  right: 5px;
+  color: #919191;
+  width: .5rem;
+  height: .5rem;
+}

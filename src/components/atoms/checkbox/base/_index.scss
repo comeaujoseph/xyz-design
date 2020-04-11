@@ -1,0 +1,35 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-checkbox-primitive {
+    margin: 0;
+    padding: 0;
+    border-radius: $border-radius-small;
+    font-size: $font-size-3;
+    overflow: visible;
+
+    &:hover {
+        box-shadow: 0 0 2px 2px rgba(204,226,247,0.4), 0 0 0 1px rgba(204,226,247,0.4);
+    }
+}
+
+.xyz-checkbox {
+    .xyz-required {
+        font-size: $font-size-3;
+    }
+}
+
+
+.xyz-checkbox__label {
+    margin-left: $spacing-x-small;
+
+    .xyz-form-element__label {
+        display: inline;
+        vertical-align: middle;
+        font-size: $font-size-3;
+    }
+}
