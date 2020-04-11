@@ -27,9 +27,7 @@ const DropdownTrigger = (props) => {
 
     return (
         <div {...rest} id={id} className={classNameList}>
-            {customTrigger ? (
-                customTrigger
-            ) : (
+            {customTrigger || (
                 <ButtonIcon size="x-small">
                     <IconCaretDown />
                 </ButtonIcon>

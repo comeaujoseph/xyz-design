@@ -19,6 +19,7 @@ export { default as Box, BoxItem } from './components/organisms/box';
 export { default as Form, FormRow, FormRowItem } from './components/organisms/form';
 export { default as Layout, Sidebar, Header, HeaderSection, HeaderItem, Content } from './components/organisms/layout';
 export { default as Menu, MenuItem, SubMenu } from './components/organisms/menu';
+export { default as Select } from './components/organisms/select';
 export { default as Table, TableHeader, THead, THeadTr, THeadTh, TableMain, TBody, TBodyTr, Td } from './components/organisms/table';
 
 

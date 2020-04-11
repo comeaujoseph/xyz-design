@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Select from './base';
+import { MenuItem } from '../menu/item';
+
+<Meta title="Select" component={Select} />
+
+# Select
+
+...
+
+<Preview withToolbar>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <Select title="Box Options">
+      <MenuItem name="item 1" />
+    </Select>
+  </Story>
+</Preview>
+
+

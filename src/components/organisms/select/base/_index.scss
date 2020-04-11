@@ -1,0 +1,45 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-select {
+  position: relative;
+  color: rgba(16,45,63,.5);
+  background-color: $white;
+  border: $border-width-thin solid $border-color;
+  padding: 5px;
+  font-size: $font-size-3;
+  text-align: left;
+  border-radius: $border-radius-medium;
+  min-width: 150px;
+}
+
+.xyz-select__inner {
+  display: flex;
+  align-items: center;
+}
+
+.xyz-select__trigger {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  .xyz-select__trigger-content {
+    flex: 1;
+    color: #1f1f22;
+    font-weight: $font-weight-thick;
+
+  }
+}
+
+.xyz-select__title {
+  text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 5px;
+    font-size: .825rem;
+}
+
+

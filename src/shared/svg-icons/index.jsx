@@ -20,6 +20,7 @@ import IconHelp from './icon-help';
 import IconLink from './icon-link';
 import IconNotification from './icon-notification';
 import IconPeople from './icon-people';
+import IconReload from './icon-reload';
 import IconSearch from './icon-search';
 import IconStar from './icon-star';
 import IconStatusCanceled from './icon-status-canceled';
@@ -34,7 +35,7 @@ import IconUpload from './icon-upload';
 export {
     IconBriefcase, IconBullhorn, IconCancel, IconAngleDoubleLeft, IconAngleDoubleRight, IconAngleDown, IconAngleRight, IconCaretDown,
     IconCloseX, IconClose, IconDashboard, IconDownload, IconEllipsis, IconExport, IconFileArchive, IconFilePDF, IconFolder,
-    IconHeart, IconHelp, IconLink, IconNotification, IconPeople, IconSearch,
+    IconHeart, IconHelp, IconLink, IconNotification, IconPeople, IconReload, IconSearch,
     IconStar, IconStatusCanceled, IconStatusRunning, IconStatusSuccess, IconTag, IconTask,
     IconTemplate, IconTrash, IconUpload
 };
