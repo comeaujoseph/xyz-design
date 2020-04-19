@@ -1,8 +1,11 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
-import Select from './base';
+import Select, { SelectTitle } from './base';
+import SelectAffix from './affix';
 import { MenuItem } from '../menu/item';
+import ButtonIcon from '../../atoms/button-icon/base';
+import IconSortDescending from '../../../shared/svg-icons/icon-sort-descending';
 
 <Meta title="Select" component={Select} />
 
@@ -12,9 +15,33 @@ import { MenuItem } from '../menu/item';
 
 <Preview withToolbar>
   <Story name="base" parameters={{ decorators: [withKnobs] }}>
-    <Select title="Box Options">
+    <Select>
       <MenuItem name="item 1" />
     </Select>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="prefix" parameters={{ decorators: [withKnobs] }}>
+    <SelectAffix>
+      <SelectTitle title="Box Options" />
+      <Select>
+        <MenuItem name="item 1" />
+      </Select>
+    </SelectAffix>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="suffix" parameters={{ decorators: [withKnobs] }}>
+    <SelectAffix>
+      <Select>
+        <MenuItem name="item 1" />
+      </Select>
+      <ButtonIcon size="medium" isOutline>
+        <IconSortDescending />
+      </ButtonIcon>
+    </SelectAffix>
   </Story>
 </Preview>
 

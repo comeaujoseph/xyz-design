@@ -5,16 +5,19 @@
 //  text
 //  other
 
+@import '../affix/index';
+
 .xyz-select {
   position: relative;
+  width: 100%;
+  min-width: 160px;
+  // padding: 5px;
+  border: $border-width-thin solid $border-color;
   color: rgba(16,45,63,.5);
   background-color: $white;
-  border: $border-width-thin solid $border-color;
-  padding: 5px;
   font-size: $font-size-3;
   text-align: left;
   border-radius: $border-radius-medium;
-  min-width: 150px;
 }
 
 .xyz-select__inner {
@@ -26,20 +29,28 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  border-radius: 0;
 
   .xyz-select__trigger-content {
     flex: 1;
     color: #1f1f22;
-    font-weight: $font-weight-thick;
-
+    // font-weight: $font-weight-thick;
   }
 }
 
-.xyz-select__title {
+.xyz-select-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7b7b7b;
+  background-color: $white;
+  border: $border-width-thin solid $border-color;
+  font-size: .825rem;
   text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-right: 5px;
-    font-size: .825rem;
-}
+  white-space: nowrap;
 
+  span {
+    padding: 0 $spacing-small;
+  }
+}
 

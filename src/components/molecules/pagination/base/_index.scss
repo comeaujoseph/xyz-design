@@ -1,0 +1,86 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: $font-size-3;
+}
+
+.xyz-pagination__verbose {
+  color: #A5ADBA;
+  font-size: $font-size-3;
+  font-weight: $font-weight-thick;
+}
+
+.xyz-pagination__main {
+  color: #555;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: right;
+}
+
+.xyz-pagination__control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  vertical-align: middle;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  .xyz-icon {
+    @include square($size-square-xx-small)
+  }
+}
+
+.xyz-pagination__control_disabled .xyz-button {
+  color: #ccc;
+}
+
+.xyz-pagination__previous {
+  margin-right: 5px;
+  .xyz-icon {
+    margin-right: 3px;
+  }
+}
+
+.xyz-pagination__next {
+  margin-left: 5px;
+  .xyz-icon {
+    margin-left: 3px;
+  }
+}
+
+.xyz-pagination__page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
+  .xyz-button {
+    height: 24px;
+    width: 24px;
+    margin: 0;
+    border: none;
+    border-radius: $border-radius-medium;
+    color: #4878FF;
+    background: transparent;
+    font-size: $font-size-3;
+    vertical-align: middle;
+  }
+}
+
+.xyz-pagination__page_active .xyz-button {
+  color: $white;
+  background-color: #555;
+}

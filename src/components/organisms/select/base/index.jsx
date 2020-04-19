@@ -8,6 +8,35 @@ import Menu from '../../menu/base';
 import ButtonIcon from '../../../atoms/button-icon/base';
 
 
+export const SelectTitle = (props) => {
+    const {
+        id,
+        className,
+        title,
+        ...rest
+    } = props;
+
+    var classNameList = classNames(
+        'xyz-select-title',
+        {},
+        className,
+    );
+
+    return (
+        <div {...rest} id={id} className={classNameList}>
+            <span>{ title }</span>
+        </div>
+    );
+};
+SelectTitle.propTypes = {
+    children: PropTypes.node,
+    id: PropTypes.string,
+    className: PropTypes.string,
+    title: PropTypes.string
+};
+SelectTitle.defaultProps = {};
+
+
 const Trigger = (props) => {
     const {
         id,
@@ -56,7 +85,6 @@ const Select = (props) => {
     return (
         <div id={id} className={classNameList}>
             <div className="xyz-select__inner">
-                {title && <div className="xyz-select__title">{ title }</div>}
                 <DropdownTrigger {...rest} customTrigger={<Trigger>{selected}</Trigger>} isOpen={isOpen}>
                     <Dropdown size={props.size}>
                         <Menu>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 
-const InputAffix = (props) => {
+const SelectAffix = (props) => {
     const {
         id,
         className,
@@ -11,7 +11,7 @@ const InputAffix = (props) => {
     } = props;
 
     var classNameList = classNames(
-        'xyz-input-affix',
+        'xyz-select-affix',
         {},
         className
     );
@@ -23,14 +23,14 @@ const InputAffix = (props) => {
     );
 };
 
-InputAffix.propTypes = {
+SelectAffix.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
     className: PropTypes.string
 };
 
 
-InputAffix.defaultProps = {}
+SelectAffix.defaultProps = {}
 
 
-export default InputAffix;
+export default SelectAffix;

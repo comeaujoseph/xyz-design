@@ -1,0 +1,39 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-select-affix {
+    display: flex;
+
+    .xyz-select,
+    .xyz-select-title,
+    .xyz-button {
+        border-radius: 0;
+    }
+
+    > .xyz-button {
+        height: auto;
+    }
+}
+
+.xyz-select-affix > .xyz-select + .xyz-select-title,
+.xyz-select-affix > .xyz-select-title + .xyz-select,
+.xyz-select-affix > .xyz-select + .xyz-button,
+.xyz-select-affix > .xyz-button + .xyz-select {
+    margin-left: (-1 * $border-width-thin);
+}
+
+.xyz-select-affix > .xyz-select-title:first-child,
+.xyz-select-affix > .xyz-select:first-child,
+.xyz-select-affix > .xyz-button:first-child {
+    border-radius: $border-radius-medium 0 0 $border-radius-medium;
+}
+
+
+.xyz-select-affix > .xyz-select:last-child,
+.xyz-select-affix > .xyz-button:last-child {
+    border-radius: 0 $border-radius-medium $border-radius-medium 0;
+}
