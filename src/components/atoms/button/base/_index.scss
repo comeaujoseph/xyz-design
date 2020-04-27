@@ -30,7 +30,7 @@
 
     &:hover,
     &:focus {
-        color: $theme-accessible-active;
+        color: $theme-accessible-active !important;
     }
 
     &:active {

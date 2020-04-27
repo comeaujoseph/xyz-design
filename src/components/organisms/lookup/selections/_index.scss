@@ -1,0 +1,55 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-lookup-selections {
+    display: flex;
+    position: relative;
+    padding: 0;
+    padding-right: 3.75rem;
+    margin-right: 1px;
+    min-height: 2rem;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #dddbda;
+    border-top: 0;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.xyz-lookup-selections__list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0 0 0;
+    list-style: none;
+}
+
+.xyz-lookup-selections__item {
+    display: flex;
+    margin: .5rem 0 .5rem .5rem;
+    padding: 1px 8px;
+    align-self: center;
+    border: 1px solid #dddbda;
+    border-radius: .25rem;
+    color: #000;
+    background-color: #fff;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #41af00;
+
+    .xyz-button-icon .xyz-icon {
+        @include square(.65rem);
+        margin-left: .75rem;
+        stroke-width: 2;
+    }
+}
+
+.xyz-lookup-selections__item-main {
+    display: flex;
+    align-items: center;
+}

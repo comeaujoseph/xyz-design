@@ -38,7 +38,7 @@ Dropdown.propTypes = {
     ]),
     size: PropTypes.oneOf([
         'xx-small', 'x-small', 'small',
-        'medium', 'large'
+        'medium', 'large', 'fluid'
     ]),
     isInline: PropTypes.bool
 };

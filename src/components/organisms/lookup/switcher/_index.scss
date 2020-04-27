@@ -1,0 +1,23 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-lookup-switcher .xyz-input {
+    position: relative;
+    width: 7.5rem;
+    color: #555;
+    transition: width 80ms linear;
+
+    &:focus {
+        width: 10rem;
+        z-index: 1;
+    }
+}
+
+.xyz-lookup-switcher .xyz-lookup__form-item > svg {
+    @include square(.85rem);
+    margin-top: -0.45rem
+}

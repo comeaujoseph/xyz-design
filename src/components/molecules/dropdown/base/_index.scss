@@ -62,6 +62,12 @@
     max-width: 525px;
   }
 
+  &.xyz-dropdown_fluid {
+    min-width: $size-x-small;
+    max-width: 100%;
+    width: 100%;
+  }
+
 }
 
 /**

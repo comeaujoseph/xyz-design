@@ -1,5 +1,5 @@
-import ButtonGroup from './base';
-import { ButtonGroupRow, ButtonGroupItem } from './row';
+import Breadcrumb from './base';
+import { Crumb } from './crumb';
 
-export { ButtonGroupRow, ButtonGroupItem };
-export default ButtonGroup;
+export { Crumb };
+export default Breadcrumb;

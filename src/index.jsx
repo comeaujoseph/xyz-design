@@ -8,6 +8,7 @@ export { default as ProgressBar } from './components/atoms/progress-bar';
 export { default as Tag, TagGroup } from './components/atoms/tag';
 
 
+export { default as Breadcrumb, Crumb } from './components/molecules/breadcrumb';
 export { default as ButtonGroup, ButtonGroupRow, ButtonGroupItem } from './components/molecules/button-group';
 export { default as Dropdown, DropdownTrigger, DropdownOverlay } from './components/molecules/dropdown';
 export { default as FormItem } from './components/molecules/form-item';
@@ -19,6 +20,7 @@ export { default as Pagination } from './components/molecules/pagination';
 export { default as Box, BoxItem } from './components/organisms/box';
 export { default as Form, FormRow, FormRowItem } from './components/organisms/form';
 export { default as Layout, Sidebar, Header, HeaderSection, HeaderItem, Content } from './components/organisms/layout';
+export { default as Lookup, LookupGroup, Listbox, Switcher, Selections } from './components/organisms/lookup';
 export { default as Menu, MenuItem, SubMenu } from './components/organisms/menu';
 export { default as Select, SelectTitle, SelectAffix } from './components/organisms/select';
 export { default as Table, TableHeader, THead, THeadTr, THeadTh, TableMain, TBody, TBodyTr, Td } from './components/organisms/table';

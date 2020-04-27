@@ -1,0 +1,55 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+@import '../listbox/index';
+@import '../switcher/index';
+@import '../selections/index';
+
+.xyz-lookup__input {
+  &:focus {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.xyz-has-selection > .xyz-input {
+  box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 3px #dddbda;
+}
+
+.xyz-lookup-group {
+  display: flex;
+  flex-direction: row;
+
+  .xyz-input {
+      border-radius: 0;
+  }
+}
+
+.xyz-lookup-group > .xyz-lookup-switcher + .xyz-lookup .xyz-input,
+.xyz-lookup-group > .xyz-lookup + .xyz-lookup-switcher .xyz-input {
+  margin-left: (-1 * $border-width-thin);
+}
+
+.xyz-lookup-group > .xyz-lookup-switcher:first-child .xyz-input,
+.xyz-lookup-group > .xyz-lookup:first-child .xyz-input {
+  border-radius: $button-border-radius 0 0 $button-border-radius;
+}
+
+.xyz-lookup-group > .xyz-lookup-switcher:last-child .xyz-input,
+.xyz-lookup-group > .xyz-lookup:last-child .xyz-input {
+  border-radius: 0 $button-border-radius $button-border-radius 0;
+}
+
+.xyz-lookup-group.xyz-has-selection > .xyz-lookup-switcher:first-child .xyz-input,
+.xyz-lookup-group.xyz-has-selection > .xyz-lookup:first-child .xyz-input {
+  border-radius: $button-border-radius 0 0 0;
+}
+
+.xyz-lookup-group.xyz-has-selection > .xyz-lookup-switcher:last-child .xyz-input,
+.xyz-lookup-group.xyz-has-selection > .xyz-lookup:last-child .xyz-input {
+  border-radius: 0 $button-border-radius 0 0;
+}

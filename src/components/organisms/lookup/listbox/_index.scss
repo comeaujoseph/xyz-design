@@ -1,0 +1,32 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+
+.xyz-listbox {
+    padding: 0.5rem;
+}
+
+.xyz-listbox_open {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.xyz-listbox__item {
+    display: flex;
+    align-items: center;
+    min-height: 32px;
+    margin-bottom: 0;
+    padding: .25rem .75rem;
+    border-radius: .25rem;
+    transition: background-color .2s ease;
+    cursor: pointer;
+
+    &:hover {
+        background: #FAFAF9;
+    }
+}

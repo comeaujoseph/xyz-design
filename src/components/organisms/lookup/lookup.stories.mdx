@@ -1,0 +1,146 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import IconSearch from '../../../shared/svg-icons/icon-search';
+import IconClose from '../../../shared/svg-icons/icon-close';
+import ButtonIcon from '../../atoms/button-icon/base';
+
+import Lookup, { LookupGroup } from './base';
+import Listbox from './listbox';
+import Switcher from './switcher';
+import Selections from './selections';
+
+import * as Snapshot from './snapshot.data';
+import _ from '../../../shared/helpers';
+
+<Meta title="Lookup" component={Lookup} />
+
+# Lookup
+
+...
+
+<Preview withToolbar>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <Lookup
+        rightInputIcon={<IconSearch className="xyz-input__icon xyz-input__icon_right" />}
+        results={
+          <Listbox
+            id="listbox-id-1"
+            snapshot={Snapshot.ObjectOptions}
+            count={8}
+            isOpen
+          />
+        }
+      />
+    </div>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="selection" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <Lookup
+        rightInputIcon={<ButtonIcon className="xyz-input__icon xyz-input__icon_right" size="medium"><IconClose /></ButtonIcon>}
+        results={
+          <Listbox
+            id="listbox-id-1"
+            snapshot={Snapshot.ObjectOptions}
+            count={8}
+          />
+        }
+        hasSelection
+        value="selected item"
+        readOnly
+      />
+    </div>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="group" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <LookupGroup
+        rightInputIcon={<IconSearch className="xyz-input__icon xyz-input__icon_right" />}
+        addonPosition="start"
+        addon={
+          <Switcher
+              id={_.uniqueId('lookup-id-')}
+              value="malware"
+              addonPosition="start"
+              snapshot={Snapshot.ObjectOptions}
+              isOpen
+          />
+        }
+        results={
+          <Listbox
+            id="listbox-id-1"
+            snapshot={Snapshot.ObjectOptions}
+            count={8}
+          />
+        }
+      />
+    </div>
+  </Story>
+</Preview>
+
+
+<Preview withToolbar>
+  <Story name="group selection" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <LookupGroup
+        rightInputIcon={<ButtonIcon className="xyz-input__icon xyz-input__icon_right" size="medium"><IconClose /></ButtonIcon>}
+        addonPosition="start"
+        addon={
+          <Switcher
+              id={_.uniqueId('lookup-id-')}
+              value="malware"
+              addonPosition="start"
+              snapshot={Snapshot.ObjectOptions}
+          />
+        }
+        results={
+          <Listbox
+            id="listbox-id-1"
+            snapshot={Snapshot.ObjectOptions}
+            count={8}
+          />
+        }
+        hasSelection
+        value="GRIZZLY_STEPPE_Malware_1"
+        readOnly
+      />
+    </div>
+  </Story>
+</Preview>
+
+
+<Preview withToolbar>
+  <Story name="selections" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "300px" }}>
+      <LookupGroup
+        rightInputIcon={<IconSearch className="xyz-input__icon xyz-input__icon_right" />}
+        addonPosition="start"
+        addon={
+          <Switcher
+              id={_.uniqueId('lookup-id-')}
+              value="malware"
+              addonPosition="start"
+              snapshot={Snapshot.ObjectOptions}
+          />
+        }
+        results={
+          <Listbox
+            id="listbox-id-1"
+            snapshot={Snapshot.ObjectOptions}
+            count={8}
+          />
+        }
+        listboxOfSelections={
+          <Selections snapshot={Snapshot.Selections} count={2} />
+        }
+      />
+    </div>
+  </Story>
+</Preview>
+
