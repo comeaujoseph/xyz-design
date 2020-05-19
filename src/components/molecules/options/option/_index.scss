@@ -1,0 +1,196 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-option-detailed {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+
+  margin-left: 5px;
+  min-width: 170px;
+}
+
+.xyz-option-detailed__container {
+  border-radius: .25rem;
+  box-shadow: inset 0 0 0 2px #f3f3f3;
+  cursor: pointer;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  -webkit-transition: opacity .2s ease-in-out,-webkit-box-shadow .2s ease-in-out,-webkit-transform .2s ease-in-out;
+  transition: box-shadow .2s ease-in-out,opacity .2s ease-in-out,transform .2s ease-in-out;
+  transition: box-shadow .2s ease-in-out,opacity .2s ease-in-out,transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
+  -webkit-transform: scale(.8);
+  transform: scale(.8);
+  padding: 8px;
+  width: 100%;
+  opacity: 1;
+  pointer-events: all;
+  position: relative;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  height: 100%;
+
+  &.xyz-option_selected,
+  &:hover {
+    box-shadow: inset 0 0 0 2px #295be6;
+  }
+}
+
+.xyz-option_selected .xyz-option-detailed__container {
+  box-shadow: inset 0 0 0 2px #295be6;
+}
+
+.xyz-option-detailed__inner {
+  padding: 8px;
+  width: 100%;
+  display: inline-block;
+  height: 180px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.xyz-option-detailed__inner label {
+  color: #62676d;
+  display: block;
+  line-height: 24px;
+  margin: 0 0 8px;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  div {
+    background-color: #62676d;
+    background-color: #295be6;
+    background-color: $tundora;
+    border-radius: .25rem;
+    color: #fff;
+    display: inline-block;
+    font-family: Inter-UI-Medium,Arial,Roboto,sans-serif;
+    font-size: 14px;
+    line-height: 15px;
+    padding: 4px 8px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+.xyz-option__checkbox {
+  background-color: #fff;
+  border: 1.5px solid #9aa1aa;
+  cursor: pointer;
+  display: inline-block;
+  height: 18px;
+  -webkit-transition: border-color .3s;
+  transition: border-color .3s;
+  width: 18px;
+  border-radius: 50%;
+
+  &:hover {
+    border-color: #1054eb;
+  }
+}
+
+.xyz-option_selected .xyz-option__checkbox {
+  background-color: #295be6;
+  // background-image: url('../assets/images/checkmark.svg');
+  // https://yoksel.github.io/url-encoder/
+  background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FFF' fill-rule='nonzero' d='M0 6.32C0 7.678 4.22 12 4.22 12h1.602S12 2.965 12 1.039C12 .229 11.17 0 10.885 0c-.177.226-6.122 8.855-6.122 8.855L1.296 5.38S0 5.645 0 6.319z'/%3E%3C/svg%3E%0A");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 8px;
+  border: 0;
+}
+
+.xyz-option-detailed__container .xyz-option__checkbox {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.xyz-option-detailed__summary {
+  color: #3d4045;
+  font-size: 13px;
+  line-height: 19px;
+  margin-top: 10px;
+}
+
+.xyz-option-detailed__value {
+  left: 8px;
+  bottom: 8px;
+  color: #62676d;
+  font-size: .825rem;
+  line-height: 24px;
+  position: absolute;
+
+  em {
+    color: #000;
+    font-family: Inter-UI-Medium,Arial,Roboto,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+  }
+}
+
+
+.xyz-option-simple {
+  // background-color: #f3f3f3;
+  box-shadow: inset 0 0 0 2px #f3f3f3;
+  border-radius: .25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 12px;
+  position: relative;
+  -webkit-transition: -webkit-box-shadow .2s ease-in-out;
+  transition: box-shadow .2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  min-width: 226px;
+  margin-left: 8px;
+  font-weight: 500;
+  font-size: .87rem;
+  line-height: 40px;
+  vertical-align: middle;
+
+  &.xyz-option_selected,
+  &:hover {
+    box-shadow: inset 0 0 0 2px #295be6;
+  }
+}
+
+.xyz-option-simple .xyz-option__checkbox {
+  border-radius: 50%;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.xyz-option-simple .xyz-option-simple__value {
+  color: #62676d;
+  font-size: .85rem;
+    line-height: 40px;
+    position: absolute;
+    right: 12px;
+}

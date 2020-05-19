@@ -1,0 +1,30 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+@import '../tab/index';
+
+.xyz-tabs {
+    background: 0 0;
+    display: block;
+    box-shadow: inset 0 -1px 0 0 #ddd;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 15px;
+    width: 100%;
+
+    &::before {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+    &::after {
+        display: table;
+        line-height: 0;
+        content: "";
+        clear: both;
+    }
+}

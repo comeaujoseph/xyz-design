@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import IconCaretDown from '../../../../shared/svg-icons/icon-caret-down';
+import IconAngleDown from '../../../../shared/svg-icons/icon-angle-down';
+
 
 
 const ButtonIcon = (props) => {
@@ -37,7 +39,7 @@ const ButtonIcon = (props) => {
         <button id={id} className={classNameList} {...rest}>
             { props.children }
             { hasDropdown && (
-                <IconCaretDown className="xyz-button-icon_dropdown" />
+                <IconAngleDown className="xyz-button-icon_dropdown" />
             )}
         </button>
     );

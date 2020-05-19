@@ -1,0 +1,66 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-disclaimer {
+  margin: 0 0 8px;
+  padding: 10px 16px;
+  border-radius: .25rem;
+  background-color: #f3f3f3;
+  user-select: none;
+  cursor: pointer;
+
+  & > div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.xyz-disclaimer__icon svg {
+  margin-right: 15px;
+  height: 20px;
+  width: 20px;
+  color: $corn;
+}
+
+.xyz-disclaimer__message {
+  h4 {
+    color: #0f55eb;
+    font-size: .85rem;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 0 0 3px;
+  }
+
+  span {
+    color: #555;
+    font-size: .75rem;
+    line-height: 19px;
+    vertical-align: middle;
+  }
+}
+
+.xyz-disclaimer__info {
+  background-color: #c3c7cc;
+  color: #fff;
+  display: inline-block;
+  font-family: Inter-UI-Bold,Arial,Roboto,sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  height: 16px;
+  line-height: 16px;
+  margin-left: 8px;
+  text-align: center;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  width: 16px;
+  border-radius: 50%;
+}

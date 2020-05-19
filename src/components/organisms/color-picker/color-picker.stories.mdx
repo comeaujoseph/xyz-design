@@ -1,0 +1,58 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import ColorPicker, { ColorPickerTrigger, ColorOption } from './base';
+
+<Meta title="Color Picker" component={ColorPicker} />
+
+# ColorPicker
+
+...
+
+<Preview withToolbar>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "200px" }}>
+      <ColorPicker color="#EA468D">
+        <ColorOption color="#06A9F5" />
+        <ColorOption color="#C46BFF" />
+        <ColorOption color="#EA468D" isSelected />
+        <ColorOption color="#FB8B14" />
+        <ColorOption color="#C7741C" />
+        <ColorOption color="#49c800" />
+        <ColorOption color="#04bb9d" />
+        <ColorOption color="#e19a86" />
+        <ColorOption color="#3750b5" />
+        <ColorOption color="#a01aa5" />
+        <ColorOption color="#f1c23f" />
+        <ColorOption color="#215500" />
+        <ColorOption color="#890000" />
+        <ColorOption />
+        <ColorOption color="#000000" />
+      </ColorPicker>
+    </div>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="open" parameters={{ decorators: [withKnobs] }}>
+    <div style={{ height: "200px" }}>
+      <ColorPicker color="#EA468D" isOpen>
+        <ColorOption color="#06A9F5" />
+        <ColorOption color="#C46BFF" />
+        <ColorOption color="#EA468D" isSelected />
+        <ColorOption color="#FB8B14" />
+        <ColorOption color="#C7741C" />
+        <ColorOption color="#49c800" />
+        <ColorOption color="#04bb9d" />
+        <ColorOption color="#e19a86" />
+        <ColorOption color="#3750b5" />
+        <ColorOption color="#a01aa5" />
+        <ColorOption color="#f1c23f" />
+        <ColorOption color="#215500" />
+        <ColorOption color="#890000" />
+        <ColorOption />
+        <ColorOption color="#000000" />
+      </ColorPicker>
+    </div>
+  </Story>
+</Preview>

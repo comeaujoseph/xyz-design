@@ -1,0 +1,80 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-color-picker {
+  .xyz-dropdown {
+    width: 175px;
+    min-width: 175px;
+    max-width: 175px;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 2px 6px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.xyz-color-picker-trigger {
+  @include square(36px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsla(0,0%,69.4%,.135);
+  }
+
+  .xyz-color-picker-option {
+    display: inline-block;
+    align-self: center;
+  }
+}
+
+.xyz-color-picker-option {
+  @include square(24px);
+  position: relative;
+  border-radius: 100px;
+
+  background-color: rgb(137, 0, 0);
+}
+
+.xyz-color-picker__grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px;
+
+  .xyz-color-picker-option {
+    margin: 3px;
+    cursor: pointer;
+
+    &.xyz-color-picker-option_selected {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSI3IiB2aWV3Qm94PSItMSAtMSAxMCA3Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNMCAybDMgMyA1LTUiLz48L3N2Zz4=);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      &::after {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        content: " ";
+        background-color: rgba(0,0,0,.2);
+        border-radius: 100px;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+}
+

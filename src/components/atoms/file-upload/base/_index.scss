@@ -1,0 +1,52 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+
+.xyz-file-upload {
+  display: inline-flex;
+  width: 100%;
+}
+
+.xyz-file-upload__dropzone {
+  width: 100%;
+  padding: $spacing-xx-small;
+  border: $border-width-thin dashed $border-color;
+  border-radius: $border-radius-medium;
+}
+
+.xyz-file-upload__input {
+  position: absolute !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}
+
+.xyz-file-upload__main {
+  display: flex;
+  align-items: center;
+}
+
+.xyz-file-upload__button {
+  display: inline-flex;
+  align-items: center;
+  box-shadow: none;
+  font-size: 0.8125rem;
+  line-height: 1.625rem;
+}
+
+.xyz-file-upload__drop {
+  margin-left: 0.5rem;
+  margin-right: 0.75rem;
+  font-size: 0.8125rem;
+  color: #2e2e2e;
+}

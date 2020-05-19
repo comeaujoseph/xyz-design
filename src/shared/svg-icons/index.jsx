@@ -9,18 +9,26 @@ import IconAngleRight from './icon-angle-right';
 import IconCaretDown from './icon-caret-down';
 import IconCloseX from './icon-close-x';
 import IconClose from './icon-close';
+import IconCode from './icon-code';
+import IconCopy from './icon-copy';
 import IconDashboard from './icon-dashboard';
 import IconDownload from './icon-download';
 import IconEllipsis from './icon-ellipsis';
+import IconEllipsisVertical from './icon-ellipsis-v';
 import IconExport from './icon-export';
 import IconFileArchive from './icon-file-archive';
 import IconFilePDF from './icon-file-pdf';
+import IconFlag from './icon-flag';
 import IconFolder from './icon-folder';
+import IconGlobal from './icon-global';
 import IconHeart from './icon-heart';
 import IconHelp from './icon-help';
+import IconHistory from './icon-history';
 import IconLink from './icon-link';
 import IconNotification from './icon-notification';
+import IconOverview from './icon-overview';
 import IconPeople from './icon-people';
+import IconPlay from './icon-play';
 import IconPlus from './icon-plus';
 import IconReload from './icon-reload';
 import IconSearch from './icon-search';
@@ -35,11 +43,13 @@ import IconTask from './icon-task';
 import IconTemplate from './icon-template';
 import IconTrash from './icon-trash';
 import IconUpload from './icon-upload';
+import IconWarning from './icon-warning';
 
 export {
     IconBriefcase, IconBullhorn, IconCancel, IconAngleDoubleLeft, IconAngleDoubleRight, IconAngleDown, IconAngleLeft, IconAngleRight, IconCaretDown,
-    IconCloseX, IconClose, IconDashboard, IconDownload, IconEllipsis, IconExport, IconFileArchive, IconFilePDF, IconFolder,
-    IconHeart, IconHelp, IconLink, IconNotification, IconPeople, IconPlus, IconReload, IconSearch, IconSortAscending, IconSortDescending,
+    IconCloseX, IconClose, IconCode, IconCopy, IconDashboard, IconDownload, IconEllipsis, IconEllipsisVertical, IconExport, IconFileArchive, IconFilePDF, IconFlag, IconFolder,
+    IconGlobal, IconHeart, IconHelp, IconHistory, IconLink, IconNotification, IconOverview, IconPeople, IconPlay, IconPlus, IconReload, IconSearch,
+    IconSortAscending, IconSortDescending,
     IconStar, IconStatusCanceled, IconStatusRunning, IconStatusSuccess, IconTag, IconTask,
-    IconTemplate, IconTrash, IconUpload
+    IconTemplate, IconTrash, IconUpload, IconWarning
 };

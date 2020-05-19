@@ -1,0 +1,36 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-document {
+  border: $border-width-thin solid $border-color;
+  border-radius: $border-radius-medium;
+}
+
+.xyz-document__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 8px 16px;
+  border-bottom: $border-width-thin solid $border-color;
+  border-radius: $border-radius-medium $border-radius-medium 0 0;
+  background-color: $background-color;
+
+  .xyz-button {
+    background-color: $white;
+
+    &:hover,
+    &:focus {
+      color: #555 !important;
+    }
+  }
+}
+
+.xyz-document__body {
+  min-height: 250px;
+  padding: 16px;
+}

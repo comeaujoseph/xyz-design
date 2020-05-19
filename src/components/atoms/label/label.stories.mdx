@@ -1,0 +1,22 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Disclaimer from './base';
+
+
+<Meta title="Disclaimer" component={Disclaimer} />
+
+# Disclaimer
+
+...
+
+<Preview withToolbar>
+  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+    <Disclaimer />
+  </Story>
+</Preview>
+
+
+## API
+
+<Props of={Disclaimer} />
