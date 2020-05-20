@@ -12,6 +12,7 @@ const Modal = (props) => {
         className,
         size,
         isOpen,
+        handleClose,
         ...rest
     } = props;
 
@@ -32,7 +33,7 @@ const Modal = (props) => {
             <div {...rest} id={id} className={classNameList}>
                 <div className="xyz-modal__main">
                     <div className="xyz-modal__content">
-                        <div className="xyz-modal__close" onClick={(e) => props.handleClose(e)}>
+                        <div className="xyz-modal__close" onClick={(e) => handleClose(e)}>
                             <ButtonIcon size="xx-small"><IconCloseX /></ButtonIcon>
                         </div>
                         <div className="xyz-modal__inner">

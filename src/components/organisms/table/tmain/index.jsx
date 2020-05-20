@@ -75,10 +75,9 @@ export const TBodyTr = (props) => {
         className,
     );
 
-    return <tr id={id} className={classNameList} {...rest}>{ props.children }</tr>;
+    return <tr {...rest} id={id} className={classNameList}>{ props.children }</tr>;
 };
 
-TBodyTr.displayName = "TBodyTr";
 TBodyTr.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
@@ -95,9 +94,7 @@ export const Td = (props) => {
 
     var classNameList = classNames(
         'xyz-td',
-        {
-
-        },
+        {},
         className,
     );
 

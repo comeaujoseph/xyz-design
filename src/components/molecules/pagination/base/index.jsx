@@ -15,6 +15,8 @@ const Pagination = (props) => {
         current,
         pageSize,
         total,
+        handleNext,
+        handlePrev,
         ...rest
     } = props;
 
@@ -47,14 +49,14 @@ const Pagination = (props) => {
             </div>
             <ul className="xyz-pagination__main">
                 <li className={classNames('xyz-pagination__control', { 'xyz-pagination__control_disabled': !pageNumber }, 'xyz-pagination__previous')}>
-                    <Button onClick={() => props.handlePrev()} disabled={!pageNumber}>
+                    <Button onClick={() => handlePrev()} disabled={!pageNumber}>
                         <IconAngleLeft />
                         <span>Prev</span>
                     </Button>
                 </li>
                 { pages }
                 <li className={classNames('xyz-pagination__control', { 'xyz-pagination__control_disabled': ((pageNumber * pageSize) + pageSize) >= total }, 'xyz-pagination__next')}>
-                    <Button onClick={() => props.handleNext()} disabled={((pageNumber * pageSize) + pageSize) >= total}>
+                    <Button onClick={() => handleNext()} disabled={((pageNumber * pageSize) + pageSize) >= total}>
                         <span>Next</span>
                         <IconAngleRight />
                     </Button>

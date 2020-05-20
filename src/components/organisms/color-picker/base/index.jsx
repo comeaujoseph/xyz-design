@@ -24,7 +24,7 @@ export const ColorOption = (props) => {
     );
 
     return (
-        <div {...rest} id={id} className={classNameList} style={{backgroundColor: color}} />
+        <div {...rest} id={id} className={classNameList} style={{backgroundColor: color}} data-color={color} />
     );
 };
 ColorOption.propTypes = {
@@ -85,8 +85,8 @@ const ColorPicker = (props) => {
     );
 
     return (
-        <div {...rest} id={id} className={classNameList}>
-            <DropdownTrigger customTrigger={<ColorPickerTrigger color={color} />} isOpen={isOpen}>
+        <div  id={id} className={classNameList}>
+            <DropdownTrigger {...rest} customTrigger={<ColorPickerTrigger color={color} />} isOpen={isOpen}>
                 <Dropdown position={props.position} size="x-small">
                     <div className="xyz-color-picker__grid">
                         { props.children }
