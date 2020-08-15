@@ -17,6 +17,7 @@ const Pagination = (props) => {
         total,
         handleNext,
         handlePrev,
+        isVerbose,
         ...rest
     } = props;
 
@@ -28,8 +29,9 @@ const Pagination = (props) => {
 
     const pages = [];
     const pageNumber = Math.ceil(current / pageSize) - 1;
+    const totalPages = Math.ceil(total / pageSize);
     const idx = (1 + (pageNumber * pageSize));
-    for (let i = idx; i <= ((pageNumber * pageSize) + pageSize) && i < (total + 1); i++) {
+    for (let i = 1; i <= totalPages; i++) {
         pages.push(
             <li key={i} className={classNames(
                 'xyz-pagination__page',
@@ -44,19 +46,25 @@ const Pagination = (props) => {
 
     return (
         <div {...rest} id={id} className={classNameList}>
-            <div className="xyz-pagination__verbose">
-                Showing { (1 + (pageNumber * pageSize)) } - { ((pageNumber * pageSize) + pageSize) > total ? total : ((pageNumber * pageSize) + pageSize) } of { total }
-            </div>
+            { isVerbose && (
+                <div className="xyz-pagination__verbose">
+                    Showing { (1 + (pageNumber * pageSize)) } - { ((pageNumber * pageSize) + pageSize) > total ? total : ((pageNumber * pageSize) + pageSize) } of { total }
+                </div>
+            )}
             <ul className="xyz-pagination__main">
-                <li className={classNames('xyz-pagination__control', { 'xyz-pagination__control_disabled': !pageNumber }, 'xyz-pagination__previous')}>
-                    <Button onClick={() => handlePrev()} disabled={!pageNumber}>
+                {/* <li className={classNames('xyz-pagination__control', { 'xyz-pagination__control_disabled': !pageNumber }, 'xyz-pagination__previous')}> */}
+                <li className={classNames('xyz-pagination__control', { 'xyz-pagination__control_disabled': !handlePrev }, 'xyz-pagination__previous')}>
+                    {/* <Button onClick={() => handlePrev()} disabled={!pageNumber}> */}
+                    <Button onClick={() => handlePrev()} disabled={ !handlePrev }>
                         <IconAngleLeft />
                         <span>Prev</span>
                     </Button>
                 </li>
                 { pages }
-                <li className={classNames('xyz-pagination__control', { 'xyz-pagination__control_disabled': ((pageNumber * pageSize) + pageSize) >= total }, 'xyz-pagination__next')}>
-                    <Button onClick={() => handleNext()} disabled={((pageNumber * pageSize) + pageSize) >= total}>
+                {/* <li className={classNames('xyz-pagination__control', { 'xyz-pagination__control_disabled': ((pageNumber * pageSize) + pageSize) >= total }, 'xyz-pagination__next')}> */}
+                <li className={classNames('xyz-pagination__control', { 'xyz-pagination__control_disabled': !handleNext }, 'xyz-pagination__next')}>
+                    {/* <Button onClick={() => handleNext()} disabled={((pageNumber * pageSize) + pageSize) >= total}> */}
+                    <Button onClick={() => handleNext()} disabled={ !handleNext }>
                         <span>Next</span>
                         <IconAngleRight />
                     </Button>

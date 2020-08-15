@@ -7,6 +7,7 @@ export { default as Disclaimer } from './components/atoms/disclaimer';
 export { default as FileUpload } from './components/atoms/file-upload';
 export { default as Input } from './components/atoms/input';
 export { default as Label } from './components/atoms/label';
+export { default as Loader } from './components/atoms/loader';
 export { default as ProgressBar } from './components/atoms/progress-bar';
 export { default as Tag, TagGroup } from './components/atoms/tag';
 

@@ -11,6 +11,9 @@ import Pagination from './base';
 
 <Preview withToolbar>
   <Story name="base" parameters={{ decorators: [withKnobs] }}>
-    <Pagination total={21} current={1} />
+    <Pagination total={11} current={1} />
+  </Story>
+  <Story name="verbose" parameters={{ decorators: [withKnobs] }}>
+    <Pagination isVerbose total={21} current={1} />
   </Story>
 </Preview>

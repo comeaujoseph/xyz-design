@@ -1,0 +1,41 @@
+// CSS properties order:
+//  positioning
+//  display & box model
+//  color
+//  text
+//  other
+
+.xyz-loader {
+    position: relative;
+    display: inline-flex;
+    border-radius: 50%;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    -webkit-animation-name: spin;
+    animation-name: spin;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 0.1875rem;
+    transform-origin: 50% 50% calc((1.5rem / 2) + 0.1875rem);
+    border-color: rgba(112,112,112,0.25);
+    border-top-color: #707070;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

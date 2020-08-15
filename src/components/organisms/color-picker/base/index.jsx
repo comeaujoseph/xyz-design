@@ -31,6 +31,7 @@ ColorOption.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
     className: PropTypes.string,
+    color: PropTypes.string,
     isSelected: PropTypes.bool
 };
 ColorOption.defaultProps = {
