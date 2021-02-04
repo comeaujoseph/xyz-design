@@ -1,16 +1,22 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
-import Pagination from './base';
+import Message from './base';
 
-<Meta title="Pagination" component={Pagination} />
 
-# Pagination
+<Meta title="Message" component={Message} />
+
+# Message
 
 ...
 
 <Preview withToolbar>
   <Story name="base" parameters={{ decorators: [withKnobs] }}>
-    <Pagination totalPages={20} currentPage={5} isVerbose />
+    <Message isActive/>
   </Story>
 </Preview>
+
+
+## API
+
+<Props of={Message} />

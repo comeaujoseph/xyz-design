@@ -26,7 +26,7 @@ const CheckboxPrimitive = (props) => {
             name={name || 'options'}
             value={id || uniqueId}
             disabled={isDisabled}
-            defaultChecked={isChecked}
+            checked={isChecked}
             required={isRequired}
         />
     );
@@ -50,6 +50,7 @@ const Checkbox = (props) => {
         className,
         labelId,
         label,
+        isChecked,
         ...rest
     } = props;
 
@@ -66,7 +67,7 @@ const Checkbox = (props) => {
                     * {' '}
                 </abbr>
             )}
-            <CheckboxPrimitive {...rest} id={id || uniqueId} />
+            <CheckboxPrimitive {...rest} id={id || uniqueId} isChecked={isChecked} />
             <label
                 className={classNames('xyz-checkbox__label')}
                 htmlFor={id || uniqueId}

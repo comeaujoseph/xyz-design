@@ -14,6 +14,7 @@ import IconCode from './icon-code';
 import IconCog from './icon-cog';
 import IconComments from './icon-comments';
 import IconCopy from './icon-copy';
+import IconDash from './icon-dash';
 import IconDashboard from './icon-dashboard';
 import IconDownload from './icon-download';
 import IconEllipsis from './icon-ellipsis';
@@ -56,7 +57,7 @@ import IconWarning from './icon-warning';
 
 export {
     IconBriefcase, IconBullhorn, IconCalendar, IconCancel, IconAngleDoubleLeft, IconAngleDoubleRight, IconAngleDown, IconAngleLeft, IconAngleRight, IconCaretDown,
-    IconCloseX, IconClose, IconCode, IconCog, IconComments, IconCopy, IconDashboard, IconDownload, IconEllipsis, IconEllipsisVertical, IconExport, IconFileArchive, IconFilePDF, IconFlag, IconFolder,
+    IconCloseX, IconClose, IconCode, IconCog, IconComments, IconCopy, IconDash, IconDashboard, IconDownload, IconEllipsis, IconEllipsisVertical, IconExport, IconFileArchive, IconFilePDF, IconFlag, IconFolder,
     IconGlobal, IconHeart, IconHelp, IconHistory, IconInformationO, IconLink, IconMedia, IconNotification, IconOverview, IconPeople, IconPlay, IconPlus, IconReload, IconRemove, IconSearch,
     IconSortAscending, IconSortDescending,
     IconSpam, IconStar, IconStatusCanceled, IconStatusRunning, IconStatusSuccess, IconStatusWarning, IconTag, IconTask,
