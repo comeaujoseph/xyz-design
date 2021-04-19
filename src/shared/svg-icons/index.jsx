@@ -54,6 +54,14 @@ import IconTimer from './icon-timer';
 import IconTrash from './icon-trash';
 import IconUpload from './icon-upload';
 import IconWarning from './icon-warning';
+import IconBookmark from './icon-bookmark';
+import IconSave from './icon-save';
+import IconRedo from './icon-redo';
+import IconBack from './icon-back';
+import IconMaximize from './icon-maximize';
+import IconSubstitute from './icon-substitute';
+import IconPanes from './icon-panes';
+import IconFolderO from './icon-folder-o';
 
 export {
     IconBriefcase, IconBullhorn, IconCalendar, IconCancel, IconAngleDoubleLeft, IconAngleDoubleRight, IconAngleDown, IconAngleLeft, IconAngleRight, IconCaretDown,
@@ -61,5 +69,5 @@ export {
     IconGlobal, IconHeart, IconHelp, IconHistory, IconInformationO, IconLink, IconMedia, IconNotification, IconOverview, IconPeople, IconPlay, IconPlus, IconReload, IconRemove, IconSearch,
     IconSortAscending, IconSortDescending,
     IconSpam, IconStar, IconStatusCanceled, IconStatusRunning, IconStatusSuccess, IconStatusWarning, IconTag, IconTask,
-    IconTemplate, IconTimer, IconTrash, IconUpload, IconWarning
+    IconTemplate, IconTimer, IconTrash, IconUpload, IconWarning, IconBookmark, IconSave, IconRedo, IconBack, IconMaximize, IconSubstitute, IconPanes, IconFolderO
 };
