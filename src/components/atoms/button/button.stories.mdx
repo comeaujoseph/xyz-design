@@ -1,5 +1,4 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
 
 import Button from './base';
 import IconDownload from '../../../shared/svg-icons/icon-download';
@@ -14,10 +13,10 @@ Buttons should be used in situations where users needs to trigger an action/beha
 - trigger a new UI element to appear on the page
 
 <Preview withToolbar>
-  <Story name="button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="button">
     <Button>base button</Button>
   </Story>
-  <Story name="link button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="link button">
     <Button use="a">link button</Button>
   </Story>
 </Preview>
@@ -35,7 +34,7 @@ The HTML elements for buttons and links describe a very specific type of action 
 The base `xyz-button` looks like a plain text link. It removes all the styling of the native button.
 
 <Preview withToolbar>
-  <Story name="base button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="base button">
     <Button>base button</Button>
   </Story>
 </Preview>
@@ -59,19 +58,19 @@ In xyz design we provide 4 types of button:
 ### Neutral
 
 <Preview withToolbar>
-  <Story name="neutral button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="neutral button">
     <Button isNeutral>neutral button</Button>
   </Story>
-  <Story name="outline button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="outline button">
     <Button isOutline>outline button</Button>
   </Story>
 </Preview>
 
 <Preview withToolbar>
-  <Story name="disabled neutral button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled neutral button">
     <Button isNeutral disabled>neutral button</Button>
   </Story>
-  <Story name="disabled outline button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled outline button">
     <Button isOutline disabled>outline button</Button>
   </Story>
 </Preview>
@@ -83,25 +82,25 @@ The theme button generally should only be used once per component screen at any 
 Not all features need to have primary actions, sometimes the actions are secondary to the content and are all of equal importance.
 
 <Preview withToolbar>
-  <Story name="theme button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="theme button">
     <Button isTheme>theme button</Button>
   </Story>
-  <Story name="outline theme button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="outline theme button">
     <Button isOutlineTheme>o-theme button</Button>
   </Story>
 </Preview>
 
 <Preview withToolbar>
-  <Story name="disabled theme button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled theme button">
     <Button isTheme disabled>theme button</Button>
   </Story>
-  <Story name="disabled outline theme button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled outline theme button">
     <Button isOutlineTheme disabled>o-theme button</Button>
   </Story>
 </Preview>
 
 <Preview withToolbar>
-  <Story name="stretch theme button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="stretch theme button">
     <Button isTheme isStretch>theme button</Button>
   </Story>
 </Preview>
@@ -111,19 +110,19 @@ Not all features need to have primary actions, sometimes the actions are seconda
 This button is used to indicate a destructive action to the user, like permanently erasing data. Use the text-destructive version when the [standard destructive](#Destructive) button would be too distracting to the experience.
 
 <Preview withToolbar>
-  <Story name="destructive button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="destructive button">
     <Button isDestructive>destructive button</Button>
   </Story>
-  <Story name="text destructive button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="text destructive button">
     <Button isTextDestructive>text destructive button</Button>
   </Story>
 </Preview>
 
 <Preview withToolbar>
-  <Story name="disabled destructive button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled destructive button">
     <Button isDestructive disabled>destructive button</Button>
   </Story>
-  <Story name="disabled text destructive button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled text destructive button">
     <Button isTextDestructive disabled>text destructive button</Button>
   </Story>
 </Preview>
@@ -131,13 +130,13 @@ This button is used to indicate a destructive action to the user, like permanent
 ### Success
 
 <Preview withToolbar>
-  <Story name="success button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="success button">
     <Button isSuccess>success button</Button>
   </Story>
 </Preview>
 
 <Preview withToolbar>
-  <Story name="disabled success button" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled success button">
     <Button isSuccess disabled>success button</Button>
   </Story>
 </Preview>
@@ -147,23 +146,21 @@ This button is used to indicate a destructive action to the user, like permanent
 An `xyz-icon` can be placed inside the button. You can position the icon on the left or the right using `iconPosition`.
 
 <Preview withToolbar>
-  <Story name="button with left icon" parameters={{ decorators: [withKnobs] }}>
+  <Story name="button with left icon">
     <Button isOutline icon={<IconDownload />}>button</Button>
   </Story>
-  <Story name="button with right icon" parameters={{ decorators: [withKnobs] }}>
+  <Story name="button with right icon">
     <Button isOutline icon={<IconDownload />} iconPosition="right">button</Button>
   </Story>
 </Preview>
 
 <Preview withToolbar>
-  <Story name="disabled button with left icon" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled button with left icon">
     <Button isOutline icon={<IconDownload />} disabled>button</Button>
   </Story>
-  <Story name="disabled button with right icon" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled button with right icon">
     <Button isOutline icon={<IconDownload />} iconPosition="right" disabled>button</Button>
   </Story>
 </Preview>
 
-## API
-
-<Props of={Button} />
+<ArgsTable of={Button} />
