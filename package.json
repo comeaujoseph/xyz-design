@@ -12,7 +12,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "cross-env BABEL_ENV=production babel src -d dist",
-    "chromatic": "npx chromatic --project-token=secrets.CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "npx chromatic --project-token=secrets.CHROMATIC_PROJECT_TOKEN",
+    "release": "auto shipit --base-branch=main"
   },
   "repository": {
     "type": "git",
