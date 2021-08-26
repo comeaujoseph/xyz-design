@@ -8,6 +8,7 @@ export const BoxItem = (props) => {
     const {
         id,
         className,
+        disabled,
         ...rest
     } = props;
 
@@ -19,14 +20,15 @@ export const BoxItem = (props) => {
 
     return (
         <li {...rest} id={id} className={classNameList}>
-            <a>{ props.children }</a>
+            <a disabled={disabled}>{ props.children }</a>
         </li>
     );
 };
 BoxItem.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    disabled: PropTypes.bool
 };
 BoxItem.defaultProps = {};
 

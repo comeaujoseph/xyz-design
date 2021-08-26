@@ -16,7 +16,10 @@ module.exports = {
         // Return the altered config
         return config;
     },
-    stories: ['../src/components/atoms/button/*.stories.mdx'],
+    stories: [
+      '../src/components/atoms/button/*.stories.mdx',
+      '../src/components/atoms/button-icon/*.stories.mdx'
+    ],
     addons: [
         "@storybook/addon-essentials",
     ],

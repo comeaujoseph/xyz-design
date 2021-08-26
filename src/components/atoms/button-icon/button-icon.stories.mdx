@@ -1,5 +1,4 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
 
 import ButtonIcon from './base';
 import IconHelp from '../../../shared/svg-icons/icon-help';
@@ -11,7 +10,7 @@ import IconHelp from '../../../shared/svg-icons/icon-help';
 Button icon is visual iconography version of the `Button` component.
 
 <Preview withToolbar>
-  <Story name="button icon" parameters={{ decorators: [withKnobs] }}>
+  <Story name="button">
     <ButtonIcon>
       <IconHelp />
     </ButtonIcon>
@@ -31,7 +30,7 @@ A button icon supports multiple sizes:
 Omit the `size` property for a button icon with the default size.
 
 <Preview withToolbar>
-  <Story name="sizing" parameters={{ decorators: [withKnobs] }}>
+  <Story name="sizing">
     <div>
       <ButtonIcon>
         <IconHelp />
@@ -54,7 +53,7 @@ Omit the `size` property for a button icon with the default size.
 
 ## Variations
 
-In xyz design we provide 1 types of button:
+In xyz design we provide 2 types of button:
 
 - neutral
 - dropdown
@@ -67,7 +66,7 @@ In xyz design we provide 1 types of button:
 ### Neutral
 
 <Preview withToolbar>
-  <Story name="neutral" parameters={{ decorators: [withKnobs] }}>
+  <Story name="neutral">
     <div>
       <ButtonIcon isNeutral>
         <IconHelp/>
@@ -86,39 +85,54 @@ In xyz design we provide 1 types of button:
       </ButtonIcon>
     </div>
   </Story>
-  <Story name="outline" parameters={{ decorators: [withKnobs] }}>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="outline">
     <ButtonIcon size="medium" isOutline>
       <IconHelp />
     </ButtonIcon>
   </Story>
-</Preview>
-
-<Preview withToolbar>
-  <Story name="disabled neutral" parameters={{ decorators: [withKnobs] }}>
-    <ButtonIcon size="medium" isNeutral disabled>
+  <Story name="disabled neutral">
+    <ButtonIcon size="medium" disabled>
       <IconHelp/>
     </ButtonIcon>
   </Story>
-  <Story name="disabled outline" parameters={{ decorators: [withKnobs] }}>
+  <Story name="disabled outline">
     <ButtonIcon size="medium" isOutline disabled>
       <IconHelp />
     </ButtonIcon>
   </Story>
 </Preview>
 
-
 ### Dropdown
 
 Use this variation when the button opens a dropdown menu.
 
 <Preview withToolbar>
-  <Story name="dropdown" parameters={{ decorators: [withKnobs] }}>
+  <Story name="dropdown">
     <ButtonIcon size="small" hasDropdown>
       <IconHelp />
     </ButtonIcon>
   </Story>
 </Preview>
 
-## API
+<Preview withToolbar>
+  <Story name="dropdown outline">
+    <ButtonIcon size="medium" isOutline hasDropdown>
+      <IconHelp />
+    </ButtonIcon>
+  </Story>
+  <Story name="dropdown disabled">
+    <ButtonIcon size="medium" hasDropdown disabled>
+      <IconHelp/>
+    </ButtonIcon>
+  </Story>
+  <Story name="dropdown disabled outline">
+    <ButtonIcon size="medium" hasDropdown isOutline disabled>
+      <IconHelp />
+    </ButtonIcon>
+  </Story>
+</Preview>
 
-<Props of={ButtonIcon} />
+<ArgsTable of={ButtonIcon} />

@@ -10,7 +10,9 @@
     "lint:javascript": "eslint --format codeframe '*.js' 'src/**/*.{js,jsx}'",
     "lint:html": "htmlhint .html/*.html",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "chromatic": "npx chromatic --project-token=secrets.CHROMATIC_PROJECT_TOKEN"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,7 @@
   "devDependencies": {
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/react": "^6.2.9",
+    "chromatic": "^5.9.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-config-standard": "^14.1.0",
