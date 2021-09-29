@@ -18,7 +18,9 @@ module.exports = {
     },
     stories: [
       '../src/components/atoms/button/*.stories.mdx',
-      '../src/components/atoms/button-icon/*.stories.mdx'
+      '../src/components/atoms/button-icon/*.stories.mdx',
+      '../src/components/molecules/pagination/*.stories.mdx',
+      '../src/components/organisms/table/*.stories.mdx'
     ],
     addons: [
         "@storybook/addon-essentials",

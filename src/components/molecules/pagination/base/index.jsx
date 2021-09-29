@@ -58,7 +58,8 @@ const Pagination = (props) => {
     var pages = [];
     if (1 + 2 * ellipsisSize + 2 * siblingPagesRange + 2 * boundaryPagesRange >= totalPages) {
         const pageNumbers = createRange(1, totalPages);
-        for (let i = 0; i <= pageNumbers.length; i++) {
+        console.log(pageNumbers);
+        for (let i = 0; i < pageNumbers.length; i++) {
             pages.push(createPage(pageNumbers[i]));
         }
     } else {

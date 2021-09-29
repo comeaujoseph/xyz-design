@@ -1,24 +1,21 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+
+import ButtonIcon from '../../atoms/button-icon/base';
+import Tag from '../../atoms/tag/base';
+import IconEllipsis from '../../../shared/svg-icons/icon-ellipsis';
+import IconStatusRunning from '../../../shared/svg-icons/icon-status-running';
+import IconStatusCanceled from '../../../shared/svg-icons/icon-status-canceled';
 
 import Table from './base';
 import { TableHeader, THead, THeadTr, THeadTh } from './thead';
 import { TableMain, TBody, TBodyTr, Td } from './tmain';
-
-import ButtonIcon from '../../atoms/button-icon/base';
-import IconEllipsis from '../../../shared/svg-icons/icon-ellipsis';
-
-import Tag from '../../atoms/tag/base';
-import IconStatusRunning from '../../../shared/svg-icons/icon-status-running';
-import IconStatusCanceled from '../../../shared/svg-icons/icon-status-canceled';
-
 
 <Meta title="Table" component={Table} />
 
 # Table
 
 <Preview withToolbar>
-  <Story name="example" parameters={{ decorators: [withKnobs] }}>
+  <Story name="table">
     <Table>
       <TableHeader>
         <THead>
@@ -75,4 +72,3 @@ import IconStatusCanceled from '../../../shared/svg-icons/icon-status-canceled';
     </Table>
   </Story>
 </Preview>
-
