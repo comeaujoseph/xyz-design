@@ -1,3 +1,15 @@
+# v1.1.2 (Thu Sep 30 2021)
+
+#### 🐛 Bug Fix
+
+- Bump lodash from 4.17.20 to 4.17.21 [#3](https://github.com/comeaujoseph/xyz-design/pull/3) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 1
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+
+---
+
 # v1.1.1 (Thu Sep 30 2021)
 
 #### 🐛 Bug Fix
