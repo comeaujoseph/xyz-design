@@ -1,3 +1,15 @@
+# v1.1.1 (Thu Sep 30 2021)
+
+#### 🐛 Bug Fix
+
+- Bump hosted-git-info from 2.8.8 to 2.8.9 [#4](https://github.com/comeaujoseph/xyz-design/pull/4) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 1
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+
+---
+
 # v1.1.0 (Thu Sep 30 2021)
 
 #### 🚀 Enhancement
