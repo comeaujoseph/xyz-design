@@ -42,3 +42,5 @@ coverage
 build
 
 package-lock.json
+
+dist
