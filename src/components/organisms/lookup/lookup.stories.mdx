@@ -1,5 +1,4 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
 
 import IconSearch from '../../../shared/svg-icons/icon-search';
 import IconClose from '../../../shared/svg-icons/icon-close';
@@ -20,7 +19,7 @@ import _ from '../../../shared/helpers';
 ...
 
 <Preview withToolbar>
-  <Story name="base" parameters={{ decorators: [withKnobs] }}>
+  <Story name="base">
     <div style={{ height: "300px" }}>
       <Lookup
         rightInputIcon={<IconSearch className="xyz-input__icon xyz-input__icon_right" />}
@@ -38,7 +37,7 @@ import _ from '../../../shared/helpers';
 </Preview>
 
 <Preview withToolbar>
-  <Story name="selection" parameters={{ decorators: [withKnobs] }}>
+  <Story name="selection">
     <div style={{ height: "300px" }}>
       <Lookup
         rightInputIcon={<ButtonIcon className="xyz-input__icon xyz-input__icon_right" size="medium"><IconClose /></ButtonIcon>}
@@ -58,7 +57,7 @@ import _ from '../../../shared/helpers';
 </Preview>
 
 <Preview withToolbar>
-  <Story name="group" parameters={{ decorators: [withKnobs] }}>
+  <Story name="group" >
     <div style={{ height: "300px" }}>
       <LookupGroup
         rightInputIcon={<IconSearch className="xyz-input__icon xyz-input__icon_right" />}
@@ -86,7 +85,7 @@ import _ from '../../../shared/helpers';
 
 
 <Preview withToolbar>
-  <Story name="group selection" parameters={{ decorators: [withKnobs] }}>
+  <Story name="group selection" >
     <div style={{ height: "300px" }}>
       <LookupGroup
         rightInputIcon={<ButtonIcon className="xyz-input__icon xyz-input__icon_right" size="medium"><IconClose /></ButtonIcon>}
@@ -116,7 +115,7 @@ import _ from '../../../shared/helpers';
 
 
 <Preview withToolbar>
-  <Story name="selections" parameters={{ decorators: [withKnobs] }}>
+  <Story name="selections" >
     <div style={{ height: "300px" }}>
       <LookupGroup
         rightInputIcon={<IconSearch className="xyz-input__icon xyz-input__icon_right" />}
@@ -137,7 +136,7 @@ import _ from '../../../shared/helpers';
           />
         }
         listboxOfSelections={
-          <Selections snapshot={Snapshot.Selections} count={2} />
+          <Selections snapshot={Snapshot.Selections} count={3} />
         }
       />
     </div>

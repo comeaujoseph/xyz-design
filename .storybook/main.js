@@ -21,7 +21,9 @@ module.exports = {
       '../src/components/atoms/button-icon/*.stories.mdx',
       '../src/components/atoms/progress-bar/*.stories.mdx',
       '../src/components/molecules/pagination/*.stories.mdx',
-      '../src/components/organisms/table/*.stories.mdx'
+      '../src/components/molecules/options/*.stories.mdx',
+      '../src/components/organisms/table/*.stories.mdx',
+      '../src/components/organisms/lookup/*.stories.mdx'
     ],
     addons: [
         "@storybook/addon-essentials",
