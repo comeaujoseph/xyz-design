@@ -14,6 +14,7 @@ const CheckboxPrimitive = (props) => {
         isDisabled,
         isChecked,
         isRequired,
+        onChange,
     } = props;
 
     var classNameList = classNames(
@@ -28,6 +29,7 @@ const CheckboxPrimitive = (props) => {
             disabled={isDisabled}
             checked={isChecked}
             required={isRequired}
+            onChange={onChange}
         />
     );
 };
@@ -38,6 +40,7 @@ CheckboxPrimitive.propTypes = {
     isDisabled: PropTypes.bool,
     isChecked: PropTypes.bool,
     isRequired: PropTypes.bool,
+    onChange: PropTypes.func,
 };
 CheckboxPrimitive.defaultProps = {}
 
@@ -51,6 +54,7 @@ const Checkbox = (props) => {
         labelId,
         label,
         isChecked,
+        onChange,
         ...rest
     } = props;
 
@@ -67,7 +71,7 @@ const Checkbox = (props) => {
                     * {' '}
                 </abbr>
             )}
-            <CheckboxPrimitive {...rest} id={id || uniqueId} isChecked={isChecked} />
+            <CheckboxPrimitive {...rest} id={id || uniqueId} isChecked={isChecked} onChange={onChange} />
             <label
                 className={classNames('xyz-checkbox__label')}
                 htmlFor={id || uniqueId}
@@ -88,6 +92,7 @@ Checkbox.propTypes = {
     className: PropTypes.string,
     label: PropTypes.string,
     labelId: PropTypes.string,
+    onChange: PropTypes.func,
 };
 Checkbox.defaultProps = {}
 export default Checkbox;
