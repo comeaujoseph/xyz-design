@@ -53,7 +53,7 @@ const Trigger = (props) => {
 
     return (
         <ButtonIcon id={id} className={classNameList} {...rest} hasDropdown isNeutral>
-            <div className="xyz-select__trigger-content">{ props.children }</div>
+            <div className="xyz-select__trigger-content" style={{ color: props.color }}>{ props.children }</div>
         </ButtonIcon>
     );
 };
@@ -85,7 +85,7 @@ const Select = (props) => {
     return (
         <div id={id} className={classNameList}>
             <div className="xyz-select__inner">
-                <DropdownTrigger {...rest} customTrigger={<Trigger>{selected}</Trigger>} isOpen={isOpen}>
+                <DropdownTrigger {...rest} customTrigger={<Trigger color={props.color}>{selected}</Trigger>} isOpen={isOpen}>
                     <Dropdown size={props.size}>
                         <Menu>
                             { props.children }
@@ -102,11 +102,13 @@ Select.propTypes = {
     id: PropTypes.string,
     className: PropTypes.string,
     selected: PropTypes.string,
+    color: PropTypes.string,
     isOpen: PropTypes.bool
 };
 
 Select.defaultProps = {
-    selected: "All"
+    selected: "All",
+    color: "#49c800",
 }
 
 export default Select;
