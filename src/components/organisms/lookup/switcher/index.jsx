@@ -26,8 +26,9 @@ const Switcher = (props) => {
     );
 
     return (
-        <div {...rest} id={id} className={classNameList}>
+        <div id={id} className={classNameList}>
             <Lookup
+                {...rest}
                 id={id}
                 inputIconPosition="right"
                 placeholder=" "
