@@ -17,7 +17,6 @@ const LookupFormItem = (props) => {
         'xyz-lookup',
         'xyz-dropdown-trigger xyz-dropdown-trigger_click',
         {
-            'xyz-dropdown-trigger xyz-dropdown-trigger_click': !props.staticListbox,
             'xyz-is-open': props.isOpen,
         },
         className
@@ -107,7 +106,8 @@ const Lookup = (props) => {
         isDisabled,
         leftInputIcon,
         rightInputIcon,
-        hasSelection
+        hasSelection,
+        ...rest
     } = props;
 
 
@@ -123,6 +123,7 @@ const Lookup = (props) => {
              <LookupFormItem
                 staticListbox={staticListbox}
                 isOpen={isOpen}
+                {...rest}
             >
                 <LookupInput
                     id={id}
