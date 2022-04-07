@@ -75,7 +75,9 @@ const ListboxItem = (props) => {
 
     var classNameList = classNames(
         'xyz-listbox__item',
-        {},
+        {
+            'xyz-is-selected': props.selected,
+        },
         className,
     );
 
@@ -163,7 +165,7 @@ const Listbox = (props) => {
         const uniqueId = props.hasUniqueId ? _.uniqueId('listbox-option-id-') : null;
         const option = props.snapshot[key];
         return (
-            <ListboxItem key={key}>
+            <ListboxItem key={key} selected={option.selected}>
                 <Option
                     id={uniqueId || key}
                     name={option.name}

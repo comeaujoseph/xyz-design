@@ -16,6 +16,7 @@ const Switcher = (props) => {
         value,
         isOpen,
         snapshot,
+        open,
         ...rest
     } = props;
 
@@ -36,13 +37,14 @@ const Switcher = (props) => {
                 rightInputIcon={
                     <IconAngleDown className="xyz-input__icon xyz-input__icon_right" />
                 }
+                open={open}
                 results={
                     <Listbox
                         className="xyz-dropdown_x-small xyz-dropdown_left"
                         id={listboxId}
                         snapshot={snapshot}
                         type="plain"
-                        count={8}
+                        count={Object.keys(snapshot).length}
                         isOpen={isOpen}
                     />
                 }
@@ -59,6 +61,7 @@ Switcher.propTypes = {
     listboxId: PropTypes.string.isRequired,
     value: PropTypes.string,
     isOpen: PropTypes.bool,
+    open: PropTypes.func,
     snapshot: PropTypes.object.isRequire
 };
 

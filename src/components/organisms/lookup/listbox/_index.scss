@@ -26,7 +26,12 @@
     transition: background-color .2s ease;
     cursor: pointer;
 
-    &:hover {
+
+    &.xyz-is-selected {
+        background-color: #EAECF0;
+    }
+
+    &:not(.xyz-is-selected):hover {
         background: #FAFAF9;
     }
 }

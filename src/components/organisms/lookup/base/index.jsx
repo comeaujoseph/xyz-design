@@ -10,7 +10,7 @@ const LookupFormItem = (props) => {
     const {
         id,
         className,
-        ...rest
+        open,
     } = props;
 
     var classNameList = classNames(
@@ -23,7 +23,7 @@ const LookupFormItem = (props) => {
     );
 
     return (
-        <div id={id} className={classNameList} {...rest}>
+        <div id={id} className={classNameList} onClick={() => open()}>
             { props.children }
         </div>
     );
@@ -31,7 +31,8 @@ const LookupFormItem = (props) => {
 LookupFormItem.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    open: PropTypes.func
 };
 LookupFormItem.defaultProps = {};
 
@@ -97,6 +98,7 @@ const Lookup = (props) => {
         isHorizontal,
         // lookup form item
         staticListbox,
+        open,
         isOpen,
         // lookup input
         inputContainerClassName,
@@ -113,6 +115,7 @@ const Lookup = (props) => {
 
     return (
         <FormItem
+            {...rest}
             inputId={id}
             labelContent={label}
             isRequired={isRequired}
@@ -123,7 +126,7 @@ const Lookup = (props) => {
              <LookupFormItem
                 staticListbox={staticListbox}
                 isOpen={isOpen}
-                {...rest}
+                open={open}
             >
                 <LookupInput
                     id={id}
@@ -161,7 +164,8 @@ Lookup.propTypes = {
     isDisabled: PropTypes.bool,
     leftInputIcon: PropTypes.element,
     rightInputIcon: PropTypes.element,
-    hasSelection: PropTypes.bool
+    hasSelection: PropTypes.bool,
+    open: PropTypes.func,
 };
 Lookup.defaultProps = {}
 export default Lookup;
