@@ -72,7 +72,7 @@ const LookupInput = (props) => {
                         : props.placeholder
                 }
                 readOnly={props.readOnly}
-                defaultValue={props.value}
+                value={props.value}
                 disabled={props.isDisabled}
             />
             {props.rightInputIcon && props.rightInputIcon}
