@@ -23,7 +23,7 @@ const LookupFormItem = (props) => {
     );
 
     return (
-        <div id={id} className={classNameList} onClick={() => (typeof open === 'function') ? this.open() : () => false } >
+        <div id={id} className={classNameList} onClick={() => (typeof open === 'function') ? open() : () => false } >
             { props.children }
         </div>
     );
@@ -75,7 +75,7 @@ const LookupInput = (props) => {
                 value={props.value}
                 disabled={props.isDisabled}
                 onChange={props.handleChange}
-                onKeyPress={props.handleSearch}
+                onKeyPress={props.handleKeyPress}
             />
             {props.rightInputIcon && props.rightInputIcon}
         </div>
@@ -85,8 +85,8 @@ LookupInput.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
     className: PropTypes.string,
-    onChange: PropTypes.func,
-    onKeyPress: PropTypes.func
+    handleChange: PropTypes.func,
+    handleKeyPress: PropTypes.func
 };
 LookupInput.defaultProps = {};
 
@@ -227,8 +227,8 @@ export const LookupGroup = (props) => {
         leftInputIcon,
         rightInputIcon,
         hasSelection,
-        onChange,
-        onKeyPress
+        handleChange,
+        handleKeyPress
     } = props;
 
     return (
@@ -256,8 +256,8 @@ export const LookupGroup = (props) => {
                         leftInputIcon={leftInputIcon}
                         rightInputIcon={rightInputIcon}
                         hasSelection={hasSelection}
-                        onChange={onChange}
-                        onKeyPress={onKeyPress}
+                        handleChange={handleChange}
+                        handleKeyPress={handleKeyPress}
                     />
                     { results }
                 </LookupFormItem>
@@ -291,7 +291,7 @@ LookupGroup.propTypes = {
     leftInputIcon: PropTypes.element,
     rightInputIcon: PropTypes.element,
     hasSelection: PropTypes.bool,
-    onChange: PropTypes.func,
-    onKeyPress: PropTypes.func
+    handleChange: PropTypes.func,
+    handleKeyPress: PropTypes.func
 };
 LookupGroup.defaultProps = {};
