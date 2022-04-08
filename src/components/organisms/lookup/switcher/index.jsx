@@ -17,6 +17,7 @@ const Switcher = (props) => {
         isOpen,
         snapshot,
         open,
+        handleSelection,
         ...rest
     } = props;
 
@@ -46,6 +47,7 @@ const Switcher = (props) => {
                         type="plain"
                         count={Object.keys(snapshot).length}
                         isOpen={isOpen}
+                        handleSelection={handleSelection}
                     />
                 }
                 resultsType="listbox"
@@ -62,6 +64,7 @@ Switcher.propTypes = {
     value: PropTypes.string,
     isOpen: PropTypes.bool,
     open: PropTypes.func,
+    handleSelection: PropTypes.func,
     snapshot: PropTypes.object.isRequire
 };
 

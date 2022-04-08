@@ -70,7 +70,8 @@ ListboxList.defaultProps = {};
 
 const ListboxItem = (props) => {
     const {
-        className
+        className,
+        handleSelected
     } = props;
 
     var classNameList = classNames(
@@ -82,14 +83,15 @@ const ListboxItem = (props) => {
     );
 
     return (
-        <div className={classNameList}>
+        <div className={classNameList} onClick={() => handleSelected(props.key)}>
             {props.children}
         </div>
     );
 };
 ListboxItem.propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string
+    className: PropTypes.string,
+    handleSelected: PropTypes.func,
 };
 ListboxItem.defaultProps = {};
 
@@ -161,11 +163,20 @@ Option.defaultProps = {};
 
 const Listbox = (props) => {
 
+    const {
+        id,
+        className,
+        type,
+        snapshot,
+        count,
+        ...rest
+    } = props;
+
     const renderPlainOptions = (key) => {
         const uniqueId = props.hasUniqueId ? _.uniqueId('listbox-option-id-') : null;
         const option = props.snapshot[key];
         return (
-            <ListboxItem key={key} selected={option.selected}>
+            <ListboxItem key={key} selected={option.selected} handleSelected={props.handleSelected}>
                 <Option
                     id={uniqueId || key}
                     name={option.name}
@@ -184,15 +195,6 @@ const Listbox = (props) => {
             </ListboxItem>
         );
     };
-
-    const {
-        id,
-        className,
-        type,
-        snapshot,
-        count,
-        ...rest
-    } = props;
 
     var classNameList = classNames(
         'xyz-listbox',
