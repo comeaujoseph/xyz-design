@@ -71,6 +71,7 @@ ListboxList.defaultProps = {};
 const ListboxItem = (props) => {
     const {
         className,
+        idx,
         handleSelected
     } = props;
 
@@ -83,7 +84,7 @@ const ListboxItem = (props) => {
     );
 
     return (
-        <div className={classNameList} onClick={() => handleSelected(props.key)}>
+        <div className={classNameList} onClick={() => handleSelected(idx)}>
             {props.children}
         </div>
     );
@@ -91,6 +92,7 @@ const ListboxItem = (props) => {
 ListboxItem.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
+    idx: PropTypes.number,
     handleSelected: PropTypes.func,
 };
 ListboxItem.defaultProps = {};
@@ -176,7 +178,7 @@ const Listbox = (props) => {
         const uniqueId = props.hasUniqueId ? _.uniqueId('listbox-option-id-') : null;
         const option = props.snapshot[key];
         return (
-            <ListboxItem key={key} selected={option.selected} handleSelected={props.handleSelected}>
+            <ListboxItem key={key} idx={key} selected={option.selected} handleSelected={props.handleSelected}>
                 <Option
                     id={uniqueId || key}
                     name={option.name}
