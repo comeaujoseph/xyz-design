@@ -1,3 +1,15 @@
+# v1.1.10 (Fri Apr 08 2022)
+
+#### ⚠️ Pushed to `master`
+
+- lookup selection ([@jcomeau-barracuda](https://github.com/jcomeau-barracuda))
+
+#### Authors: 1
+
+- [@jcomeau-barracuda](https://github.com/jcomeau-barracuda)
+
+---
+
 # v1.1.9 (Thu Apr 07 2022)
 
 #### ⚠️ Pushed to `master`
