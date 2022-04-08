@@ -295,7 +295,7 @@ LookupGroup.propTypes = {
     rightInputIcon: PropTypes.element,
     hasSelection: PropTypes.bool,
     handleChange: PropTypes.func,
-    handleKeyPress: PropTypes.func
+    handleKeyPress: PropTypes.func,
     inputName: PropTypes.string
 };
 LookupGroup.defaultProps = {};
