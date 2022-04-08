@@ -64,6 +64,7 @@ const LookupInput = (props) => {
                     {},
                 )}
                 id={id}
+                name={props.name}
                 role="textbox"
                 type="text"
                 placeholder={
@@ -228,7 +229,8 @@ export const LookupGroup = (props) => {
         rightInputIcon,
         hasSelection,
         handleChange,
-        handleKeyPress
+        handleKeyPress,
+        inputName
     } = props;
 
     return (
@@ -249,6 +251,7 @@ export const LookupGroup = (props) => {
                     <LookupInput
                         id={id}
                         className={inputContainerClassName}
+                        name={inputName}
                         placeholder={placeholder}
                         value={value}
                         readOnly={readOnly}
@@ -293,5 +296,6 @@ LookupGroup.propTypes = {
     hasSelection: PropTypes.bool,
     handleChange: PropTypes.func,
     handleKeyPress: PropTypes.func
+    inputName: PropTypes.string
 };
 LookupGroup.defaultProps = {};
