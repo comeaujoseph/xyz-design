@@ -84,7 +84,7 @@ const ListboxItem = (props) => {
     );
 
     return (
-        <div className={classNameList} onClick={() => handleSelection(idx)}>
+        <div className={classNameList} onClick={() => (typeof handleSelection === 'function') ? handleSelection(idx) : () => false }>
             {props.children}
         </div>
     );

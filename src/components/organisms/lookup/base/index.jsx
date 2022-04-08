@@ -23,7 +23,7 @@ const LookupFormItem = (props) => {
     );
 
     return (
-        <div id={id} className={classNameList} onClick={() => open()}>
+        <div id={id} className={classNameList} onClick={() => (typeof open === 'function') ? this.open() : () => false } >
             { props.children }
         </div>
     );
@@ -74,6 +74,8 @@ const LookupInput = (props) => {
                 readOnly={props.readOnly}
                 value={props.value}
                 disabled={props.isDisabled}
+                onChange={props.handleChange}
+                onKeyPress={props.handleSearch}
             />
             {props.rightInputIcon && props.rightInputIcon}
         </div>
@@ -82,7 +84,9 @@ const LookupInput = (props) => {
 LookupInput.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    onChange: PropTypes.func,
+    onKeyPress: PropTypes.func
 };
 LookupInput.defaultProps = {};
 
@@ -223,6 +227,8 @@ export const LookupGroup = (props) => {
         leftInputIcon,
         rightInputIcon,
         hasSelection,
+        onChange,
+        onKeyPress
     } = props;
 
     return (
@@ -250,6 +256,8 @@ export const LookupGroup = (props) => {
                         leftInputIcon={leftInputIcon}
                         rightInputIcon={rightInputIcon}
                         hasSelection={hasSelection}
+                        onChange={onChange}
+                        onKeyPress={onKeyPress}
                     />
                     { results }
                 </LookupFormItem>
@@ -282,6 +290,8 @@ LookupGroup.propTypes = {
     isDisabled: PropTypes.bool,
     leftInputIcon: PropTypes.element,
     rightInputIcon: PropTypes.element,
-    hasSelection: PropTypes.bool
+    hasSelection: PropTypes.bool,
+    onChange: PropTypes.func,
+    onKeyPress: PropTypes.func
 };
 LookupGroup.defaultProps = {};
