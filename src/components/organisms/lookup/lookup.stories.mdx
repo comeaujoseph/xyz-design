@@ -137,6 +137,27 @@ import _ from '../../../shared/helpers';
           />
         }
         listboxOfSelections={
+          <Selections withAddon snapshot={Snapshot.Selections} count={3} />
+        }
+      />
+    </div>
+  </Story>
+</Preview>
+
+
+<Preview withToolbar>
+  <Story name="selections2" >
+    <div style={{ height: "300px" }}>
+      <LookupGroup
+        rightInputIcon={<IconSearch className="xyz-input__icon xyz-input__icon_right" />}
+        results={
+          <Listbox
+            id="listbox-id-1"
+            snapshot={Snapshot.ObjectOptions}
+            count={8}
+          />
+        }
+        listboxOfSelections={
           <Selections snapshot={Snapshot.Selections} count={3} />
         }
       />

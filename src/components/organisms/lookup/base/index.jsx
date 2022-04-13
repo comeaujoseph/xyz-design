@@ -146,6 +146,7 @@ const Lookup = (props) => {
                 />
                 { results }
             </LookupFormItem>
+            {props.listboxOfSelections && props.listboxOfSelections}
         </FormItem>
     );
 };
@@ -185,7 +186,8 @@ const LookupGroupContainer = (props) => {
     var classNameList = classNames(
         'xyz-lookup-group',
         {
-            'xyz-has-selection': props.hasSelection
+            'xyz-has-selection': props.hasSelection,
+            'xyz-has-addon': props.hasAddon
         },
         className
     );
@@ -242,7 +244,7 @@ export const LookupGroup = (props) => {
             isHorizontal={isHorizontal}
             isStacked={isStacked}
         >
-            <LookupGroupContainer hasSelection={listboxOfSelections}>
+            <LookupGroupContainer hasSelection={listboxOfSelections} hasAddon={addon}>
                 {addonPosition === 'start' && addon}
                 <LookupFormItem
                     staticListbox={staticListbox}
@@ -273,8 +275,8 @@ export const LookupGroup = (props) => {
 LookupGroup.propTypes = {
     id: PropTypes.string,
     results: PropTypes.element.isRequired,
-    addon: PropTypes.element.isRequired,
-    addonPosition: PropTypes.oneOf(['start', 'end']).isRequired,
+    addon: PropTypes.element,
+    addonPosition: PropTypes.oneOf(['start', 'end']),
     listboxOfSelections: PropTypes.element,
     // form item
     formClassName: PropTypes.string,

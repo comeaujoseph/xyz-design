@@ -63,7 +63,9 @@ const Selections = (props) => {
 
     var classNameList = classNames(
         'xyz-lookup-selections',
-        {},
+        {
+            'xyz-with-addon': props.withAddon
+        },
         className
     );
 
@@ -80,6 +82,7 @@ Selections.propTypes = {
     id: PropTypes.string,
     className: PropTypes.string,
     snapshot: PropTypes.object.isRequired,
+    withAddon: PropTypes.bool,
     count: PropTypes.number
 };
 

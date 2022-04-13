@@ -10,7 +10,6 @@
     position: relative;
     padding: 0;
     padding-right: 3.75rem;
-    margin-right: 1px;
     min-height: 2rem;
     overflow: hidden;
     background: #fff;
@@ -18,6 +17,10 @@
     border-top: 0;
     border-bottom-left-radius: .25rem;
     border-bottom-right-radius: .25rem;
+}
+
+.xyz-lookup-selections.xyz-with-addon {
+    margin-right: 1px;
 }
 
 .xyz-lookup-selections__list {
