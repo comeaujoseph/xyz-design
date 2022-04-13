@@ -49,7 +49,7 @@ const Selections = (props) => {
         const uniqueId = props.hasUniqueId ? _.uniqueId('lookup-selection-id-') : null;
         const option = props.snapshot[key];
         return (
-            <SelectionItem id={uniqueId || key} key={key} handleDelete={props.handleDelete}>
+            <SelectionItem id={uniqueId || key} key={key} idx={key} handleDelete={props.handleDelete}>
                 {option.name}
             </SelectionItem>
         );
