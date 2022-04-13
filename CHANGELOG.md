@@ -1,3 +1,16 @@
+# v1.1.19 (Wed Apr 13 2022)
+
+#### ⚠️ Pushed to `master`
+
+- Merge branch 'master' of github.com:comeaujoseph/xyz-design ([@jcomeau-barracuda](https://github.com/jcomeau-barracuda))
+- lookup selection close ([@jcomeau-barracuda](https://github.com/jcomeau-barracuda))
+
+#### Authors: 1
+
+- [@jcomeau-barracuda](https://github.com/jcomeau-barracuda)
+
+---
+
 # v1.1.18 (Wed Apr 13 2022)
 
 #### ⚠️ Pushed to `master`
