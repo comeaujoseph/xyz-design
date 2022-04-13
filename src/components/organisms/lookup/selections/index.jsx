@@ -14,6 +14,7 @@ const SelectionItem = (props) => {
     const {
         id,
         className,
+        handleDelete,
     } = props;
 
     var classNameList = classNames(
@@ -28,7 +29,7 @@ const SelectionItem = (props) => {
                 {props.children}
             </div>
             <ButtonIcon size="xx-small">
-                <IconCloseX />
+                <IconCloseX onClick={() => handleDelete(props.idx) } />
             </ButtonIcon>
         </li>
     );
@@ -36,7 +37,8 @@ const SelectionItem = (props) => {
 SelectionItem.propTypes = {
     children: PropTypes.node,
     id: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    handleDelete: PropTypes.func,
 };
 SelectionItem.defaultProps = {};
 
@@ -47,7 +49,7 @@ const Selections = (props) => {
         const uniqueId = props.hasUniqueId ? _.uniqueId('lookup-selection-id-') : null;
         const option = props.snapshot[key];
         return (
-            <SelectionItem id={uniqueId || key} key={key}>
+            <SelectionItem id={uniqueId || key} key={key} handleDelete={props.handleDelete}>
                 {option.name}
             </SelectionItem>
         );
@@ -83,7 +85,8 @@ Selections.propTypes = {
     className: PropTypes.string,
     snapshot: PropTypes.object.isRequired,
     withAddon: PropTypes.bool,
-    count: PropTypes.number
+    count: PropTypes.number,
+    handleDelete: PropTypes.func,
 };
 
 Selections.defaultProps = {}
