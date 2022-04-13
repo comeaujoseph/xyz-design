@@ -28,8 +28,8 @@ const SelectionItem = (props) => {
             <div className="xyz-lookup-selections__item-main">
                 {props.children}
             </div>
-            <ButtonIcon size="xx-small">
-                <IconCloseX onClick={() => handleDelete(props.idx) } />
+            <ButtonIcon size="xx-small" onClick={() => handleDelete(props.idx) } >
+                <IconCloseX />
             </ButtonIcon>
         </li>
     );
