@@ -25,7 +25,7 @@ const SelectionItem = (props) => {
 
     return (
         <li id={id} className={classNameList}>
-            <div className="xyz-lookup-selections__item-main">
+            <div className="xyz-lookup-selections__item-main" style={{color: props.textColor}}>
                 {props.children}
             </div>
             <ButtonIcon size="xx-small" onClick={() => handleDelete(props.idx) } >
@@ -40,7 +40,9 @@ SelectionItem.propTypes = {
     className: PropTypes.string,
     handleDelete: PropTypes.func,
 };
-SelectionItem.defaultProps = {};
+SelectionItem.defaultProps = {
+    textColor: "#41af00",
+};
 
 
 const Selections = (props) => {
@@ -49,7 +51,7 @@ const Selections = (props) => {
         const uniqueId = props.hasUniqueId ? _.uniqueId('lookup-selection-id-') : null;
         const option = props.snapshot[key];
         return (
-            <SelectionItem id={uniqueId || key} key={key} idx={key} handleDelete={props.handleDelete}>
+            <SelectionItem id={uniqueId || key} key={key} idx={key} handleDelete={props.handleDelete} textColor={option.textColor}>
                 {option.name}
             </SelectionItem>
         );

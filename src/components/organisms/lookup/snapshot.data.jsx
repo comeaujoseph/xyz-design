@@ -45,6 +45,7 @@
 export const Selections = {
   option1: {
     name: '#102903',
+    textColor: "red"
   },
   option2: {
     name: '#93872',
