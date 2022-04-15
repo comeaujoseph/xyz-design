@@ -68,7 +68,8 @@ const Selections = (props) => {
     var classNameList = classNames(
         'xyz-lookup-selections',
         {
-            'xyz-with-addon': props.withAddon
+            'xyz-with-addon': props.withAddon,
+            'xyz-none': !Object.keys(snapshot).length
         },
         className
     );

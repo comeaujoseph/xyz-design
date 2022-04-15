@@ -54,3 +54,6 @@ export const Selections = {
     name: '#7372',
   },
 };
+
+export const Selections2 = {
+};
