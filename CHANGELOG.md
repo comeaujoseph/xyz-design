@@ -1,3 +1,16 @@
+# v1.1.23 (Fri Apr 15 2022)
+
+#### ⚠️ Pushed to `master`
+
+- Merge branch 'master' of github.com:comeaujoseph/xyz-design ([@jcomeau-barracuda](https://github.com/jcomeau-barracuda))
+- fix lookup border radius logic ([@jcomeau-barracuda](https://github.com/jcomeau-barracuda))
+
+#### Authors: 1
+
+- [@jcomeau-barracuda](https://github.com/jcomeau-barracuda)
+
+---
+
 # v1.1.22 (Fri Apr 15 2022)
 
 #### ⚠️ Pushed to `master`
