@@ -137,8 +137,8 @@ import _ from '../../../shared/helpers';
           />
         }
         listboxOfSelections={
-          Object.keys(Snapshot.Selections2).length > 0 &&
-          <Selections withAddon snapshot={Snapshot.Selections2} count={3} />
+          Object.keys(Snapshot.Selections).length > 0 &&
+          <Selections withAddon snapshot={Snapshot.Selections} count={3} />
         }
       />
     </div>
@@ -159,6 +159,7 @@ import _ from '../../../shared/helpers';
           />
         }
         listboxOfSelections={
+          Object.keys(Snapshot.Selections).length > 0 &&
           <Selections snapshot={Snapshot.Selections} count={3} />
         }
       />

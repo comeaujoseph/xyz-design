@@ -34,15 +34,23 @@
   margin-left: (-1 * $border-width-thin);
 }
 
+
 .xyz-lookup-group > .xyz-lookup-switcher:first-child .xyz-input,
 .xyz-lookup-group > .xyz-lookup:first-child .xyz-input {
+  border-radius: $button-border-radius;
+}
+
+
+
+.xyz-lookup-group > .xyz-lookup-switcher:first-child .xyz-input {
   border-radius: $button-border-radius 0 0 $button-border-radius;
 }
 
-.xyz-lookup-group > .xyz-lookup-switcher:last-child .xyz-input,
-.xyz-lookup-group > .xyz-lookup:last-child .xyz-input {
+.xyz-lookup-group > .xyz-lookup-switcher:last-child .xyz-input {
   border-radius: 0 $button-border-radius $button-border-radius 0;
 }
+
+
 
 .xyz-lookup-group.xyz-has-selection > .xyz-lookup-switcher:first-child .xyz-input,
 .xyz-lookup-group.xyz-has-selection > .xyz-lookup:first-child .xyz-input {
