@@ -1,3 +1,15 @@
+# v1.1.24 (Sun May 08 2022)
+
+#### ⚠️ Pushed to `master`
+
+- fix lookup border radius ([@jcomeau-barracuda](https://github.com/jcomeau-barracuda))
+
+#### Authors: 1
+
+- [@jcomeau-barracuda](https://github.com/jcomeau-barracuda)
+
+---
+
 # v1.1.23 (Fri Apr 15 2022)
 
 #### ⚠️ Pushed to `master`
