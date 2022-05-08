@@ -50,13 +50,12 @@
   border-radius: 0 $button-border-radius $button-border-radius 0;
 }
 
-
-
 .xyz-lookup-group.xyz-has-selection > .xyz-lookup-switcher:first-child .xyz-input,
 .xyz-lookup-group.xyz-has-selection > .xyz-lookup:first-child .xyz-input {
   border-radius: $button-border-radius 0 0 0;
 }
 
+.xyz-lookup-group.xyz-has-addon > .xyz-lookup:last-child .xyz-input,
 .xyz-lookup-group.xyz-has-selection > .xyz-lookup-switcher:last-child .xyz-input,
 .xyz-lookup-group.xyz-has-selection > .xyz-lookup:last-child .xyz-input {
   border-radius: $button-border-radius $button-border-radius 0 0;
@@ -67,3 +66,7 @@
   border-radius: 0 $button-border-radius 0 0;
 }
 
+
+.xyz-lookup-group.xyz-has-addon > .xyz-lookup:last-child .xyz-input {
+  border-radius: 0 $button-border-radius $button-border-radius 0;
+}
