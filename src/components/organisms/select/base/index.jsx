@@ -86,7 +86,7 @@ const Select = (props) => {
         <div id={id} className={classNameList}>
             <div className="xyz-select__inner">
                 <DropdownTrigger {...rest} customTrigger={<Trigger color={props.color}>{selected}</Trigger>} isOpen={isOpen}>
-                    <Dropdown size={props.size}>
+                    <Dropdown size={props.size} position={this.props.position}>
                         <Menu>
                             { props.children }
                         </Menu>
@@ -103,12 +103,16 @@ Select.propTypes = {
     className: PropTypes.string,
     selected: PropTypes.string,
     color: PropTypes.string,
-    isOpen: PropTypes.bool
+    isOpen: PropTypes.bool,
+    position: PropTypes.oneOf([
+        'left', 'right', 'bottom'
+    ])
 };
 
 Select.defaultProps = {
     selected: "All",
     color: "#49c800",
+    position: 'left'
 }
 
 export default Select;
