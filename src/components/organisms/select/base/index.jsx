@@ -86,7 +86,7 @@ const Select = (props) => {
         <div id={id} className={classNameList}>
             <div className="xyz-select__inner">
                 <DropdownTrigger {...rest} customTrigger={<Trigger color={props.color}>{selected}</Trigger>} isOpen={isOpen}>
-                    <Dropdown size={props.size} position={this.props.position}>
+                    <Dropdown size={props.size} position={props.position}>
                         <Menu>
                             { props.children }
                         </Menu>
