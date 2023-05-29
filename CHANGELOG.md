@@ -1,3 +1,16 @@
+# v1.1.28 (Mon May 29 2023)
+
+#### ⚠️ Pushed to `master`
+
+- Merge branch 'master' of github.com:comeaujoseph/xyz-design ([@comeaujoseph](https://github.com/comeaujoseph))
+- fix icon export ([@comeaujoseph](https://github.com/comeaujoseph))
+
+#### Authors: 1
+
+- Joey Comeau ([@comeaujoseph](https://github.com/comeaujoseph))
+
+---
+
 # v1.1.27 (Mon May 29 2023)
 
 #### ⚠️ Pushed to `master`
