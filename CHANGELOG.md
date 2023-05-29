@@ -1,3 +1,15 @@
+# v1.1.27 (Mon May 29 2023)
+
+#### ⚠️ Pushed to `master`
+
+- add icons: archive, home, information ([@comeaujoseph](https://github.com/comeaujoseph))
+
+#### Authors: 1
+
+- Joey Comeau ([@comeaujoseph](https://github.com/comeaujoseph))
+
+---
+
 # v1.1.26 (Thu Jun 23 2022)
 
 #### ⚠️ Pushed to `master`
