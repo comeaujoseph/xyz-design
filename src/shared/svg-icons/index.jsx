@@ -7,6 +7,7 @@ import IconAngleDoubleRight from './icon-angle-double-right';
 import IconAngleDown from './icon-angle-down';
 import IconAngleLeft from './icon-angle-left';
 import IconAngleRight from './icon-angle-right';
+import IconArchive from './icon-archive';
 import IconCaretDown from './icon-caret-down';
 import IconCloseX from './icon-close-x';
 import IconClose from './icon-close';
@@ -28,6 +29,8 @@ import IconGlobal from './icon-global';
 import IconHeart from './icon-heart';
 import IconHelp from './icon-help';
 import IconHistory from './icon-history';
+import IconHome from './icon-home';
+import IconInformation from './icon-information';
 import IconInformationO from './icon-information-o';
 import IconLink from './icon-link';
 import IconMedia from './icon-media';
@@ -65,9 +68,9 @@ import IconFolderO from './icon-folder-o';
 import IconPause from './icon-pause';
 
 export {
-    IconBriefcase, IconBullhorn, IconCalendar, IconCancel, IconAngleDoubleLeft, IconAngleDoubleRight, IconAngleDown, IconAngleLeft, IconAngleRight, IconCaretDown,
+    IconArchive, IconBriefcase, IconBullhorn, IconCalendar, IconCancel, IconAngleDoubleLeft, IconAngleDoubleRight, IconAngleDown, IconAngleLeft, IconAngleRight, IconCaretDown,
     IconCloseX, IconClose, IconCode, IconCog, IconComments, IconCopy, IconDash, IconDashboard, IconDownload, IconEllipsis, IconEllipsisVertical, IconExport, IconFileArchive, IconFilePDF, IconFlag, IconFolder,
-    IconGlobal, IconHeart, IconHelp, IconHistory, IconInformationO, IconLink, IconMedia, IconNotification, IconOverview, IconPeople, IconPlay, IconPlus, IconReload, IconRemove, IconSearch,
+    IconGlobal, IconHeart, IconHelp, IconHistory, IconHome, IconInformation, IconInformationO, IconLink, IconMedia, IconNotification, IconOverview, IconPeople, IconPlay, IconPlus, IconReload, IconRemove, IconSearch,
     IconSortAscending, IconSortDescending,
     IconSpam, IconStar, IconStatusCanceled, IconStatusRunning, IconStatusSuccess, IconStatusWarning, IconTag, IconTask,
     IconTemplate, IconTimer, IconTrash, IconUpload, IconWarning, IconBookmark, IconSave, IconRedo, IconBack, IconMaximize, IconSubstitute, IconPanes, IconFolderO, IconPause
